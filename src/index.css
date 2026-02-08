@@ -57,10 +57,10 @@ html{
 .dynamic-content table tbody tr td{font-size: 22px; color: #4B5563; border-bottom: 1px solid #4b55639c; padding: 10px; text-align: center;}
 .sticky-wrapper{animation: slideDown 0.7s ease-in-out;}
 .animate-spin.reverse{animation: spiner 1s linear infinite;}
-.humburger.active .line-1{margin: auto; animation: width 0.3s ease-in-out; transform: rotate(45deg); width: 16px; position: absolute; top: 18px; left: 10px; height: 2px;}
+.humburger.active .line-1{margin: auto; animation: width 0.3s ease-in-out; transform: rotate(45deg); width: 24px; position: absolute; top: 24px; left: 12px; height: 2px;}
 .humburger.active .line-2 .bg-secondary{ width: 100%; height:100%; animation: scale 0.3s ease-in-out; position: absolute; top: 0px; left: 0px; background-color: transparent; border: 2px solid var(--color-primary); transition: background-color 0s linear;}
 .humburger.active .line-2 .bg-primary{display: none;}
-.humburger.active .line-3{margin: auto; animation: width 0.3s ease-in-out; transform: rotate(-45deg); width: 16px; position: absolute; top: 18px; left: 10px; height: 2px;}
+.humburger.active .line-3{margin: auto; animation: width 0.3s ease-in-out; transform: rotate(-45deg); width: 24px; position: absolute; top: 24px; left: 12px; height: 2px;}
 
 @keyframes width {
   0%{width: 0%;}

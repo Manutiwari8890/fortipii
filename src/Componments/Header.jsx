@@ -58,6 +58,7 @@ function Header(){
 
     useEffect(() => {
         window.scrollTo(0, 0);
+        setMenu(false)
     }, [location.pathname])
 
     useEffect(() => {

@@ -9,9 +9,9 @@ function About() {
         <>
             <section className="py-10 bg-primary/5 relative bg-[url('/assets/images/particles-bg.png')] bg-center bg-cover mt-20 xl:mt-20 2xl:mt-25">
                 <div className="container px-2 lg:px-5 mx-auto z-1">
-                    <div className="text-center content-center min-h-100 max-w-2/3 mx-auto xl:min-h-75 2xl:min-h-100">
-                        <h1 className="text-[70px] text-secondary font-black xl:text-[54px] 2xl:text-[70px]"> <span className="text-primary">About</span> Our Company</h1>
-                        <p className="text-xl text-[#4B5563] leading-8 mt-2 font-commissioner max-w-[90%] mx-auto xl:text-lg xl:leading-7 2xl:text-xl 2xl:leading-8">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+                    <div className="text-center content-center min-h-45 max-w-full mx-auto md:min-h-50 md:max-w-9/10 lg:max-w-2/3 lg:min-h-50 xl:min-h-75 2xl:min-h-100">
+                        <h1 className="text-[36px] text-secondary font-black md:text-[54px] 2xl:text-[70px]"> <span className="text-primary">About</span> Our Company</h1>
+                        <p className="text-sm text-[#4B5563] leading-5.5 mt-2 font-commissioner max-w-full mx-auto md:text-base md:leading-7 lg:max-w-9/10 lg:text-base lg:leading-7 xl:text-lg xl:leading-7 2xl:text-xl 2xl:leading-8">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
                     </div>
                 </div>
             </section>

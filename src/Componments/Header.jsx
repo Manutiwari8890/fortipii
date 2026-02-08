@@ -102,7 +102,6 @@ function Header(){
                                         width: `${lineStyle.width}px`,
                                     }}
                                 />
- 
                             </ul>
                             <div className="flex gap-2 items-center">
                                 <Link className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full">Sign Up</Link>

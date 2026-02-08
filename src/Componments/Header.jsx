@@ -76,13 +76,13 @@ function Header(){
     return (
         <>
             <header>
-                <nav className={`bg-white  border fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 ease-in-out py-4 ${menu ? "min-h-80" : "min-h-20 content-center "} ${isScroll ? " mx-auto border-[#26365626] rounded-full top-2 shadow-sm sticky-wrapper w-[95%] lg:py-2 lg:w-[95%] xl:w-[95%] 2xl:w-3/4" : "w-full border-transparent top-0"} xl:min-h-20 2xl:min-h-25`}>
+                <nav className={`bg-white  border fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 ease-in-out py-4 ${menu ? "min-h-80" : "min-h-20 content-center rounded-[150px] lg:rounded-[150px]"} ${isScroll ? " mx-auto border-[#26365626] top-2 shadow-sm sticky-wrapper w-[98%] md:w-[98%] xl:rounded-full lg:py-2 lg:w-[95%] xl:w-[95%] 2xl:w-3/4" : "w-full border-transparent top-0"} xl:min-h-20 2xl:min-h-25 ${(isScroll && menu) ? "rounded-[36px] lg:rounded-[36px]" : ""}`}>
                     <div className="container mx-auto px-2 lg:px-5">
-                        <div className="flex gap-2 items-center justify-between">
+                        <div className={`flex gap-2 items-center justify-between ${isScroll ? "px-3" : ""}`}>
                             <Link className="mr-6" to="/">
-                                <img src="/assets/images/fortipii.svg" alt="Fortipii" className="w-45" />
+                                <img src="/assets/images/fortipii.svg" alt="Fortipii" className={`${isScroll ? "w-35 md:w-35" : "w-45"} lg:w-45 xl:w-45`} />
                             </Link>
-                            <ul className={`gap-1 fixed z-10000 top-22 left-0 border-1 border-transparent rounded-0 px-2 py-2 transition-all transition-ease-in-out duration-300 origin-top overflow-hidden ${menu ? "opacity-100 h-50 rotate-x-0 w-full delay-200" : "opacity-0 w-0 relative border-[#26365626] h-0 rotate-x-90" } md:px-8 lg:rounded-full xl:top-0 xl:px-2 xl:w-max xl:border-[#26365626] xl:w-auto xl:flex xl:justify-center xl:relative xl:h-max xl:overflow-y-visible xl:translate-y-0`}  ref={navRef} onMouseLeave={handleLeave}>
+                            <ul className={`gap-1 fixed z-10000 top-20 left-0 border-1 border-transparent rounded-0 px-4 py-2 transition-all transition-ease-in-out duration-300 origin-top overflow-hidden ${menu ? "opacity-100 h-50 rotate-x-0 w-full delay-200" : "opacity-0 w-0 relative border-[#26365626] h-0 rotate-x-90" } md:px-8 lg:rounded-full xl:top-0 xl:px-2 xl:w-max xl:border-[#26365626] xl:w-auto xl:flex xl:justify-center xl:relative xl:h-max xl:overflow-y-visible xl:translate-y-0`}  ref={navRef} onMouseLeave={handleLeave}>
                                 <li className="nav-item">
                                     <NavLink to="/" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/" ? "text-primary xl:text-white" : ""}`} data-page="/" onMouseEnter={handleHover}>Home</NavLink>
                                 </li>

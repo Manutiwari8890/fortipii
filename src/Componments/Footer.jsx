@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 function Footer(){
     return (
         <>
-            <footer className="">
+            <footer>
                 <div className="container px-2 mx-auto lg:px-5">
-                    <div className="grid grid-cols-2 gap-2 pt-10 pb-15 lg:grid-cols-4 lg:gap-5 xl:gap-15">
+                    <div className="grid grid-cols-1 gap-y-3 pt-10 pb-5 px-2 md:px-0 md:mb-10 md:pb-10 md:gap-y-2 md:gax-8 md:grid-cols-2 lg:pb-15 lg:gap-2 lg:grid-cols-4 lg:gap-5 xl:gap-15">
                         <div className="company-detail">
                             <Link to="/" className="inline-block mb-2 lg:mb-5">
-                                <img src="/assets/images/fortipii.svg" alt="" className="w-45"/>
+                                <img src="/assets/images/fortipii.svg" alt="" className="w-35 lg:w-45"/>
                             </Link>
                             <p className="text-base text-[#4B5563] mt-2 font-commissioner xl:text-base 2xl:text-lg">Simple, minimal fees, and lots of fun: just Fortipii. As simple and affordable as possible - that's our goal.</p>
                         </div>
                         <div className="footer-links">
-                            <h4 className="text-xl font-semibold text-[#1C2C3A] mb-8 mt-4">Resources</h4>
+                            <h4 className="text-xl font-semibold text-[#1C2C3A] mb-2 mt-4 lg:mb-8">Resources</h4>
                             <ul>
                                 <li>
                                     <Link className="text-lg text-[#4B5563] font-commissioner py-2 inline-block w-full hover:text-primary">Projects</Link>
@@ -20,7 +20,7 @@ function Footer(){
                             </ul>
                         </div>
                         <div className="footer-links">
-                            <h4 className="text-xl font-semibold text-[#1C2C3A] mb-8 mt-4">Company</h4>
+                            <h4 className="text-xl font-semibold text-[#1C2C3A] mb-2 mt-4 lg:mb-8">Company</h4>
                             <ul>
                                 <li>
                                     <Link to="/about" className="text-lg text-[#4B5563] font-commissioner py-2 inline-block w-full hover:text-primary">About Us</Link>
@@ -31,25 +31,25 @@ function Footer(){
                             </ul>
                         </div>
                         <div className="footer-links">
-                            <h4 className="text-xl font-semibold text-[#1C2C3A] mb-8 mt-4">Get in Touch with Us</h4>
+                            <h4 className="text-xl font-semibold text-[#1C2C3A] mb-4 mt-4 md:mb-2 lg:mb-8">Get in Touch with Us</h4>
                             <ul className="flex gap-3">
                                 <li>
-                                    <Link className="w-12 h-12 group rounded-lg inline-block text-center content-center bg-primary/10 hover:bg-primary">
-                                        <svg className="w-6 h-6 text-primary mx-auto group-hover:text-white" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Link className="w-10 h-10 group rounded-lg inline-block text-center content-center bg-primary/10 hover:bg-primary lg:w-12 lg:h-12">
+                                        <svg className="w-5 h-5 text-primary mx-auto group-hover:text-white lg:w-6 lg:h-6" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M17.6485 4.46484C17.7891 4.35938 18 4.46484 18 4.64062V11.8125C18 12.7617 17.2266 13.5 16.3125 13.5H1.68755C0.738331 13.5 4.95911e-05 12.7617 4.95911e-05 11.8125V4.64062C4.95911e-05 4.46484 0.175831 4.35938 0.316456 4.46484C1.12505 5.09766 2.14458 5.87109 5.73052 8.47266C6.4688 9 7.73442 10.1602 9.00005 10.1602C10.2305 10.1602 11.5313 9 12.2344 8.47266C15.8204 5.87109 16.8399 5.09766 17.6485 4.46484ZM9.00005 9C8.1563 9.03516 6.99614 7.98047 6.39849 7.55859C1.72271 4.18359 1.37114 3.86719 0.316456 3.02344C0.105518 2.88281 4.95911e-05 2.63672 4.95911e-05 2.35547V1.6875C4.95911e-05 0.773438 0.738331 0 1.68755 0H16.3125C17.2266 0 18 0.773438 18 1.6875V2.35547C18 2.63672 17.8594 2.88281 17.6485 3.02344C16.5938 3.86719 16.2422 4.18359 11.5665 7.55859C10.9688 7.98047 9.80864 9.03516 9.00005 9Z" fill="currentColor"/>
                                         </svg>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="w-12 h-12 group rounded-lg inline-block text-center content-center bg-primary/10 hover:bg-primary">
-                                        <svg className="w-6 h-6 text-primary mx-auto group-hover:text-white" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Link className="w-10 h-10 group rounded-lg inline-block text-center content-center bg-primary/10 hover:bg-primary lg:w-12 lg:h-12">
+                                        <svg className="w-5 h-5 text-primary mx-auto group-hover:text-white lg:w-6 lg:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13.3594 2.32031C14.836 3.79688 15.75 5.73047 15.75 7.83984C15.75 12.1289 12.1641 15.6445 7.83989 15.6445C6.53911 15.6445 5.27349 15.293 4.11333 14.6953L4.86374e-05 15.75L1.08989 11.707C0.421924 10.5469 0.0352049 9.21094 0.0352049 7.80469C0.0352049 3.51562 3.55083 0 7.83989 0C9.94927 0 11.918 0.84375 13.3594 2.32031ZM7.83989 14.3086C11.4258 14.3086 14.4141 11.3906 14.4141 7.83984C14.4141 6.08203 13.6758 4.46484 12.4454 3.23438C11.2149 2.00391 9.5977 1.33594 7.87505 1.33594C4.28911 1.33594 1.37114 4.25391 1.37114 7.80469C1.37114 9.03516 1.7227 10.2305 2.35552 11.2852L2.5313 11.5312L1.86333 13.9219L4.32427 13.2539L4.5352 13.3945C5.55474 13.9922 6.67974 14.3086 7.83989 14.3086ZM11.4258 9.45703C11.6016 9.5625 11.7422 9.59766 11.7774 9.70312C11.8477 9.77344 11.8477 10.1602 11.6719 10.6172C11.4961 11.0742 10.7227 11.4961 10.3711 11.5312C9.73833 11.6367 9.24614 11.6016 8.01567 11.0391C6.04692 10.1953 4.7813 8.22656 4.67583 8.12109C4.57036 7.98047 3.90239 7.06641 3.90239 6.08203C3.90239 5.13281 4.39458 4.67578 4.57036 4.46484C4.74614 4.25391 4.95708 4.21875 5.0977 4.21875C5.20317 4.21875 5.3438 4.21875 5.44927 4.21875C5.58989 4.21875 5.73052 4.18359 5.9063 4.57031C6.04692 4.95703 6.4688 5.90625 6.50395 6.01172C6.53911 6.11719 6.57427 6.22266 6.50395 6.36328C6.15239 7.10156 5.73052 7.06641 5.94145 7.41797C6.71489 8.71875 7.45317 9.17578 8.61333 9.73828C8.78911 9.84375 8.89458 9.80859 9.0352 9.70312C9.14067 9.5625 9.52739 9.10547 9.63286 8.92969C9.77349 8.71875 9.91411 8.75391 10.0899 8.82422C10.2657 8.89453 11.2149 9.35156 11.4258 9.45703Z" fill="currentColor"/>
                                         </svg>
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link className="w-12 h-12 group rounded-lg inline-block text-center content-center bg-primary/10 hover:bg-primary">
-                                        <svg className="w-6 h-6 text-primary mx-auto group-hover:text-white" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <Link className="w-10 h-10 group rounded-lg inline-block text-center content-center bg-primary/10 hover:bg-primary lg:w-12 lg:h-12">
+                                        <svg className="w-5 h-5 text-primary mx-auto group-hover:text-white lg:w-6 lg:h-6" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M7.90996 3.83203C10.1248 3.83203 11.9529 5.66016 11.9529 7.875C11.9529 10.125 10.1248 11.918 7.90996 11.918C5.65996 11.918 3.86699 10.125 3.86699 7.875C3.86699 5.66016 5.65996 3.83203 7.90996 3.83203ZM7.90996 10.5117C9.35137 10.5117 10.5115 9.35156 10.5115 7.875C10.5115 6.43359 9.35137 5.27344 7.90996 5.27344C6.4334 5.27344 5.27324 6.43359 5.27324 7.875C5.27324 9.35156 6.46855 10.5117 7.90996 10.5117ZM13.0428 3.69141C13.0428 4.21875 12.6209 4.64062 12.0936 4.64062C11.5662 4.64062 11.1443 4.21875 11.1443 3.69141C11.1443 3.16406 11.5662 2.74219 12.0936 2.74219C12.6209 2.74219 13.0428 3.16406 13.0428 3.69141ZM15.7146 4.64062C15.785 5.94141 15.785 9.84375 15.7146 11.1445C15.6443 12.4102 15.3631 13.5 14.449 14.4492C13.535 15.3633 12.41 15.6445 11.1443 15.7148C9.84355 15.7852 5.94121 15.7852 4.64043 15.7148C3.3748 15.6445 2.28496 15.3633 1.33574 14.4492C0.421679 13.5 0.140429 12.4102 0.070117 11.1445C-0.000195503 9.84375 -0.000195503 5.94141 0.070117 4.64062C0.140429 3.375 0.421679 2.25 1.33574 1.33594C2.28496 0.421875 3.3748 0.140625 4.64043 0.0703125C5.94121 0 9.84355 0 11.1443 0.0703125C12.41 0.140625 13.535 0.421875 14.449 1.33594C15.3631 2.25 15.6443 3.375 15.7146 4.64062ZM14.0271 12.5156C14.449 11.4961 14.3436 9.03516 14.3436 7.875C14.3436 6.75 14.449 4.28906 14.0271 3.23438C13.7459 2.56641 13.2186 2.00391 12.5506 1.75781C11.4959 1.33594 9.03496 1.44141 7.90996 1.44141C6.7498 1.44141 4.28887 1.33594 3.26934 1.75781C2.56621 2.03906 2.03887 2.56641 1.75762 3.23438C1.33574 4.28906 1.44121 6.75 1.44121 7.875C1.44121 9.03516 1.33574 11.4961 1.75762 12.5156C2.03887 13.2188 2.56621 13.7461 3.26934 14.0273C4.28887 14.4492 6.7498 14.3438 7.90996 14.3438C9.03496 14.3438 11.4959 14.4492 12.5506 14.0273C13.2186 13.7461 13.7811 13.2188 14.0271 12.5156Z" fill="currentColor"/>
                                         </svg>
                                     </Link>

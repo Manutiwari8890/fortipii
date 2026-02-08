@@ -4,25 +4,25 @@ import IconCard from "../Componments/IconCard";
 function Index(){
     return (
         <>
-            <section className="py-20 bg-primary/5 min-h-150 mt-20 xl:mt-20 2xl:mt-25">
+            <section className="py-10 bg-primary/5 min-h-150 mt-20 md:py-15 lg:py-15 xl:py-20 xl:mt-20 2xl:mt-25">
                 <div className="container px-2 lg:px-5 mx-auto relative z-1">
-                    <div className="h-full content-center text-center max-w-2/3 mx-auto">
+                    <div className="h-full content-center text-center max-w-full mx-auto md:max-w-9/10 lg:max-w-4/5 xl:max-w-2/3">
                         <div className="img-container mx-auto w-max relative mb-4"> 
-                            <img src="/assets/images/security.svg" className="w-20 xl:w-20 2xl:w-25" />
-                            <img src="/assets/images/lock.svg" className="w-10 absolute bottom-0 -left-4" />
+                            <img src="/assets/images/security.svg" className="w-15 md:w-20 lg:w-18 xl:w-20 2xl:w-25" />
+                            <img src="/assets/images/lock.svg" className="w-6 absolute bottom-0 -left-2 md:-left-4 md:8 lg:w-8 lg:-left-3 xl:w-10 xl:-left-4" />
                         </div>
-                        <h2 className="text-[90px] font-black text-[#061E38] leading-26 mb-6 xl:text-[70px] xl:leading-20 2xl:text-[90px] 2xl:leading-26">Fortify your data. <span className="text-primary">Simplify</span> your life.</h2>
-                        <p className="text-xl text-[#4B5563] max-w-180 mx-auto family-normal">Fortipii makes privacy easy. Protect your sensitive information effortlessly with strong, no-fuss security you can trust.</p>
-                        <div className="form-wrapper relative my-8">
+                        <h2 className="text-[48px] font-black text-[#061E38] leading-14 mb-6 md:leading-18 md:text-[64px] lg:text-[64px] lg:leading-18 xl:text-[70px] xl:leading-20 2xl:text-[90px] 2xl:leading-26">Fortify your data. <span className="text-primary">Simplify</span> your life.</h2>
+                        <p className="text-base text-[#4B5563] max-w-180 mx-auto family-normal md:text-xl">Fortipii makes privacy easy. Protect your sensitive information effortlessly with strong, no-fuss security you can trust.</p>
+                        <div className="form-wrapper relative mb-8 pt-20 md:py-0 md:my-8">
                             <form>
-                                <div className="flex border border-[#26365638] w-140 mx-auto bg-white rounded-xl xl:w-110 2xl:w-140">
+                                <div className="flex border border-[#26365638] w-full mx-auto bg-white rounded-xl md:w-100 lg:w-110 xl:w-110 2xl:w-140">
                                     <div className="form-group w-full flex-1">
-                                        <input type="text" placeholder="Enter Your Email.." className="text-lg text-[#263656] font-commissioner placeholder:text-[#263656] py-4 px-8 w-full xl:px-6 xl:py-3 2xl:px-8 2xl:py-4" />
+                                        <input type="text" placeholder="Enter Your Email.." className="text-lg text-[#263656] font-commissioner placeholder:text-[#263656] py-4 px-6 rounded-xl w-full lg:px-6 xl:px-6 xl:py-3 2xl:px-8 2xl:py-4" />
                                     </div>
-                                    <button className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-3 px-12 rounded-xl cursor-pointer xl:px-8 2xl:px-12">Get Started</button>
+                                    <button className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-3 px-6 rounded-xl cursor-pointer md:px-8 lg:px-8 xl:px-8 2xl:px-12">Get Started</button>
                                 </div>
                             </form>
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="141" height="76" className="absolute bottom-0 z-1 left-10" viewBox="0 0 141 76" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"   className="absolute bottom-0 z-1 left-1/2 w-24 -translate-x-1/2 top-2 md:top-0 md:-translate-x-0 md:left-0 lg:left-10 lg:w-28 xl:w-32" viewBox="0 0 141 76" fill="none">
                                 <rect width="141" height="76" fill="url(#pattern0_38_45)" />
                                 <defs>
                                     <pattern id="pattern0_38_45" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -32,22 +32,22 @@ function Index(){
                                 </defs>
                             </svg>
                         </div>
-                        <div className="flex gap-4 justify-center">
-                            <div className="flex gap-1 text-base text-[#263656] font-commissioner items-center">
+                        <div className="flex gap-4 justify-center flex-wrap md:flex-nowrap md:gap-3 lg:gap-3 xl:gap-4">
+                            <div className="flex gap-1 text-xs text-[#263656] font-commissioner items-center lg:text-base">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7.08325 9.58336L9.58325 12.0833L13.7499 7.91669" stroke="#41CBBA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M4.16658 15L2.60855 4.09379C2.54697 3.66272 2.82816 3.26041 3.25324 3.16594L9.63836 1.74703C9.87649 1.69411 10.1233 1.69411 10.3615 1.74703L16.7466 3.16594C17.1717 3.26041 17.4528 3.66272 17.3913 4.09379L15.8332 15C15.7743 15.4125 15.4166 17.9167 9.99992 17.9167C4.58325 17.9167 4.2255 15.4125 4.16658 15Z" stroke="#41CBBA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                                 Private Client Data Protected
                             </div>
-                            <div className="flex gap-1 text-base text-[#263656] font-commissioner items-center">
+                            <div className="flex gap-1 text-xs text-[#263656] font-commissioner items-center lg:text-base">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9.99991 18.3333V10.8333M9.99991 10.8333L12.9166 13.75M9.99991 10.8333L7.08325 13.75" stroke="#41CBBA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M16.6666 14.6727C17.9113 14.1851 19.1666 13.0741 19.1666 10.8333C19.1666 7.50003 16.3888 6.66669 14.9999 6.66669C14.9999 5.00003 14.9999 1.66669 9.99991 1.66669C4.99991 1.66669 4.99991 5.00003 4.99991 6.66669C3.61103 6.66669 0.833252 7.50003 0.833252 10.8333C0.833252 13.0741 2.08848 14.1851 3.33325 14.6727" stroke="#41CBBA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                                 local-first AI Engine
                             </div>
-                            <div className="flex gap-1 text-base text-[#263656] font-commissioner items-center">
+                            <div className="flex gap-1 text-xs text-[#263656] font-commissioner items-center lg:text-base">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M13.3333 13.3333V6.66669" stroke="#41CBBA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
                                     <path d="M10 13.3333V9.16669" stroke="#41CBBA" strokeWidth="1.25" strokeLinecap="round" strokeLinejoin="round" />
@@ -60,33 +60,33 @@ function Index(){
                     </div>
                 </div>
             </section>
-            <section className="pt-20 pb-5">
+            <section className="pt-10 pb-5 md:pt-15 lg:pt-15 xl:pb-5 xl:pt-20">
                 <div className="container px-2 lg:px-5 mx-auto z-1">
-                    <div className="grid grid-cols-3 gap-10">
-                        <div className="border border-[#0000001A] p-8 rounded-4xl text-center content-center relative xl:min-h-[300px] 2xl:min-h-[372px]">
-                            <div className="img-container w-20 mx-auto mb-5 reltive z-1 xl:w-15 2xl:w-20">
+                    <div className="grid grid-cols-1 gap-y-8 md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:gap-10">
+                        <div className="border border-[#0000001A] min-h-[275px] p-8 rounded-4xl text-center content-center relative lg-py-8 lg:px-6 xl:p-8 xl:min-h-[300px] 2xl:min-h-[372px]">
+                            <div className="img-container w-15 mx-auto mb-3 reltive z-1 xl:mb-15 xl:w-15 2xl:w-20">
                                 <img src="/assets/images/security.svg" className="w-full" />
                             </div>
                             <div className="relative z-1">
-                                <p className="text-[32px] font-commissioner leading-10 text-white mb-6 xl:leading-8 xl:text-[28px] 2xl:leading-10 2xl:text-[32px]"><strong>Fortipii </strong> <br />So safe, it’s boring.</p>
-                               <div className="px-10">
+                                <p className="text-[28px] font-commissioner leading-9 text-white mb-6 lg:leading-9 xl:leading-8 xl:text-[28px] 2xl:leading-10 2xl:text-[32px]"><strong>Fortipii </strong> <br />So safe, it’s boring.</p>
+                               <div className="px-2 xl:px-10">
                                     <Link className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-5 px-8 rounded-full inline-block w-full hover:bg-secondary xl:px-6 xl:py-3 2xl:px-8 2xl:py-5">Get Started</Link>
                                </div>
                             </div>
                             <div className="absolute top-0 left-0 w-full h-full bg-linear-to-l from-[#1F4567] to-secondary rounded-4xl -z-1 "></div>
                         </div>
-                        <div className="border border-[#0000001A] min-h-[372px] p-8 rounded-4xl text-center content-center group relative xl:min-h-[300px] 2xl:min-h-[372px]">
-                            <div className="img-container w-25 mx-auto mb-5 reltive z-1 xl:w-20 2xl:w-25">
+                        <div className="border border-[#0000001A] min-h-[275px] p-8 rounded-4xl text-center content-center group relative lg-py-8 lg:px-6 xl:p-8 xl:min-h-[300px] 2xl:min-h-[372px]">
+                            <div className="img-container w-18 mx-auto mb-3 reltive z-1 lg:w-18 lg:mb-3 xl:mb-5 xl:w-20 2xl:w-25">
                                 <img src="/assets/images/lock.svg" className="w-full" />
                             </div>
-                            <p className="text-[32px] text-secondary font-commissioner leading-10 relative z-1 group-hover:text-white xl:leading-8 xl:text-[28px] 2xl:leading-10 2xl:text-[32px]"><strong>So safe,</strong> <br />it’s boring.</p>
+                            <p className="text-[28px] text-secondary font-commissioner leading-9 relative z-1 group-hover:text-white lg:leading-9 xl:leading-8 xl:text-[28px] 2xl:leading-10 2xl:text-[32px]"><strong>So safe,</strong> <br />it’s boring.</p>
                             <div className="absolute top-0 left-0 w-full h-full bg-linear-to-l from-[#1F4567] to-secondary rounded-4xl -z-1 opacity-0 group-hover:opacity-100"></div>
                         </div>
-                        <div className="border border-[#0000001A] min-h-[372px] p-8 rounded-4xl text-center content-center group relative xl:min-h-[300px] 2xl:min-h-[372px]">
+                        <div className="border place-self-center border-[#0000001A] min-h-[275px] p-8 rounded-4xl text-center content-center group relative lg-py-8 lg:px-6 xl:min-h-[300px] 2xl:min-h-[372px]">
                             <div className="relative z-1">
-                                <h6 className="text-[28px] font-commissioner font-semibold leading-10 text-secondary group-hover:text-white xl:leading-8 xl:text-[24px] 2xl:leading-10 2xl:text-[28px]">Fortify your data.<br/>Simplify your life.</h6>
-                                <p className="text-lg font-commissioner text-[#4B5563] my-8 group-hover:text-white xl:text-base 2xl:text-lg">Fortipii makes privacy easy. Protect your sensitive information effortlessly with strong, no-fuss security you can trust.</p>
-                                <div className="px-8">
+                                <h6 className="text-[24px] font-commissioner font-semibold leading-8 text-secondary group-hover:text-white xl:leading-8 xl:text-[24px] 2xl:leading-10 2xl:text-[28px]">Fortify your data.<br/>Simplify your life.</h6>
+                                <p className="text-base font-commissioner text-[#4B5563] my-6 group-hover:text-white xl:my-8 xl:text-base 2xl:text-lg">Fortipii makes privacy easy. Protect your sensitive information effortlessly with strong, no-fuss security you can trust.</p>
+                                <div className="px-2 xl:px-8">
                                     <Link className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-5 px-8 rounded-full inline-block w-full hover:bg-secondary xl:px-6 xl:py-3 2xl:px-8 2xl:py-5">Get Started</Link>
                                 </div>
                             </div>
@@ -95,13 +95,13 @@ function Index(){
                     </div>
                 </div>
             </section>
-            <section className="xl:pt-20 xl:pb-10 2xl:py-20">
+            <section className="pt-5 pb-5 md:pt-10 md:pb-10 xl:pt-20 xl:pb-10 2xl:py-20">
                 <div className="container px-2 lg:px-5 mx-auto z-1">
-                    <div className="title-wrapper text-center max-w-1/2 mx-auto mb-15 xl:max-w-2/3 2xl:max-w-1/2">
+                    <div className="title-wrapper text-center max-w-full mx-auto mb-8 md:max-w-4/5 lg:mb-10 lg:max-w-2/3 xl:mb-15 xl:max-w-2/3 2xl:max-w-1/2">
                         <h3 className="text-lg font-commissioner font-medium text-primary mb-2">Built for Small Offices</h3>
-                        <h2 className="text-[50px] font-extrabold text-secondary leading-14">The boring kind of safety your clients actually want.</h2>
+                        <h2 className="text-[32px] font-extrabold text-secondary leading-8 md:leading-10 md:text-[40px] lg:text-[46px] lg:leading-12 xl:text-[50px] xl:leading-14">The boring kind of safety your clients actually want.</h2>
                     </div>
-                    <div className="grid grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
                         <IconCard data={{ title: "Folder-based scanning", detail: "Scan desktops, mapped OneDrive/Google Drive folders, and shared drives for SSNs, DOBs, emails, TINs, bank numbers and more.", icon: '<svg width="40" height="40" class="group-hover:scale-150 group-hover:translate-x-[10px]" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_96_270)"><path d="M8.72556 18.9023C8.72556 18.1023 8.72556 17.3581 8.72556 16.6139C8.72556 14.3814 8.72556 12.1674 8.72556 9.93487C8.72556 7.53487 10.4558 5.82324 12.8558 5.82324C16.1674 5.82324 19.4977 5.82324 22.8093 5.82324C22.9395 5.82324 23.0697 5.82324 23.2744 5.82324C23.2744 6.00929 23.2744 6.17673 23.2744 6.34417C23.2744 7.92557 23.2744 9.52557 23.2744 11.107C23.2744 12.7442 24.3535 13.8232 25.9721 13.8232C27.5535 13.8232 29.1535 13.8232 30.7349 13.8232C30.9023 13.8232 31.0511 13.8232 31.2558 13.8232C31.2558 15.5349 31.2558 17.1907 31.2558 18.9209C31.4418 18.9209 31.6093 18.9209 31.7767 18.9209C33.1163 18.9209 34.4744 18.9209 35.8139 18.9209C36.5767 18.9209 37.0604 19.3488 37.0791 19.9814C37.0977 20.6325 36.5767 21.0977 35.8139 21.0977C25.2651 21.0977 14.7349 21.0977 4.18603 21.0977C3.40463 21.0977 2.90231 20.6511 2.92091 19.9814C2.93951 19.3488 3.42324 18.9209 4.18603 18.9209C5.6744 18.9023 7.18138 18.9023 8.72556 18.9023Z" fill="#5ED1C0"/><path d="M8.72559 23.2931C16.2605 23.2931 23.7209 23.2931 31.2372 23.2931C31.2372 23.4419 31.2558 23.5908 31.2558 23.7396C31.2558 25.8233 31.2558 27.9257 31.2558 30.0094C31.2558 32.4652 29.5442 34.1768 27.0884 34.1768C22.3628 34.1768 17.6372 34.1768 12.9116 34.1768C10.4372 34.1768 8.72559 32.4652 8.72559 29.9722C8.72559 27.7582 8.72559 25.5443 8.72559 23.2931Z" fill="#5ED1C0"/><path d="M0.0744186 6.75351C0.0744186 5.58141 -0.0372093 4.40932 0.0930232 3.27444C0.316279 1.45118 1.97209 0.0558345 3.81395 0.0372299C5.78605 2.05711e-05 7.77674 0.0186252 9.76744 0.0372299C10.4372 0.0372299 10.9209 0.520951 10.9023 1.1349C10.8837 1.74886 10.4 2.19537 9.73023 2.21397C7.90698 2.21397 6.06512 2.21397 4.24186 2.21397C2.92093 2.21397 2.19535 2.93955 2.17674 4.24188C2.17674 6.06514 2.17674 7.907 2.17674 9.73025C2.17674 10.6419 1.35814 11.1814 0.595349 10.7907C0.204651 10.5675 0 10.214 0 9.74886C0 8.74421 0 7.75816 0 6.75351C0.0372093 6.75351 0.0558139 6.75351 0.0744186 6.75351Z" fill="#5ED1C0"/><path d="M33.2091 0.0930954C34.3812 0.0930954 35.5719 -0.0185325 36.744 0.1117C38.5487 0.334956 39.944 1.97216 39.9812 3.79542C40.0184 5.78612 39.9998 7.79542 39.9998 9.78612C39.9998 10.4373 39.5347 10.9024 38.9394 10.921C38.3254 10.9396 37.8417 10.4559 37.8417 9.78612C37.8231 7.94426 37.8417 6.1024 37.8417 4.24193C37.8417 2.921 37.1161 2.19542 35.7952 2.19542C33.9719 2.19542 32.1301 2.19542 30.3068 2.19542C29.4324 2.19542 28.8742 1.39542 29.2277 0.651235C29.4324 0.223328 29.8045 0.0186768 30.2882 0.0186768C31.2742 0.0186768 32.2603 0.0186768 33.2463 0.0186768C33.2091 0.0372814 33.2091 0.0558861 33.2091 0.0930954Z" fill="#5ED1C0"/><path d="M6.77201 39.9256C5.61852 39.9256 4.46503 40.0372 3.33015 39.907C1.39527 39.6651 0.0371273 38.0093 0.0185226 36.0558C-8.20095e-05 34.1395 0.0185226 32.2046 0.0185226 30.2884C0.0185226 29.5814 0.483639 29.0977 1.1162 29.0977C1.74875 29.0977 2.19527 29.6 2.19527 30.307C2.19527 32.1302 2.19527 33.9721 2.19527 35.7953C2.19527 37.0791 2.92085 37.8232 4.22317 37.8232C6.06503 37.8232 7.90689 37.8232 9.76736 37.8232C10.2697 37.8232 10.6418 38.0465 10.8464 38.5116C11.0325 38.9581 10.9581 39.386 10.586 39.6651C10.3627 39.8511 10.0278 39.9814 9.73015 39.9814C8.7441 40.0186 7.75806 40 6.77201 40C6.77201 39.9628 6.77201 39.9442 6.77201 39.9256Z" fill="#5ED1C0"/><path d="M39.9256 33.2093C39.9256 34.3814 40.0372 35.5535 39.907 36.6883C39.6651 38.5674 38.0093 39.9442 36.1302 39.9814C34.1767 40.0186 32.2232 40 30.2698 39.9814C29.6 39.9814 29.1163 39.5163 29.0977 38.9023C29.0791 38.2697 29.5814 37.8046 30.2884 37.8046C32.1302 37.8046 33.9721 37.8046 35.8326 37.8046C37.0977 37.8046 37.8232 37.0604 37.8419 35.7953C37.8419 33.9535 37.8419 32.1116 37.8419 30.2511C37.8419 29.3767 38.6605 28.8186 39.386 29.1721C39.8139 29.3767 40.0186 29.7488 40.0186 30.2325C40.0186 31.2186 40.0186 32.2046 40.0186 33.1907C39.9628 33.2093 39.9442 33.2093 39.9256 33.2093Z" fill="#5ED1C0"/><path d="M30.4186 11.6465C28.9488 11.6465 27.4047 11.6465 25.8791 11.6465C25.6 11.6465 25.4512 11.4977 25.4512 11.2186C25.4512 9.67443 25.4512 8.14884 25.4512 6.67908C27.0884 8.31629 28.7628 9.9907 30.4186 11.6465Z" fill="#5ED1C0"/></g><defs><clipPath id="clip0_96_270"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>' }} />
                         <IconCard data={{ title: "Smart redaction", detail: "Redact Private Client Data in PDFs and images while preserving layout. Keep redacted copies for workflow and preserve originals in a controlled vault.", icon: '<svg width="40" height="40" class="group-hover:scale-150 group-hover:translate-x-[10px]" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><g clipPath="url(#clip0_96_292)"><path d="M26.028 34.4186C24.8932 34.4186 23.8327 34.4186 22.7536 34.4186C22.2513 34.4186 21.7304 34.4558 21.228 34.3628C19.6652 34.0651 18.6048 32.7442 18.6048 31.1256C18.6048 28.0558 18.6048 24.986 18.6048 21.9163C18.6048 21.7674 18.6048 21.6 18.6048 21.4139C17.0606 21.4139 15.535 21.4139 13.9722 21.4139C13.9722 22.1581 13.9908 22.9023 13.9722 23.6279C13.9536 25.1907 13.042 26.4186 11.628 26.8279C11.2932 26.9209 10.9397 26.9581 10.6048 26.9581C8.20478 26.9767 5.82339 26.9767 3.42339 26.9581C1.45129 26.9581 0.0745503 25.6 0.0559457 23.6279C0.037341 21.2093 0.037341 18.7721 0.0559457 16.3535C0.0559457 14.4 1.43269 13.0232 3.40478 13.0232C5.80478 13.0232 8.18618 13.0232 10.5862 13.0232C12.5769 13.0232 13.9536 14.4 13.9722 16.3907C13.9908 17.1163 13.9722 17.8418 13.9722 18.586C15.535 18.586 17.042 18.586 18.6048 18.586C18.6048 18.4186 18.6048 18.2511 18.6048 18.1023C18.6048 15.0883 18.6048 12.093 18.6048 9.07904C18.6048 6.95811 19.9629 5.59998 22.0839 5.59998C23.3676 5.59998 24.6699 5.59998 25.9908 5.59998C26.0094 5.41393 26.0094 5.26509 26.0094 5.11625C26.028 4.35346 25.9908 3.57207 26.0652 2.80928C26.2327 1.26509 27.535 0.055789 29.0978 0.0371843C31.6838 -2.49809e-05 34.2699 -2.49809e-05 36.8373 0.0371843C38.5118 0.055789 39.8699 1.43253 39.9071 3.10695C39.9443 5.65579 39.9443 8.22323 39.9071 10.7721C39.8885 12.5581 38.5304 13.9163 36.7071 13.9535C34.2141 13.9907 31.7211 13.9907 29.228 13.9535C27.349 13.9163 26.0466 12.5395 26.0094 10.6418C25.9908 9.89765 26.0094 9.17207 26.0094 8.37207C25.5257 8.37207 25.0792 8.37207 24.6327 8.37207C23.7397 8.37207 22.8652 8.37207 21.9722 8.37207C21.5071 8.37207 21.3769 8.52091 21.3769 8.96742C21.3769 9.33951 21.3769 9.73021 21.3769 10.1023C21.3769 17.0046 21.3769 23.907 21.3769 30.8093C21.3769 31.5163 21.4513 31.6093 22.1769 31.6093C23.2745 31.6093 24.3908 31.6093 25.4885 31.6093C25.6373 31.6093 25.8048 31.6093 26.0094 31.6093C26.0094 30.8279 25.9908 30.1023 26.0094 29.3581C26.028 27.7581 26.9769 26.5302 28.4466 26.1581C28.7629 26.0837 29.0978 26.0465 29.4327 26.0465C31.7769 26.0279 34.1397 26.0279 36.4838 26.0465C38.5676 26.0465 39.9257 27.4046 39.9257 29.4883C39.9257 31.8511 39.9257 34.2325 39.9257 36.5953C39.9257 38.6604 38.5676 40 36.5025 40C34.1397 40 31.7769 40 29.4141 40C27.3676 40 26.0094 38.6232 25.9908 36.5767C26.028 35.8697 26.028 35.1814 26.028 34.4186Z" fill="#5ED1C0"/></g><defs><clipPath id="clip0_96_292"><rect width="40" height="40" fill="white"/></clipPath></defs></svg>' }} />
                         <IconCard data={{ title: "Email & attachment monitoring", detail: "Monitor high-risk mailboxes (O365, Gmail, etc.) and flag, isolate, or redact sensitive emails and attachments.", icon: '<svg width="40" height="40" class="group-hover:scale-150 group-hover:translate-x-[10px]" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.3767 31.1814C21.2465 31.1814 21.1162 31.2 20.986 31.2C15.3116 31.2 9.63716 31.2 3.96274 31.2C1.87902 31.2 0.372043 29.9349 0.055764 27.9628C0.0185547 27.7767 0.0185547 27.5907 0.0185547 27.4046C0.0185547 22.2511 0.0185547 17.0977 0.0185547 11.9256C0.0185547 11.8325 0.0185547 11.7209 0.0185547 11.5535C0.223206 11.6651 0.390648 11.7581 0.539485 11.8511C5.24646 14.6418 9.95344 17.4139 14.6604 20.2046C16.5209 21.3023 18.3441 21.3023 20.2046 20.2046C24.9302 17.3953 29.6744 14.6046 34.3999 11.8139C34.5116 11.7395 34.6418 11.6837 34.8092 11.5907C34.8092 13.8232 34.8092 16.0186 34.8092 18.2325C34.1767 18.307 33.5255 18.3256 32.893 18.4372C31.3488 18.6977 29.9906 19.386 28.8744 20.4837C26.9023 22.4186 24.9488 24.3721 23.0139 26.3442C21.786 27.5907 21.2651 29.1349 21.3953 30.8837C21.3953 30.9581 21.3767 31.0697 21.3767 31.1814Z" fill="#5ED1C0"/><path d="M17.4508 5.20932C21.9531 5.20932 26.4368 5.20932 30.9392 5.20932C32.8741 5.20932 34.3066 6.36281 34.7345 8.16746C34.8275 8.52095 34.7345 8.7256 34.3996 8.93025C29.2089 11.9814 24.0368 15.0512 18.8648 18.1023C17.8973 18.6791 16.9485 18.6791 15.981 18.1023C10.7717 15.014 5.56243 11.9256 0.334521 8.85583C0.111265 8.7256 0.0554512 8.59537 0.0926605 8.3349C0.334521 6.56746 1.91592 5.22792 3.8322 5.20932C6.39964 5.19071 8.96708 5.20932 11.5345 5.20932C13.488 5.20932 15.4601 5.20932 17.4508 5.20932Z" fill="#5ED1C0"/><path d="M39.9813 26.0279C39.9813 27.8325 39.4976 29.1162 38.4557 30.1767C37.079 31.5907 35.6836 32.986 34.2697 34.3628C33.7115 34.9023 32.9487 34.9209 32.465 34.4186C31.9441 33.8976 31.9813 33.1534 32.558 32.5767C33.879 31.2558 35.2185 29.9348 36.5208 28.5953C38.1208 26.9581 37.6743 24.3534 35.6092 23.4976C34.4185 22.9953 33.2464 23.1441 32.3162 24.0558C30.3813 25.9162 28.5022 27.8325 26.6232 29.7302C26.2139 30.1395 26.2325 30.7162 26.6046 31.0883C26.9953 31.479 27.5906 31.479 28.0371 31.0325C29.265 29.8232 30.4929 28.5953 31.7022 27.3674C32.4092 26.6604 33.1348 25.9348 33.8418 25.2279C34.4185 24.6697 35.1627 24.6325 35.6836 25.1534C36.186 25.6558 36.186 26.4 35.6278 26.9581C33.6743 28.9302 31.7022 30.9023 29.7301 32.8558C28.372 34.1767 26.1767 34.1581 24.8557 32.8558C23.5348 31.5348 23.4976 29.3953 24.8371 28.0372C26.7348 26.0837 28.6325 24.1302 30.6232 22.2697C32.372 20.6325 34.4743 20.2976 36.6697 21.2651C38.8278 22.2139 39.8883 24 39.9813 26.0279Z" fill="#5ED1C0"/></svg>' }} />
@@ -113,16 +113,16 @@ function Index(){
             </section>
             <section className="py-5">
                 <div className="container px-2 lg:px-5 mx-auto z-1">
-                    <div className="bg-linear-to-l from-[#1F4567] to-secondary rounded-[60px] px-20 relative min-h-85 content-center xl:min-h-66 2xl:min-h-85">
-                        <div className="grid grid-cols-4 h-full">
-                            <div className="col-span-3 text-left h-full content-center">
-                                <h2 className="text-[45px] text-white font-bold mb-6 xl:text-[36px] xl:mb-3 2xl:text-[45px] 2xl:mb-6">Protection of Private Client Data Boring?</h2>
-                                <p className="text-xl font-commissioner text-white w-2/3 xl:text-base xl:w-3/4 2xl:w-2/3 2xl:text-xl">Start with a single workstation, then scale to your whole office with redaction and email protection.</p>
-                                <Link className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-4 px-12 rounded-full overflow-hidden inline-block mt-8 min-w-65 text-center hover:bg-secondary xl:mt-4 xl:py-3 xl:px-8 2xl:py-4 2xl:px-12 2xl:mt-8">View Pricing</Link>
+                    <div className="bg-linear-to-l from-[#1F4567] to-secondary rounded-3xl px-8 pt-8 relative min-h-50 content-center md:rounded-[46px] md:pt-0 lg:min-h-65 lg:px-10 xl:px-20 xl:rounded-[60px] xl:min-h-66 2xl:min-h-85">
+                        <div className="grid grid-cols-6 h-full xl:grid-cols-4">
+                            <div className="col-span-6 text-left h-full content-center md:col-span-4 xl:col-span-3">
+                                <h2 className="text-[28px] text-white font-bold mb-4 leading-9 md:mb-3 md:text-[22px] lg:mb-4 lg:text-[30px] xl:text-[36px] xl:mb-3 2xl:text-[45px] 2xl:mb-6">Protection of Private Client Data Boring?</h2>
+                                <p className="text-sm font-commissioner text-white w-full md:w-4/5 lg:text-base lg:w-3/4 xl:text-base 2xl:w-2/3 2xl:text-xl">Start with a single workstation, then scale to your whole office with redaction and email protection.</p>
+                                <Link className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-12 rounded-full overflow-hidden inline-block mt-5 min-w-45 text-center hover:bg-secondary lg:mt-4 lg:min-w-65 lg:py-4 lg:mt-6 xl:mt-4 xl:py-3 xl:px-8 2xl:py-4 2xl:px-12 2xl:mt-8">View Pricing</Link>
                             </div>
-                            <div className="img-container relative">
-                                <img src="/assets/images/security-bg.png" className="w-full" alt="" />
-                                <img src="/assets/images/security.png" className="w-1/2 absolute top-19 left-1/2 -translate-x-1/2" alt="" />
+                            <div className="img-container relative col-span-6 md:col-span-2 xl:col-span-1">
+                                <img src="/assets/images/security-bg.png" className="w-4/5 mx-auto md:w-full" alt="" />
+                                <img src="/assets/images/security.png" className="w-2/5 absolute top-20 left-1/2 -translate-x-1/2 md:w-1/2 md:top-19" alt="" />
                             </div>
                         </div>
                         <img src="/assets/images/particles.png" className="w-1/2 absolute top-0 right-0" />

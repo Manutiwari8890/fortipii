@@ -106,7 +106,7 @@ function Header(){
                             <div className="flex gap-2 items-center">
                                 <Link className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full">Sign Up</Link>
                                 <Link className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full">Login</Link>
-                                <button className={`hidden ml-4 humburger cursor-pointer group text-center content-center lg:block ${menu ? "active" : ""}`} onClick={() => setMenu((pre) => !pre)}>
+                                <button className={`hidden ml-4 humburger cursor-pointer group text-center content-center lg:block xl:hidden 2xl:hidden ${menu ? "active" : ""}`} onClick={() => setMenu((pre) => !pre)}>
                                     <div className="flex flex-col overflow-hidden w-9 h-9 justify-center relative gap-1.5 relative m-auto">
                                         <div className="w-9 h-1 bg-secondary rounded-full line-1"></div>
                                         <div className="flex justify-between items-center min-h-1.5 line-2">

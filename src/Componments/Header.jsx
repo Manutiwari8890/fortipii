@@ -76,7 +76,7 @@ function Header(){
     return (
         <>
             <header>
-                <nav className={`bg-white  border fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 ease-in-out py-4 ${menu ? "min-h-105" : "min-h-20 content-center rounded-[150px] lg:rounded-[150px]"} ${isScroll ? " mx-auto border-[#26365626] top-2 shadow-sm sticky-wrapper w-[98%] md:w-[98%] xl:rounded-full lg:py-4 lg:w-[95%] xl:py-2 xl:w-[95%] 2xl:w-3/4" : "w-full border-transparent top-0"} xl:min-h-20 2xl:min-h-25 ${(isScroll && menu) ? "rounded-[36px] lg:rounded-[36px]" : ""}`}>
+                <nav className={`bg-white  border fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 ease-in-out py-4 ${menu ? "min-h-107" : "min-h-20 content-center rounded-[150px] lg:rounded-[150px]"} ${isScroll ? " mx-auto border-[#26365626] top-2 shadow-sm sticky-wrapper w-[98%] md:w-[98%] xl:rounded-full lg:py-4 lg:w-[95%] xl:py-2 xl:w-[95%] 2xl:w-3/4" : "w-full border-transparent top-0"} xl:min-h-20 2xl:min-h-25 ${(isScroll && menu) ? "rounded-[36px] lg:rounded-[36px]" : ""}`}>
                     <div className="container mx-auto px-2 lg:px-5">
                         <div className={`flex gap-2 items-center justify-between ${isScroll ? "px-3" : ""}`}>
                             <Link className="mr-6" to="/">

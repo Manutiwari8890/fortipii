@@ -4,7 +4,7 @@ function Footer(){
         <>
             <footer>
                 <div className="container px-2 mx-auto lg:px-5">
-                    <div className="grid grid-cols-1 gap-y-3 pt-10 pb-5 px-2 md:px-0 md:mb-10 md:pb-10 md:gap-y-2 md:gax-8 md:grid-cols-2 lg:pb-15 lg:gap-2 lg:grid-cols-4 lg:gap-5 xl:gap-15">
+                    <div className="grid grid-cols-1 gap-y-3 pt-10 pb-5 px-2 md:px-0 md:mb-10 md:pb-10 md:gap-y-2 md:gap-x-8 md:grid-cols-2 lg:pb-15 lg:gap-2 lg:grid-cols-4 lg:gap-5 xl:gap-15">
                         <div className="company-detail">
                             <Link to="/" className="inline-block mb-2 lg:mb-5">
                                 <img src="/assets/images/fortipii.svg" alt="" className="w-35 lg:w-45"/>

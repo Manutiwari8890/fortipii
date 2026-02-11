@@ -73,7 +73,7 @@ function About() {
                     <div className="max-w-full px-5 py-5 bg-white shadow-sm mx-auto mt-5 rounded-[32px] md:rounded-[40px] md:mt-15 md:max-w-9/10 md:px-10 md:py-5 lg:rounded-[60px] lg:mt-5 lg:px-10 lg:py-10 xl:mt-15 xl:max-w-3/4 xl:px-15 xl:py-10 2xl:max-w-2/3 2xl:px-20 2xl:py-15">
                         <div className={`border-b ${openFaq === 0 ? "border-primary" : "border-[#04396B]"} mb-4`}>
                             <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(0)}>
-                                Where can I get some?
+                                What does Fortipii actually do?
                                 {openFaq === 0 ?
                                     <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_96_233)">
@@ -98,12 +98,12 @@ function About() {
                                 }
                             </button>
                             <div className={`${openFaq === 0 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
-                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">Fortipii identifies and fortifies sensitive client data across your systems so it’s protected and inaccessible to unauthorized access. <br />In simple terms: we make your data uninteresting to steal.</p>
                             </div>
                         </div>
                         <div className={`border-b ${openFaq === 1 ? "border-primary" : "border-[#04396B]"} mb-4`}>
                             <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(1)}>
-                                Where does it come from?
+                                Why is there a one-time full scan?
                                 {openFaq === 1 ?
                                     <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_96_233)">
@@ -128,12 +128,12 @@ function About() {
                                 }
                             </button>
                             <div className={`${openFaq === 1 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
-                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">The full scan establishes a clean, secure baseline. It allows Fortipii to find where sensitive client data lives and ensure it’s properly protected from day one. <br /> It’s a one-time setup — not a recurring charge.</p>
                             </div>
                         </div>
                         <div className={`border-b ${openFaq === 2 ? "border-primary" : "border-[#04396B]"} mb-4`}>
                             <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(2)}>
-                                Where can I get some?
+                                How long does setup take?
                                 {openFaq === 2 ?
                                     <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_96_233)">
@@ -158,12 +158,12 @@ function About() {
                                 }
                             </button>
                             <div className={`${openFaq === 2 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
-                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">Most offices are fully scanned and protected within days, not weeks.After that, Fortipii runs quietly in the background.</p>
                             </div>
                         </div>
-                        <div className={` ${openFaq === 3 ? "border-primary" : "border-[#04396B]"} mb-4`}>
+                        <div className={`border-b ${openFaq === 3 ? "border-primary" : "border-[#04396B]"} mb-4`}>
                             <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(3)}>
-                                Where does it come from?
+                                Do I need IT staff to use Fortipii?
                                 {openFaq === 3 ?
                                     <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0_96_233)">
@@ -188,7 +188,157 @@ function About() {
                                 }
                             </button>
                             <div className={`${openFaq === 3 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
-                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">No. Fortipii is designed for real offices, not IT departments.If you can follow basic setup steps, you’re good.</p>
+                            </div>
+                        </div>
+                        <div className={`border-b ${openFaq === 4 ? "border-primary" : "border-[#04396B]"} mb-4`}>
+                            <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(4)}>
+                                Will Fortipii slow down our systems?
+                                {openFaq === 4 ?
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_233)">
+                                            <path d="M24.9997 12.8398C24.9841 12.876 24.9636 12.9111 24.9538 12.9482C24.7165 13.874 23.9841 14.4609 23.03 14.4863C22.9567 14.4883 22.8835 14.4873 22.8103 14.4873C15.9108 14.4873 9.01046 14.4873 2.11104 14.4873C1.1003 14.4873 0.33858 13.9482 0.0797907 13.0557C-0.265912 11.8643 0.535845 10.6631 1.76534 10.5332C1.91866 10.5166 2.07393 10.5127 2.22823 10.5127C9.00557 10.5117 15.7839 10.5117 22.5612 10.5117C24.0124 10.5117 24.488 10.832 24.9987 12.1553C24.9997 12.3838 24.9997 12.6113 24.9997 12.8398Z" fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_233">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg> :
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_227)">
+                                            <path d="M10.7969 14.2012C9.44141 14.2012 8.13965 14.2012 6.83887 14.2012C5.15234 14.2012 3.46582 14.2041 1.7793 14.2002C0.756836 14.1973 0 13.4707 0 12.502C0 11.5332 0.756836 10.8066 1.78125 10.8057C4.63379 10.8027 7.48535 10.8047 10.3379 10.8047C10.4736 10.8047 10.6084 10.8047 10.7979 10.8047C10.7979 10.6631 10.7979 10.5332 10.7979 10.4033C10.7979 7.51758 10.7959 4.63086 10.7998 1.74512C10.8008 1.00683 11.1426 0.458006 11.8145 0.157225C12.4482 -0.126955 13.0586 -0.0273454 13.5928 0.416014C14.0205 0.770506 14.1953 1.24512 14.1953 1.79687C14.1924 4.64941 14.1934 7.50098 14.1943 10.3535C14.1943 10.4883 14.1943 10.623 14.1943 10.8057C14.3428 10.8057 14.4727 10.8057 14.6035 10.8057C17.4893 10.8057 20.376 10.8027 23.2617 10.8076C24 10.8086 24.5479 11.1533 24.8447 11.8291C25.1309 12.4795 25.0176 13.0957 24.5557 13.6318C24.2021 14.042 23.7334 14.2041 23.1943 14.2031C20.3418 14.1992 17.4902 14.2012 14.6377 14.2012C14.5039 14.2012 14.3701 14.2012 14.1943 14.2012C14.1943 14.3555 14.1943 14.4873 14.1943 14.6191C14.1943 17.4941 14.1982 20.3691 14.1924 23.2432C14.1895 24.5146 12.9795 25.3496 11.8457 24.8623C11.1387 24.5576 10.7998 23.9922 10.7988 23.2266C10.7969 20.3633 10.7979 17.5 10.7979 14.6357C10.7969 14.502 10.7969 14.3691 10.7969 14.2012Z" fill="currentColor" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_227">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                }
+                            </button>
+                            <div className={`${openFaq === 4 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">No. Fortipii is lightweight and designed to work without disrupting daily operations.</p>
+                            </div>
+                        </div>
+                        <div className={`border-b ${openFaq === 5 ? "border-primary" : "border-[#04396B]"} mb-4`}>
+                            <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(5)}>
+                                Is Fortipii compliant with tax and privacy regulations?
+                                {openFaq === 5 ?
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_233)">
+                                            <path d="M24.9997 12.8398C24.9841 12.876 24.9636 12.9111 24.9538 12.9482C24.7165 13.874 23.9841 14.4609 23.03 14.4863C22.9567 14.4883 22.8835 14.4873 22.8103 14.4873C15.9108 14.4873 9.01046 14.4873 2.11104 14.4873C1.1003 14.4873 0.33858 13.9482 0.0797907 13.0557C-0.265912 11.8643 0.535845 10.6631 1.76534 10.5332C1.91866 10.5166 2.07393 10.5127 2.22823 10.5127C9.00557 10.5117 15.7839 10.5117 22.5612 10.5117C24.0124 10.5117 24.488 10.832 24.9987 12.1553C24.9997 12.3838 24.9997 12.6113 24.9997 12.8398Z" fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_233">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg> :
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_227)">
+                                            <path d="M10.7969 14.2012C9.44141 14.2012 8.13965 14.2012 6.83887 14.2012C5.15234 14.2012 3.46582 14.2041 1.7793 14.2002C0.756836 14.1973 0 13.4707 0 12.502C0 11.5332 0.756836 10.8066 1.78125 10.8057C4.63379 10.8027 7.48535 10.8047 10.3379 10.8047C10.4736 10.8047 10.6084 10.8047 10.7979 10.8047C10.7979 10.6631 10.7979 10.5332 10.7979 10.4033C10.7979 7.51758 10.7959 4.63086 10.7998 1.74512C10.8008 1.00683 11.1426 0.458006 11.8145 0.157225C12.4482 -0.126955 13.0586 -0.0273454 13.5928 0.416014C14.0205 0.770506 14.1953 1.24512 14.1953 1.79687C14.1924 4.64941 14.1934 7.50098 14.1943 10.3535C14.1943 10.4883 14.1943 10.623 14.1943 10.8057C14.3428 10.8057 14.4727 10.8057 14.6035 10.8057C17.4893 10.8057 20.376 10.8027 23.2617 10.8076C24 10.8086 24.5479 11.1533 24.8447 11.8291C25.1309 12.4795 25.0176 13.0957 24.5557 13.6318C24.2021 14.042 23.7334 14.2041 23.1943 14.2031C20.3418 14.1992 17.4902 14.2012 14.6377 14.2012C14.5039 14.2012 14.3701 14.2012 14.1943 14.2012C14.1943 14.3555 14.1943 14.4873 14.1943 14.6191C14.1943 17.4941 14.1982 20.3691 14.1924 23.2432C14.1895 24.5146 12.9795 25.3496 11.8457 24.8623C11.1387 24.5576 10.7998 23.9922 10.7988 23.2266C10.7969 20.3633 10.7979 17.5 10.7979 14.6357C10.7969 14.502 10.7969 14.3691 10.7969 14.2012Z" fill="currentColor" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_227">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                }
+                            </button>
+                            <div className={`${openFaq === 5 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">Fortipii supports best practices for protecting personally identifiable information (PII).We’re happy to discuss compliance needs based on your firm size and requirements.</p>
+                            </div>
+                        </div>
+                        <div className={`border-b ${openFaq === 6 ? "border-primary" : "border-[#04396B]"} mb-4`}>
+                            <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(6)}>
+                                What happens after the scan?
+                                {openFaq === 6 ?
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_233)">
+                                            <path d="M24.9997 12.8398C24.9841 12.876 24.9636 12.9111 24.9538 12.9482C24.7165 13.874 23.9841 14.4609 23.03 14.4863C22.9567 14.4883 22.8835 14.4873 22.8103 14.4873C15.9108 14.4873 9.01046 14.4873 2.11104 14.4873C1.1003 14.4873 0.33858 13.9482 0.0797907 13.0557C-0.265912 11.8643 0.535845 10.6631 1.76534 10.5332C1.91866 10.5166 2.07393 10.5127 2.22823 10.5127C9.00557 10.5117 15.7839 10.5117 22.5612 10.5117C24.0124 10.5117 24.488 10.832 24.9987 12.1553C24.9997 12.3838 24.9997 12.6113 24.9997 12.8398Z" fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_233">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg> :
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_227)">
+                                            <path d="M10.7969 14.2012C9.44141 14.2012 8.13965 14.2012 6.83887 14.2012C5.15234 14.2012 3.46582 14.2041 1.7793 14.2002C0.756836 14.1973 0 13.4707 0 12.502C0 11.5332 0.756836 10.8066 1.78125 10.8057C4.63379 10.8027 7.48535 10.8047 10.3379 10.8047C10.4736 10.8047 10.6084 10.8047 10.7979 10.8047C10.7979 10.6631 10.7979 10.5332 10.7979 10.4033C10.7979 7.51758 10.7959 4.63086 10.7998 1.74512C10.8008 1.00683 11.1426 0.458006 11.8145 0.157225C12.4482 -0.126955 13.0586 -0.0273454 13.5928 0.416014C14.0205 0.770506 14.1953 1.24512 14.1953 1.79687C14.1924 4.64941 14.1934 7.50098 14.1943 10.3535C14.1943 10.4883 14.1943 10.623 14.1943 10.8057C14.3428 10.8057 14.4727 10.8057 14.6035 10.8057C17.4893 10.8057 20.376 10.8027 23.2617 10.8076C24 10.8086 24.5479 11.1533 24.8447 11.8291C25.1309 12.4795 25.0176 13.0957 24.5557 13.6318C24.2021 14.042 23.7334 14.2041 23.1943 14.2031C20.3418 14.1992 17.4902 14.2012 14.6377 14.2012C14.5039 14.2012 14.3701 14.2012 14.1943 14.2012C14.1943 14.3555 14.1943 14.4873 14.1943 14.6191C14.1943 17.4941 14.1982 20.3691 14.1924 23.2432C14.1895 24.5146 12.9795 25.3496 11.8457 24.8623C11.1387 24.5576 10.7998 23.9922 10.7988 23.2266C10.7969 20.3633 10.7979 17.5 10.7979 14.6357C10.7969 14.502 10.7969 14.3691 10.7969 14.2012Z" fill="currentColor" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_227">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                }
+                            </button>
+                            <div className={`${openFaq === 6 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">Once your data is fortified, Fortipii continues protecting it through your monthly subscription — no repeated scans, no constant alerts.</p>
+                            </div>
+                        </div>
+                        <div className={`border-b ${openFaq === 7 ? "border-primary" : "border-[#04396B]"} mb-4`}>
+                            <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(7)}>
+                                Is Fortipii only for tax offices?
+                                {openFaq === 7 ?
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_233)">
+                                            <path d="M24.9997 12.8398C24.9841 12.876 24.9636 12.9111 24.9538 12.9482C24.7165 13.874 23.9841 14.4609 23.03 14.4863C22.9567 14.4883 22.8835 14.4873 22.8103 14.4873C15.9108 14.4873 9.01046 14.4873 2.11104 14.4873C1.1003 14.4873 0.33858 13.9482 0.0797907 13.0557C-0.265912 11.8643 0.535845 10.6631 1.76534 10.5332C1.91866 10.5166 2.07393 10.5127 2.22823 10.5127C9.00557 10.5117 15.7839 10.5117 22.5612 10.5117C24.0124 10.5117 24.488 10.832 24.9987 12.1553C24.9997 12.3838 24.9997 12.6113 24.9997 12.8398Z" fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_233">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg> :
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_227)">
+                                            <path d="M10.7969 14.2012C9.44141 14.2012 8.13965 14.2012 6.83887 14.2012C5.15234 14.2012 3.46582 14.2041 1.7793 14.2002C0.756836 14.1973 0 13.4707 0 12.502C0 11.5332 0.756836 10.8066 1.78125 10.8057C4.63379 10.8027 7.48535 10.8047 10.3379 10.8047C10.4736 10.8047 10.6084 10.8047 10.7979 10.8047C10.7979 10.6631 10.7979 10.5332 10.7979 10.4033C10.7979 7.51758 10.7959 4.63086 10.7998 1.74512C10.8008 1.00683 11.1426 0.458006 11.8145 0.157225C12.4482 -0.126955 13.0586 -0.0273454 13.5928 0.416014C14.0205 0.770506 14.1953 1.24512 14.1953 1.79687C14.1924 4.64941 14.1934 7.50098 14.1943 10.3535C14.1943 10.4883 14.1943 10.623 14.1943 10.8057C14.3428 10.8057 14.4727 10.8057 14.6035 10.8057C17.4893 10.8057 20.376 10.8027 23.2617 10.8076C24 10.8086 24.5479 11.1533 24.8447 11.8291C25.1309 12.4795 25.0176 13.0957 24.5557 13.6318C24.2021 14.042 23.7334 14.2041 23.1943 14.2031C20.3418 14.1992 17.4902 14.2012 14.6377 14.2012C14.5039 14.2012 14.3701 14.2012 14.1943 14.2012C14.1943 14.3555 14.1943 14.4873 14.1943 14.6191C14.1943 17.4941 14.1982 20.3691 14.1924 23.2432C14.1895 24.5146 12.9795 25.3496 11.8457 24.8623C11.1387 24.5576 10.7998 23.9922 10.7988 23.2266C10.7969 20.3633 10.7979 17.5 10.7979 14.6357C10.7969 14.502 10.7969 14.3691 10.7969 14.2012Z" fill="currentColor" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_227">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                }
+                            </button>
+                            <div className={`${openFaq === 7 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">No, but it’s built with tax and accounting firms in mind.Any business handling sensitive client data can benefit.</p>
+                            </div>
+                        </div>
+                        <div className={` ${openFaq === 8 ? "border-primary" : "border-[#04396B]"} mb-4`}>
+                            <button className="text-xl text-secondary font-semibold cursor-pointer w-full py-4 text-left flex justify-between hover:text-primary xl:py-2 2xl:text-2xl 2xl:py-4" onClick={() => setOpenFaq(8)}>
+                                How do I get started?
+                                {openFaq === 8 ?
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_233)">
+                                            <path d="M24.9997 12.8398C24.9841 12.876 24.9636 12.9111 24.9538 12.9482C24.7165 13.874 23.9841 14.4609 23.03 14.4863C22.9567 14.4883 22.8835 14.4873 22.8103 14.4873C15.9108 14.4873 9.01046 14.4873 2.11104 14.4873C1.1003 14.4873 0.33858 13.9482 0.0797907 13.0557C-0.265912 11.8643 0.535845 10.6631 1.76534 10.5332C1.91866 10.5166 2.07393 10.5127 2.22823 10.5127C9.00557 10.5117 15.7839 10.5117 22.5612 10.5117C24.0124 10.5117 24.488 10.832 24.9987 12.1553C24.9997 12.3838 24.9997 12.6113 24.9997 12.8398Z" fill="black" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_233">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg> :
+                                    <svg className="w-4 h-4 xl:w-4 xl:h-4 2xl:w-5 2xlh-5" viewBox="0 0 25 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <g clipPath="url(#clip0_96_227)">
+                                            <path d="M10.7969 14.2012C9.44141 14.2012 8.13965 14.2012 6.83887 14.2012C5.15234 14.2012 3.46582 14.2041 1.7793 14.2002C0.756836 14.1973 0 13.4707 0 12.502C0 11.5332 0.756836 10.8066 1.78125 10.8057C4.63379 10.8027 7.48535 10.8047 10.3379 10.8047C10.4736 10.8047 10.6084 10.8047 10.7979 10.8047C10.7979 10.6631 10.7979 10.5332 10.7979 10.4033C10.7979 7.51758 10.7959 4.63086 10.7998 1.74512C10.8008 1.00683 11.1426 0.458006 11.8145 0.157225C12.4482 -0.126955 13.0586 -0.0273454 13.5928 0.416014C14.0205 0.770506 14.1953 1.24512 14.1953 1.79687C14.1924 4.64941 14.1934 7.50098 14.1943 10.3535C14.1943 10.4883 14.1943 10.623 14.1943 10.8057C14.3428 10.8057 14.4727 10.8057 14.6035 10.8057C17.4893 10.8057 20.376 10.8027 23.2617 10.8076C24 10.8086 24.5479 11.1533 24.8447 11.8291C25.1309 12.4795 25.0176 13.0957 24.5557 13.6318C24.2021 14.042 23.7334 14.2041 23.1943 14.2031C20.3418 14.1992 17.4902 14.2012 14.6377 14.2012C14.5039 14.2012 14.3701 14.2012 14.1943 14.2012C14.1943 14.3555 14.1943 14.4873 14.1943 14.6191C14.1943 17.4941 14.1982 20.3691 14.1924 23.2432C14.1895 24.5146 12.9795 25.3496 11.8457 24.8623C11.1387 24.5576 10.7998 23.9922 10.7988 23.2266C10.7969 20.3633 10.7979 17.5 10.7979 14.6357C10.7969 14.502 10.7969 14.3691 10.7969 14.2012Z" fill="currentColor" />
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_96_227">
+                                                <rect className="w-10 h-10" fill="white" />
+                                            </clipPath>
+                                        </defs>
+                                    </svg>
+                                }
+                            </button>
+                            <div className={`${openFaq === 8 ? "max-h-max pt-2 pb-4" : "max-h-0"} overflow-hidden transition-300`}>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-7 2xl:text-xl 2xl:leading-8">Click Get Started, choose your office size, and we’ll guide you through next steps.</p>
                             </div>
                         </div>
                     </div>

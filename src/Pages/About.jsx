@@ -32,7 +32,7 @@ function About() {
             </section>
             <section className="py-10 bg-linear-to-l from-[#1F4567] to-secondary overflow-hidden md:py-18 lg:py-15 xl:py-16 2xl:py-22">
                 <div className="container px-2 lg:px-5 mx-auto relative z-1">
-                    <div className="w-150 h-150 rounded-full content-center border border-white/10 mx-auto absolute top-auto left-1/2 -translate-x-1/2 md:top-15">
+                    <div className="w-150 h-150 rounded-full content-center border border-white/10 mx-auto absolute top-auto left-1/2 -translate-x-1/2 md:w-250 md:h-250 md:top-15">
                         <div className="w-125 h-125 rounded-full content-center border border-white/10 mx-auto md:w-225 md:h-225">
                             <div className="w-100 h-100 rounded-full content-center border border-white/10 mx-auto md:w-200 md:h-200">
                                 <div className="w-75 h-75 rounded-full content-center border border-white/10 mx-auto md:w-175 md:h-175">

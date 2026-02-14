@@ -10,6 +10,8 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Blog from "./Pages/Blog";
 import SingleBlog from "./Pages/SingleBlog";
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
 
 function App(){
   const location = useLocation();
@@ -35,6 +37,8 @@ function App(){
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/register" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/blog/:slug" element={<SingleBlog />} />
       </Routes>
       <Footer />

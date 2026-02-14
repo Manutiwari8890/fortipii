@@ -97,10 +97,10 @@ function Header(){
                                     <NavLink to="/contact" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/contact" ? "text-primary xl:text-white" : ""}`}  data-page="/contact"  onMouseEnter={handleHover}>Contact</NavLink>
                                 </li>
                                 <li className="nav-item block xl:hidden">
-                                    <Link className="inline-block btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
+                                    <Link to="/register" className="inline-block btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
                                 </li>
                                 <li className="nav-item block xl:hidden">
-                                    <Link className="inline-block btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
+                                    <Link to="/login" className="inline-block btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
                                 </li>
                                 <span
                                     className="absolute top-1/2 -translate-y-1/2 h-[42px] bg-primary rounded-full transition-all -z-1 hidden xl:block"
@@ -111,8 +111,8 @@ function Header(){
                                 />
                             </ul>
                             <div className="flex gap-2 items-center">
-                                <Link className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Sign Up</Link>
-                                <Link className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Login</Link>
+                                <Link to="/register" className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Sign Up</Link>
+                                <Link to="/login" className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Login</Link>
                                 <button className={`block ml-4 humburger cursor-pointer group text-center content-center lg:block xl:hidden 2xl:hidden ${menu ? "active" : ""}`} onClick={() => setMenu((pre) => !pre)}>
                                     <div className="flex flex-col overflow-hidden w-12 h-12 justify-center relative gap-1.5 relative m-auto">
                                         <div className="w-10 h-1 bg-secondary rounded-full line-1"></div>

@@ -23,6 +23,12 @@ function Header(){
                     left: activeBtn.offsetLeft,
                     width: activeBtn.offsetWidth,
                 });
+            }else {
+                setHoverTab(null)
+                setLineStyle({
+                    left: 0,
+                    width: 0,
+                });
             }
         }
     }, [activeTab, location.pathname]);
@@ -50,6 +56,12 @@ function Header(){
                 setLineStyle({
                     left: activeBtn.offsetLeft,
                     width: activeBtn.offsetWidth,
+                });
+            }else {
+                setHoverTab(null)
+                setLineStyle({
+                    left: 0,
+                    width: 0,
                 });
             }
         }
@@ -92,6 +104,9 @@ function Header(){
                                 </li>
                                 <li className="nav-item my-1">
                                     <NavLink to="/services" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/services" ? "text-primary xl:text-white" : ""}`}  data-page="/services" onMouseEnter={handleHover}>Service</NavLink>
+                                </li>
+                                <li className="nav-item my-1">
+                                    <NavLink to="/blog" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/blog" ? "text-primary xl:text-white" : ""}`}  data-page="/blog" onMouseEnter={handleHover}>Blog</NavLink>
                                 </li>
                                 <li className="nav-item my-1">
                                     <NavLink to="/contact" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/contact" ? "text-primary xl:text-white" : ""}`}  data-page="/contact"  onMouseEnter={handleHover}>Contact</NavLink>

@@ -200,7 +200,7 @@ function Services() {
                 <div className="container px-2 lg:px-5 mx-auto z-1">
                     <div className="title-wrapper text-center max-w-full mx-auto mb-8 md:max-w-9/10 lg:mb-10 lg:max-w-2/3 xl:mb-15 xl:max-w-2/3 2xl:max-w-1/2">
                         <h2 className="text-[32px] font-extrabold text-secondary leading-8 md:leading-10 mb-4 md:text-[40px] lg:mb-4 lg:text-[46px] lg:leading-12 xl:text-[50px] xl:leading-14">Frequently Asked Questions</h2>
-                        <p className="text-xl font-commissioner text-[#4B5563] font-normal max-w-full mx-auto xl:max-w-[90%] xl:text-lg 2xl:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua utenim ad minim veniam.</p>
+                        <p className="text-xl font-commissioner text-[#4B5563] font-normal max-w-full mx-auto xl:max-w-[90%] xl:text-lg 2xl:text-xl">Find answers to common questions about how Fortipii protects your sensitive client data, how setup works, and what you can expect from day one.</p>
                     </div>
                     <div className="max-w-full px-5 py-5 bg-white shadow-sm mx-auto mt-5 rounded-[32px] md:rounded-[40px] md:mt-15 md:max-w-9/10 md:px-10 md:py-5 lg:rounded-[60px] lg:mt-5 lg:px-10 lg:py-10 xl:mt-15 xl:max-w-3/4 xl:px-15 xl:py-10 2xl:max-w-2/3 2xl:px-20 2xl:py-15">
                         <div className={`border-b ${openFaq === 0 ? "border-primary" : "border-[#04396B]"} mb-4`}>

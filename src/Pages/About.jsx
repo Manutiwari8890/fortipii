@@ -20,8 +20,8 @@ function About() {
                     <div className="px-5 py-10 bg-white shadow-sm mx-auto rounded-[40px] md:mt-5 md:px-10 md:py-10 lg:rounded-[40px] lg:px-10 lg:mt-10 lg:py-10 xl:rounded-[60px] xl:px-20 2xl:mt-15 2xl:py-15">
                         <div className="grid grid-cols-4 gap-x-0 gap-y-5 md:gap-y-10 lg:grid-cols-5 xl:grid-cols-4">
                             <div className="col-span-4 pr-0 lg:col-span-3 lg:pr-5 xl:pr-25">
-                                <h3 className="text-[40px] text-secondary mb-2 md:mb-5 md:text-[50px]">Our <span className="text-primary">Mission</span></h3>
-                                <p className="text-lg text-[#4B5563] font-commissioner leading-8 lg:text-lg lg:leading-8 2xl:text-xl 2xl:leading-9">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. </p>
+                                <h3 className="text-[40px] text-secondary mb-2 md:mb-5 md:text-[50px]">Our <span className="text-primary">Philosophy</span></h3>
+                                <p className="text-lg text-[#4B5563] font-commissioner leading-8 lg:text-lg lg:leading-8 2xl:text-xl 2xl:leading-9">Most security tools are built around panic.We’re built around confidence.  When sensitive information is properly protected, there’s nothing worth stealing — and nothing worth stressing about. So we designed Fortipii to work in the background, stay out of your way, and let you focus on your clients.</p>
                             </div>
                             <div className="img-container col-span-4 md:col-span-4 lg:col-span-2 -order-1 lg:order-1 xl:col-span-1">
                                 <img src="/assets/images/Illustration.png" alt="Illustration" className="w-full mx-auto max-w-75 md:max-w-100 lg:max-w-full" />
@@ -48,7 +48,7 @@ function About() {
                     </div>
                 </div>
             </section>
-            <section className="pt-15 pb-10 md:pb-15 xl:pt-20 xl:pb-10 2xl:py-20">
+            <section className="pt-15 pb-10 md:pb-15 xl:pt-20 xl:pb-10 2xl:pt-20 2xl:pb-0">
                 <div className="container px-2 lg:px-5 mx-auto z-1">
                     <div className="title-wrapper text-center max-w-full mx-auto mb-8 md:max-w-9/10 lg:mb-10 lg:max-w-2/3 xl:mb-15 xl:max-w-2/3 2xl:max-w-1/2">
                         <h3 className="text-lg font-commissioner font-medium text-primary mb-2">Built for Small Offices</h3>
@@ -68,7 +68,7 @@ function About() {
                 <div className="container px-2 lg:px-5 mx-auto z-1">
                     <div className="title-wrapper text-center max-w-full mx-auto mb-8 md:max-w-9/10 lg:mb-10 lg:max-w-2/3 xl:mb-15 xl:max-w-2/3 2xl:max-w-1/2">
                         <h2 className="text-[32px] font-extrabold text-secondary leading-8 md:leading-10 mb-4 md:text-[40px] lg:mb-4 lg:text-[46px] lg:leading-12 xl:text-[50px] xl:leading-14">Frequently Asked Questions</h2>
-                        <p className="text-xl font-commissioner text-[#4B5563] font-normal max-w-full mx-auto xl:max-w-[90%] xl:text-lg 2xl:text-xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua utenim ad minim veniam.</p>
+                        <p className="text-xl font-commissioner text-[#4B5563] font-normal max-w-full mx-auto xl:max-w-[90%] xl:text-lg 2xl:text-xl">Find answers to common questions about how Fortipii protects your sensitive client data, how setup works, and what you can expect from day one.</p>
                     </div>
                     <div className="max-w-full px-5 py-5 bg-white shadow-sm mx-auto mt-5 rounded-[32px] md:rounded-[40px] md:mt-15 md:max-w-9/10 md:px-10 md:py-5 lg:rounded-[60px] lg:mt-5 lg:px-10 lg:py-10 xl:mt-15 xl:max-w-3/4 xl:px-15 xl:py-10 2xl:max-w-2/3 2xl:px-20 2xl:py-15">
                         <div className={`border-b ${openFaq === 0 ? "border-primary" : "border-[#04396B]"} mb-4`}>

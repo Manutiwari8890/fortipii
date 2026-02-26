@@ -1,5 +1,30 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function Footer(){
+    const [scrollActive, setScrollActive] = useState(false);
+
+    const bottomToTop = () => {
+        window.scroll({
+            top : 0,
+            behavior : "smooth"
+        })
+    }
+
+    useEffect(() => {
+        function handleScroll(){
+            console.log(window.scrollY)
+            if(window.scrollY>150){
+                setScrollActive(true)
+            }else{
+                setScrollActive(false)
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    })
+
     return (
         <>
             <footer>
@@ -57,6 +82,10 @@ function Footer(){
                             </ul>
                         </div>
                     </div>
+                    <button class={`TopToBotton ${scrollActive ? "active" : ""}`} onClick={() => bottomToTop()}>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="m-auto" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M9.38346 14.5459V3.01257L6.2768 6.11924L5.3328 5.1619L10.0501 0.443237L14.7688 5.1619L13.8248 6.12057L10.7168 3.01257V14.5459H9.38346ZM2.87146 19.1099C2.25724 19.1099 1.7448 18.9046 1.33413 18.4939C0.923463 18.0832 0.717686 17.5703 0.716797 16.9552V13.7246H2.05013V16.9552C2.05013 17.1606 2.13546 17.349 2.30613 17.5206C2.4768 17.6921 2.6648 17.7775 2.87013 17.7766H17.2301C17.4346 17.7766 17.6226 17.6912 17.7941 17.5206C17.9657 17.3499 18.051 17.1615 18.0501 16.9552V13.7246H19.3835V16.9552C19.3835 17.5695 19.1781 18.0819 18.7675 18.4926C18.3568 18.9032 17.8439 19.109 17.2288 19.1099H2.87146Z" fill="#fff"></path></svg>
+                        <i></i>
+                    </button>
                 </div>
                 <div className="py-6 text-center bg-primary/10">
                     <p className="text-base text-[#4B5563] font-commissioner">Copyright © 2026 All rights reserved.</p>

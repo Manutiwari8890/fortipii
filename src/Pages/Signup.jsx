@@ -1,7 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { replace, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContext";
 
 function Signup(){
-
+    const {isLogin, login} = useContext(AuthContext);
+    const navigate = useNavigate();
     const [signUpDetail, setSignUpDetail] = useState({
         first_name: "", last_name : "", email : "", password: ""
     })
@@ -10,6 +13,12 @@ function Signup(){
     const [loading, setLoading] = useState(false);
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
     const [disabled, setDisabled] = useState(false);
+
+    useEffect(() => {
+        if(isLogin){
+            navigate('/', replace)
+        }
+    }, [isLogin])
 
     const handleSignUp = async (e) => {
         e.preventDefault();

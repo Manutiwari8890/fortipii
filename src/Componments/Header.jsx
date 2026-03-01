@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
 
 function Header(){
     const [lineStyle, setLineStyle] = useState({ left: 0, width: 0 });
@@ -8,6 +9,7 @@ function Header(){
     const location = useLocation();
     const [isScroll, setIsScroll] = useState(false);
     const [menu, setMenu] = useState(false);
+    const {isLogin, user, logout} = useContext(AuthContext);
 
     const navRef = useRef(null);
 
@@ -111,12 +113,17 @@ function Header(){
                                 <li className="nav-item my-1">
                                     <NavLink to="/contact" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/contact" ? "text-primary xl:text-white" : ""}`}  data-page="/contact"  onMouseEnter={handleHover}>Contact</NavLink>
                                 </li>
-                                <li className="nav-item block px-5 xl:hidden">
-                                    <Link to="/register" className="inline-block btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
-                                </li>
-                                <li className="nav-item block px-5 xl:hidden">
-                                    <Link to="/login" className="inline-block btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
-                                </li>
+                                {!isLogin ?
+                                    <>
+                                        <li className="nav-item block px-5 xl:hidden">
+                                            <Link to="/register" className="inline-block btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
+                                        </li>
+                                        <li className="nav-item block px-5 xl:hidden">
+                                            <Link to="/login" className="inline-block btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
+                                        </li>
+                                    </> :
+                                     ''
+                                }
                                 <span
                                     className="absolute top-1/2 -translate-y-1/2 h-[42px] bg-primary rounded-full transition-all -z-1 hidden xl:block"
                                     style={{
@@ -126,8 +133,21 @@ function Header(){
                                 />
                             </ul>
                             <div className="flex gap-2 items-center">
-                                <Link to="/register" className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Sign Up</Link>
-                                <Link to="/login" className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Login</Link>
+                                {!isLogin ?
+                                    <>
+                                        <Link to="/register" className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Sign Up</Link>
+                                        <Link to="/login" className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Login</Link>
+                                    </> :
+                                    <>
+                                        <div className="flex gap-2 items-center px-4 border-r-2 mr-2 border-[#26365626]">
+                                            <h2 className="text-lg text-[#263656] font-medium font-commissioner">{user?.user_nicename}</h2>
+                                            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" className="w-5 h-5 text-primary">
+                                                <path d="m10.958,15.576c-.156.528-.706.833-1.244.673-.553-.165-1.129-.249-1.714-.249-3.309,0-6,2.691-6,6v1c0,.552-.447,1-1,1s-1-.448-1-1v-1c0-4.411,3.589-8,8-8,.778,0,1.548.112,2.286.332.529.158.83.715.672,1.244Zm13.042-1.14v3.085c0,4.032-3.973,5.942-5.126,6.406-.12.048-.247.072-.373.072-.153,0-.307-.035-.463-.113-1.123-.562-5.038-2.796-5.038-6.365v-3.085c0-1.295.826-2.439,2.055-2.848l3.131-1.038c.203-.067.426-.067.629,0l3.13,1.038c1.229.408,2.056,1.553,2.056,2.848Zm-2,0c0-.432-.275-.813-.686-.949l-2.814-.933-2.815.933c-.409.136-.685.518-.685.949v3.085c0,2.28,2.63,3.888,3.545,4.379,1.031-.454,3.455-1.796,3.455-4.379v-3.085ZM14,6c0,3.309-2.691,6-6,6s-6-2.691-6-6S4.691,0,8,0s6,2.691,6,6Zm-2,0c0-2.206-1.794-4-4-4s-4,1.794-4,4,1.794,4,4,4,4-1.794,4-4Z" fill="currentColor" />
+                                            </svg>
+                                        </div>
+                                        <button className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden cursor-pointer xl:block 2xl:block" onClick={() => logout()}>Logout</button>
+                                    </>
+                                }
                                 <button className={`block ml-4 humburger cursor-pointer group text-center content-center lg:block xl:hidden 2xl:hidden ${menu ? "active" : ""}`} onClick={() => setMenu((pre) => !pre)}>
                                     <div className="flex flex-col overflow-hidden w-12 h-12 justify-center relative gap-1.5 relative m-auto">
                                         <div className="w-10 h-1 bg-secondary rounded-full line-1"></div>

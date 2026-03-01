@@ -24,7 +24,10 @@ function App(){
     });
     startLoading();
     const timer = setTimeout(() => stopLoading(), 300);
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      stopLoading()
+    }
   }, [location.pathname])
 
   return (

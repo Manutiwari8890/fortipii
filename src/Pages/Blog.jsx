@@ -68,7 +68,7 @@ function Blog(){
                     <div className="container px-2 lg:px-5 mx-auto z-1">
                         <div className="text-center content-center min-h-45 max-w-full mx-auto md:min-h-50 md:max-w-9/10 lg:max-w-2/3 lg:min-h-50 xl:min-h-75 2xl:min-h-100">
                             <h1 className="text-[36px] text-secondary font-black leading-10 md:leading-13 md:text-[48px] lg:leading-14 lg:text-[54px] 2xl:text-[70px] 2xl:leading-24" dangerouslySetInnerHTML={{ __html: content?.banner?.title }}></h1>
-                            <p className="text-sm text-[#4B5563] leading-5.5 mt-2 font-commissioner max-w-full mx-auto md:text-base md:leading-7 lg:max-w-9/10 lg:text-base lg:leading-7 xl:text-lg xl:leading-7 2xl:text-xl 2xl:leading-8">{content?.banner?.text}</p>
+                            <p className="text-sm text-[#4B5563] leading-5.5 mt-2 font-commissioner max-w-full mx-auto md:text-base md:leading-7 lg:max-w-9/10 lg:text-base lg:leading-7 xl:text-lg xl:leading-7 2xl:text-xl 2xl:leading-8">{content?.banner?.description}</p>
                         </div>
                     </div>
                 </section>

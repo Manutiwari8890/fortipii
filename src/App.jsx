@@ -23,9 +23,9 @@ function App(){
       behavior: "smooth",
     });
     startLoading();
-    const timer = setTimeout(() => stopLoading(), 1000);
+    const timer = setTimeout(() => stopLoading(), 300);
     return () => clearTimeout(timer);
-  }, [location])
+  }, [location.pathname])
 
   return (
     <>

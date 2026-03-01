@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import { replace, useNavigate } from "react-router-dom";
 
 function Login(){
-
+    const {isLogin, login} = useContext(AuthContext);
     const [loginDetail, setLoginDetail] = useState({
         username : "", password : ""
     })
     const [formErrors, setFormErrors] = useState({});
+    const [message, setMessage] = useState({status : false, value : ""})
     const [loading, setLoading] = useState(false);
+    const baseUrl = import.meta.env.VITE_AUTH_BASE_URL;
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if(isLogin){
+            navigate('/')
+        }
+    }, [])
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -15,12 +26,26 @@ function Login(){
         if(!Object.values(errors).length){
             setLoading(true);
             try{
-                setTimeout(() => {
-                    setLoading(false)
-                }, 1000)
+                const options = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(loginDetail)
+                };
+
+                const response = await fetch(`${baseUrl}`, options);
+                
+                const result = await response.json();
+                if(!result?.token){
+                    setMessage((prev) => ({status : false, value : result?.message}))
+                    throw new Error(result?.message)
+                }
+                login({user_nicename : result?.user_nicename, token : result?.token})
+                setMessage({status : true, value : "Login Successfully"})
+                navigate('/login')
             }catch(err){
                 console.log(err)
             }finally{
+                setLoading(false)
             }
         }
         
@@ -69,6 +94,9 @@ function Login(){
                                         </div>
                                     }
                                 </button>
+                                {message?.value &&
+                                    <p className={`mt-2 text-sm ${message?.status ? "text-primary" : "text-red-500"}`}>{message?.value}</p>                                
+                                }
                             </form>
                         </div>
                     </div>

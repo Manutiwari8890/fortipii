@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 
-
 function Signup(){
 
     const [signUpDetail, setSignUpDetail] = useState({
         first_name: "", last_name : "", email : "", password: ""
     })
     const [formErrors, setFormErrors] = useState({});
+    const [message, setMessage] = useState({status : false, value : ""})
     const [loading, setLoading] = useState(false);
+    const baseUrl = import.meta.env.VITE_API_BASE_URL;
+    const [disabled, setDisabled] = useState(false);
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -16,12 +18,26 @@ function Signup(){
         if (!Object.values(errors).length) {
             setLoading(true);
             try {
-                setTimeout(() => {
-                    setLoading(false)
-                }, 1000)
+                const options = {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({...signUpDetail, username : signUpDetail?.email})
+                };
+
+                const response = await fetch(`${baseUrl}register`, options);
+                
+                const result = await response.json();
+                if(result?.data?.status === 400){
+                    setMessage({status : false, value : result?.message})
+                    throw new Error(result?.message)
+                }
+                setMessage({status : true, value : result?.message})
+                setSignUpDetail({first_name : "", last_name : "", email : "", password : ""})
+                setDisabled(true);
             } catch (err) {
                 console.log(err)
             } finally {
+                setLoading(false)
             }
         }
 
@@ -77,7 +93,7 @@ function Signup(){
                                 <input type="password" id="password" className={`text-base text-secondary border rounded-xl px-4 py-4 w-full ${formErrors?.password ? "border-red-600" : "border-[#D2D2D2] focus:border-primary"}`} placeholder="* * * * * * * * * * *" value={signUpDetail?.password} onChange={(e) => setSignUpDetail((prev) => ({...prev, password : e.target.value}))} />
                                 {formErrors?.password && <p className="text-base text-red-600 mt-1 font-commissioner">{formErrors?.password}</p>}
                             </div>
-                            <button className={`btn-primary bg-secondary w-full font-commissioner text-lg relative font-medium text-white py-4 px-8 rounded-full cursor-pointer mx-auto mt-2 min-h-15 disabled:opacity-70 disabled:hover:after:hidden disabled:cursor-not-allowed`} disabled={loading}>
+                            <button className={`btn-primary bg-secondary w-full font-commissioner text-lg relative font-medium text-white py-4 px-8 rounded-full cursor-pointer mx-auto mt-2 min-h-15 disabled:opacity-70 disabled:hover:after:hidden disabled:cursor-not-allowed`} disabled={loading || disabled}>
                                 {!loading ? "SignUp Now" :
                                     <div className="w-15 m-auto text-center p-2 relative">
                                         <div className="w-10 h-10 rounded-full border-5 border-recondary border-y-transparent absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin"></div>
@@ -85,6 +101,9 @@ function Signup(){
                                     </div>
                                 }
                             </button>
+                            {message?.value &&
+                                <p className={`mt-2 text-sm ${message?.status ? "text-primary" : "text-red-500"}`}>{message?.value}</p>
+                            }
                         </form>
                         <div>
                     </div>

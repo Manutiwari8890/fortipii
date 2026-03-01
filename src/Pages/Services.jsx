@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, useContext } from "react";
 import IconCard from "../Componments/IconCard";
 import { LoadingContext } from "../Context/LoadingContext";
+import { Link } from "react-router-dom";
 
 function Services() {
     const [step, setStep] = useState(1)
@@ -8,6 +9,7 @@ function Services() {
     const containerRef = useRef(null);
     const cardRef = useRef(null);
     const [cardWidth, setCardWidth] = useState(0);
+    const [priceCard, setPriceCard] = useState([]);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -81,6 +83,27 @@ function Services() {
         getFaqContent();
     }, []);
 
+    useEffect(() => {
+        const getPrices = async () => {
+            startLoading();
+            try {
+                const response = await fetch(`${baseUrl}prices`);
+                const result = await response.json();
+
+                if (!result?.status) {
+                    throw new Error(result?.message);
+                }
+                const updated = result?.data?.sort((pre, next) => pre?.position - next?.position)
+                setPriceCard(updated)
+            } catch (err) {
+                console.log(err);
+            } finally {
+                stopLoading();
+            }
+        };
+
+        getPrices();
+    }, []);
 
     return (
         <>
@@ -152,79 +175,29 @@ function Services() {
                         </button>
                         <div className="overflow-hidden">
                             <div className={`flex grid-cols-4 w-max transition-transform duration-300 ease-in-out xl:grid xl:w-full gap-4 relative-z-1`} ref={containerRef} style={{ transform: `translateX(-${(slider * cardWidth) + (slider * 15)}px)` }}>
-                                <div className="border border-[#0000001A] bg-white rounded-3xl overflow-hidden hover:border-[#5ED1C0] hover:bg-[#E8FAF2] w-95 md:w-92 lg:w-79 xl:w-full" ref={cardRef}>
-                                    <div className="bg-[#2ECF861C] rounded-t-xl p-4">
-                                        <h4 className="text-[#1E8B7A] text-2xl font-semibold mb-1">Start</h4>
-                                        <p className="text-[#1E8B7A] text-sm xl:text-xs 2xl:text-sm">Perfect introduction to Fortipii</p>
-                                    </div>
-                                    <div className="px-4 py-6 flex flex-col justify-between items-center  min-h-115 xl:min-h-105 2xl:min-h-115">
-                                        <div className="text-left w-full">
-                                            <h3 className="text-3xl font-extrabold text-secondary mb-4">Free Trial</h3>
-                                            <ul className="list-disc pl-4 text-lg text-[#062C4F] xl:text-base 2xl:text-lg">
-                                                <li className="mb-2">Scan one drive, up to 500 files</li>
-                                                <li className="mb-2">Preview the findings</li>
-                                                <li className="mb-2">Easy upgrade to redact</li>
-                                            </ul>
+                                {priceCard?.length > 0 &&
+                                    priceCard?.map((card) => (
+                                        <div className="border border-[#0000001A] bg-white rounded-3xl overflow-hidden hover:border-[#5ED1C0] hover:bg-[#E8FAF2] w-95 md:w-92 lg:w-79 xl:w-full" ref={cardRef} key={card?.id} >
+                                            <div className="bg-[#2ECF861C] rounded-t-xl p-4">
+                                                <h4 className="text-[#1E8B7A] text-2xl font-semibold mb-1">{card?.title}</h4>
+                                                <p className="text-[#1E8B7A] text-sm xl:text-xs 2xl:text-sm">{card?.description}</p>
+                                            </div>
+                                            <div className="px-4 py-6 flex flex-col justify-between items-center  min-h-115 xl:min-h-105 2xl:min-h-115">
+                                                <div className="text-left w-full">
+                                                    <h3 className="text-3xl font-extrabold text-secondary mb-4">{card?.price_amount}</h3>
+                                                    <ul className="list-disc pl-4 text-lg text-[#062C4F] xl:text-base 2xl:text-lg">
+                                                        {card?.facilities?.length > 0 &&
+                                                            card?.facilities?.map((facility, index) => (
+                                                                <li className="mb-2" key={index}>{facility?.text}</li>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                </div>
+                                                <Link to="" className="btn-secondary bg-primary w-full inline-block text-center font-commissioner text-base font-semibold relative font-medium text-white py-3 px-8 rounded-full overflow-hidden">Talk to sales</Link>
+                                            </div>
                                         </div>
-                                        <a href="" className="btn-secondary bg-primary w-full inline-block text-center font-commissioner text-base font-semibold relative font-medium text-white py-3 px-8 rounded-full overflow-hidden">Talk to sales</a>
-                                    </div>
-                                </div>
-                                <div className="border border-[#0000001A] bg-white rounded-3xl overflow-hidden hover:border-[#5ED1C0] hover:bg-[#E8FAF2] w-95 md:w-92 lg:w-79 xl:w-full">
-                                    <div className="bg-[#2ECF861C] rounded-t-xl p-4">
-                                        <h4 className="text-[#1E8B7A] text-2xl font-semibold mb-1">Shield</h4>
-                                        <p className="text-[#1E8B7A] text-sm xl:text-xs 2xl:text-sm">Essential protection for small businesses</p>
-                                    </div>
-                                    <div className="px-4 py-6 flex flex-col justify-between items-center  min-h-115 xl:min-h-105 2xl:min-h-115">
-                                        <div className="text-left w-full">
-                                            <h3 className="text-3xl font-extrabold text-secondary mb-4">$39/month</h3>
-                                            <ul className="list-disc pl-4 text-lg text-[#062C4F] xl:text-base 2xl:text-lg">
-                                                <li className="mb-2">Unlimited file scans</li>
-                                                <li className="mb-2">Full data redaction</li>
-                                                <li className="mb-2">Includes one file location (drive)</li>
-                                            </ul>
-                                        </div>
-                                        <a href="" className="btn-secondary bg-primary w-full inline-block text-center font-commissioner text-base font-semibold relative font-medium text-white py-3 px-8 rounded-full overflow-hidden">Talk to sales</a>
-                                    </div>
-                                </div>
-                                <div className="border border-[#0000001A] bg-white rounded-3xl overflow-hidden hover:border-[#5ED1C0] hover:bg-[#E8FAF2] w-95 md:w-92 lg:w-79 xl:w-full">
-                                    <div className="bg-[#2ECF861C] rounded-t-xl p-4">
-                                        <h4 className="text-[#1E8B7A] text-2xl font-semibold mb-1">Guardian</h4>
-                                        <p className="text-[#1E8B7A] text-sm xl:text-xs 2xl:text-sm">Email + device protection together</p>
-                                    </div>
-                                    <div className="px-4 py-6 flex flex-col justify-between items-center  min-h-115 xl:min-h-105 2xl:min-h-115">
-                                        <div className="text-left w-full">
-                                            <h3 className="text-3xl font-extrabold text-secondary mb-4">$79/month</h3>
-                                            <ul className="list-disc pl-4 text-lg text-[#062C4F] xl:text-base 2xl:text-lg">
-                                                <li className="mb-2">Unlimited file scans</li>
-                                                <li className="mb-2">Full data redaction</li>
-                                                <li className="mb-2">Includes up to 3 file locations (drives)</li>
-                                                <li className="mb-2">Email and attachment scanning (O365, Gmail, Yahoo, etc.)</li>
-                                                <li className="mb-2">Workflow & audit logs for compliance</li>
-                                            </ul>
-                                        </div>
-                                        <a href="" className="btn-secondary bg-primary w-full inline-block text-center font-commissioner text-base font-semibold relative font-medium text-white py-3 px-8 rounded-full overflow-hidden">Talk to sales</a>
-                                    </div>
-                                </div>
-                                <div className="border border-[#0000001A] bg-white rounded-3xl overflow-hidden hover:border-[#5ED1C0] hover:bg-[#E8FAF2] w-95 md:w-92 lg:w-79 xl:w-full">
-                                    <div className="bg-[#2ECF861C] rounded-t-xl p-4">
-                                        <h4 className="text-[#1E8B7A] text-2xl font-semibold mb-1">Fortress</h4>
-                                        <p className="text-[#1E8B7A] text-sm xl:text-xs 2xl:text-sm">The complete Fortipii suite</p>
-                                    </div>
-                                    <div className="px-4 py-6 flex flex-col justify-between items-center  min-h-115 xl:min-h-105 2xl:min-h-115">
-                                        <div className="text-left w-full">
-                                            <h3 className="text-3xl font-extrabold text-secondary mb-4">$129/month</h3>
-                                            <ul className="list-disc pl-4 text-lg text-[#062C4F] xl:text-base 2xl:text-lg">
-                                                <li className="mb-2">Unlimited file scans</li>
-                                                <li className="mb-2">Full data redaction</li>
-                                                <li className="mb-2">Covers up to 6 file locations (drives)</li>
-                                                <li className="mb-2">Email and attachment scanning (O365, Gmail, Yahoo, etc.)</li>
-                                                <li className="mb-2">Multi-user licensing</li>
-                                                <li className="mb-2">Workflow & audit logs for compliance</li>
-                                            </ul>
-                                        </div>
-                                        <a href="" className="btn-secondary bg-primary w-full inline-block text-center font-commissioner text-base font-semibold relative font-medium text-white py-3 px-8 rounded-full overflow-hidden">Talk to sales</a>
-                                    </div>
-                                </div>
+                                    ))
+                                }
                             </div>    
                         </div>    
                         

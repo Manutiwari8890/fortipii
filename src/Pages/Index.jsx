@@ -8,31 +8,31 @@ function Index(){
     const { loading, startLoading, stopLoading } = useContext(LoadingContext)
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
     
-    useEffect(() => {
-        const getPageContent = async () => {
-            startLoading();
-            try {
-                const response = await fetch(`${baseUrl}page/home`);
-                const result = await response.json();
+    // useEffect(() => {
+    //     const getPageContent = async () => {
+    //         startLoading();
+    //         try {
+    //             const response = await fetch(`${baseUrl}page/home`);
+    //             const result = await response.json();
 
-                if (!result?.status) {
-                    throw new Error(result?.message);
-                }
-                setContent(result?.data?.content)
-            } catch (err) {
-                console.log(err);
-            } finally {
-                stopLoading();
-            }
-        };
+    //             if (!result?.status) {
+    //                 throw new Error(result?.message);
+    //             }
+    //             setContent(result?.data?.content)
+    //         } catch (err) {
+    //             console.log(err);
+    //         } finally {
+    //             stopLoading();
+    //         }
+    //     };
 
-        getPageContent();
-    }, []);
+    //     getPageContent();
+    // }, []);
 
     return (
         <>
             {content?.banner &&
-                <section className="py-10 bg-primary/5 min-h-150 mt-20 md:py-15 lg:py-15 xl:py-20 xl:mt-20 2xl:mt-25">
+                <section className="py-10 bg-primary/5 min-h-150 mt-20 md:py-15 lg:py-15 xl:py-20 xl:mt-17">
                     <div className="container px-2 lg:px-5 mx-auto relative z-1">
                         <div className="h-full content-center text-center max-w-full mx-auto md:max-w-9/10 lg:max-w-4/5 xl:max-w-2/3">
                             <div className="img-container mx-auto w-max relative mb-4"> 
@@ -76,65 +76,69 @@ function Index(){
                     </div>
                 </section>
             }
-            <section className="pt-10 pb-5 md:pt-15 lg:pt-15 xl:pb-5 xl:pt-20">
-                <div className="container px-2 lg:px-5 mx-auto z-1">
-                    <div className="grid grid-cols-1 gap-y-8 md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:gap-10">
-                        {content?.gradient_cards?.length > 0 &&
-                            <>
-                                <div className="border border-[#0000001A] min-h-[275px] h-full p-8 rounded-4xl text-center content-center relative lg-py-8 lg:px-6 xl:p-8 xl:min-h-[300px] 2xl:min-h-[372px]">
-                                    <div className="img-container w-15 mx-auto mb-3 reltive z-1 xl:mb-5 xl:w-15 2xl:w-20">
-                                        <img src={content?.gradient_cards?.[0]?.image} className="w-full" />
-                                    </div>
-                                    <div className="relative z-1">
-                                        <p className="text-[28px] font-commissioner leading-9 text-white mb-2 lg:leading-9 xl:leading-8 xl:text-[28px] 2xl:leading-10 2xl:text-[32px]"><strong>{content?.gradient_cards?.[0]?.title} </strong></p>
-                                        <p className="text-lg text-white mb-4 font-commissioner">{content?.gradient_cards?.[0]?.description}</p>
-                                        <div className="px-2 xl:px-10">
-                                            {content?.gradient_cards?.[0]?.button_title &&
-                                                <Link to={content?.gradient_cards?.[0]?.button_link} className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-5 px-8 rounded-full inline-block w-full hover:bg-secondary xl:px-6 xl:py-3 2xl:px-8 2xl:py-5">{content?.gradient_cards?.[0]?.button_title}</Link>                                        
-                                            }
+            {content?.gradient_cards?.length &&
+                <section className="pt-10 pb-5 md:pt-15 lg:pt-15 xl:pb-5 xl:pt-20">
+                    <div className="container px-2 lg:px-5 mx-auto z-1">
+                        <div className="grid grid-cols-1 gap-y-8 md:gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:gap-10">
+                            {content?.gradient_cards?.length > 0 &&
+                                <>
+                                    <div className="border border-[#0000001A] min-h-[275px] h-full p-8 rounded-4xl text-center content-center relative lg-py-8 lg:px-6 xl:p-8 xl:min-h-[300px] 2xl:min-h-[372px]">
+                                        <div className="img-container w-15 mx-auto mb-3 reltive z-1 xl:mb-5 xl:w-15 2xl:w-20">
+                                            <img src={content?.gradient_cards?.[0]?.image} className="w-full" />
                                         </div>
-                                    </div>
-                                    <div className="absolute top-0 left-0 w-full h-full bg-linear-to-l from-[#1F4567] to-secondary rounded-4xl -z-1 "></div>
-                                </div>
-                                {content?.gradient_cards?.slice(1)?.map((item, index) => (
-                                    <div className="border border-[#0000001A] min-h-[275px] h-full p-8 rounded-4xl text-center content-center group relative lg-py-8 lg:px-6 xl:p-8 xl:min-h-[300px] 2xl:min-h-[372px]" key={index}>
-                                        {item?.image &&
-                                            <div className="img-container w-18 mx-auto mb-3 reltive z-1 lg:w-18 lg:mb-3 xl:mb-5 xl:w-20 2xl:w-25">
-                                                <img src={item?.image} className="w-full" />
-                                            </div>
-                                        }
-                                        {item?.title &&
-                                            <h6 className="text-[24px] font-commissioner font-semibold leading-8 text-secondary group-hover:text-white xl:leading-8 xl:text-[24px] 2xl:leading-10 2xl:text-[28px]" dangerouslySetInnerHTML={{ __html: item?.title }} />
-                                        }
-                                        {item?.description &&
-                                            <p className="text-base font-commissioner text-[#4B5563] my-6 group-hover:text-white xl:my-8 xl:text-base 2xl:text-lg" dangerouslySetInnerHTML={{ __html: item?.description }} />
-                                        }
-                                        {item?.button_title &&
+                                        <div className="relative z-1">
+                                            <p className="text-[28px] font-commissioner leading-9 text-white mb-2 lg:leading-9 xl:leading-8 xl:text-[28px] 2xl:leading-10 2xl:text-[32px]"><strong>{content?.gradient_cards?.[0]?.title} </strong></p>
+                                            <p className="text-lg text-white mb-4 font-commissioner">{content?.gradient_cards?.[0]?.description}</p>
                                             <div className="px-2 xl:px-10">
-                                                    <Link to={item?.button_link} className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-5 px-8 rounded-full inline-block w-full hover:bg-secondary xl:px-6 xl:py-3 2xl:px-8 2xl:py-5">{item?.button_title}</Link>
+                                                {content?.gradient_cards?.[0]?.button_title &&
+                                                    <Link to={content?.gradient_cards?.[0]?.button_link} className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-5 px-8 rounded-full inline-block w-full hover:bg-secondary xl:px-6 xl:py-3 2xl:px-8 2xl:py-5">{content?.gradient_cards?.[0]?.button_title}</Link>                                        
+                                                }
                                             </div>
-                                        }
-                                        <div className="absolute top-0 left-0 w-full h-full bg-linear-to-l from-[#1F4567] to-secondary rounded-4xl -z-1 opacity-0 group-hover:opacity-100"></div>
+                                        </div>
+                                        <div className="absolute top-0 left-0 w-full h-full bg-linear-to-l from-[#1F4567] to-secondary rounded-4xl -z-1 "></div>
                                     </div>
-                                ))}
-                            </>
-                        }
+                                    {content?.gradient_cards?.slice(1)?.map((item, index) => (
+                                        <div className="border border-[#0000001A] min-h-[275px] h-full p-8 rounded-4xl text-center content-center group relative lg-py-8 lg:px-6 xl:p-8 xl:min-h-[300px] 2xl:min-h-[372px]" key={index}>
+                                            {item?.image &&
+                                                <div className="img-container w-18 mx-auto mb-3 reltive z-1 lg:w-18 lg:mb-3 xl:mb-5 xl:w-20 2xl:w-25">
+                                                    <img src={item?.image} className="w-full" />
+                                                </div>
+                                            }
+                                            {item?.title &&
+                                                <h6 className="text-[24px] font-commissioner font-semibold leading-8 text-secondary group-hover:text-white xl:leading-8 xl:text-[24px] 2xl:leading-10 2xl:text-[28px]" dangerouslySetInnerHTML={{ __html: item?.title }} />
+                                            }
+                                            {item?.description &&
+                                                <p className="text-base font-commissioner text-[#4B5563] my-6 group-hover:text-white xl:my-8 xl:text-base 2xl:text-lg" dangerouslySetInnerHTML={{ __html: item?.description }} />
+                                            }
+                                            {item?.button_title &&
+                                                <div className="px-2 xl:px-10">
+                                                        <Link to={item?.button_link} className="btn-secondary bg-primary font-commissioner text-lg relative font-medium text-white py-5 px-8 rounded-full inline-block w-full hover:bg-secondary xl:px-6 xl:py-3 2xl:px-8 2xl:py-5">{item?.button_title}</Link>
+                                                </div>
+                                            }
+                                            <div className="absolute top-0 left-0 w-full h-full bg-linear-to-l from-[#1F4567] to-secondary rounded-4xl -z-1 opacity-0 group-hover:opacity-100"></div>
+                                        </div>
+                                    ))}
+                                </>
+                            }
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section className="pt-5 pb-5 md:pt-10 md:pb-10 xl:pt-20 xl:pb-10 2xl:py-20">
-                <div className="container px-2 lg:px-5 mx-auto z-1">
-                    <div className="title-wrapper text-center max-w-full mx-auto mb-8 md:max-w-4/5 lg:mb-10 lg:max-w-2/3 xl:mb-15 xl:max-w-2/3 2xl:max-w-2/3">
-                        <h3 className="text-lg font-commissioner font-medium text-primary mb-2">{content?.strength_section?.title}</h3>
-                        <h2 className="text-[32px] font-extrabold text-secondary leading-8 md:leading-10 md:text-[40px] lg:text-[46px] lg:leading-12 xl:text-[50px] xl:leading-14">{content?.strength_section?.description}</h2>
+                </section>
+            }
+            {content?.strength_section &&
+                <section className="pt-5 pb-5 md:pt-10 md:pb-10 xl:pt-20 xl:pb-10 2xl:py-20">
+                    <div className="container px-2 lg:px-5 mx-auto z-1">
+                        <div className="title-wrapper text-center max-w-full mx-auto mb-8 md:max-w-4/5 lg:mb-10 lg:max-w-2/3 xl:mb-15 xl:max-w-2/3 2xl:max-w-2/3">
+                            <h3 className="text-lg font-commissioner font-medium text-primary mb-2">{content?.strength_section?.title}</h3>
+                            <h2 className="text-[32px] font-extrabold text-secondary leading-8 md:leading-10 md:text-[40px] lg:text-[46px] lg:leading-12 xl:text-[50px] xl:leading-14">{content?.strength_section?.description}</h2>
+                        </div>
+                        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+                            {content?.strength_section?.strength_cards?.map((card, index) => (
+                                <IconCard data={{ title: card?.title, detail: card?.description, icon: card?.card }} key={index} />
+                            ))}
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-                        {content?.strength_section?.strength_cards?.map((card, index) => (
-                            <IconCard data={{ title: card?.title, detail: card?.description, icon: card?.card }} key={index} />
-                        ))}
-                    </div>
-                </div>
-            </section>
+                </section>
+            }
             {content?.footer_section &&
                 <section className="py-5">
                     <div className="container px-2 lg:px-5 mx-auto z-1">
@@ -155,6 +159,449 @@ function Index(){
                     </div>
                 </section>
             }
+            <section className="bg-secondary py-20 relative border-t border-gray mt-17">
+                <div className="container px-10 mx-auto">
+                    <div className="grid grid-cols-5 gap-5">
+                        <div className="col-span-3 pr-5">
+                            <div className="flex items-center gap-2 text-xs font-semibold text-teal bg-light border border-teal w-max px-5 py-2 mb-5 rounded-full"><div className="w-1 h-1 rounded-full bg-accent"></div>Now in early access · Tax & financial professionals</div>
+                            <h2 className="text-primary text-6xl leading-17 family-normal mt-2 mb-3 font-bold">From risk assessment to <span className="text-teal">full protection</span> — one platform</h2>
+                            <p className="text-xl text-slate max-w-130 mt-6 mb-4 leading-8">Fortipii finds, scores, and shields your clients' sensitive data across your files, drives, and email — quietly, automatically, completely.</p>
+                            <em className="text-slate text-sm font-semibold ">"So safe, it's boring." — That's the goal.</em>
+                            <div className="flex gap-4 items-center mt-8">
+                                <a href="" className="text-base font-bold bg-primary text-white py-3 px-10 rounded-full family-normal hover:bg-teal hover:-translate-y-[2px]">Get early access →</a>
+                                <a href="" className="text-base font-semibold border-[2px] border-gray text-slate py-3 px-10 rounded-full hover:text-accent hover:border-accent">Watch a 2-min demo</a>
+                            </div>
+                        </div>
+                        <div className="col-span-2 content-center">
+                            <div className="bg-primary rounded-4xl px-6 py-6 relative">
+                                <div className="w-35 h-35 bg-[radial-gradient(circle,rgba(94,209,192,0.18)_0%,transparent_70%)] absolute -top-10 -right-10"></div>
+                                <p className="text-xs text-accent tracking-[0.12em] uppercase font-bold mb-4">FortiPIIScore · Your Practice</p>
+                                <div className="text-5xl font-bold text-white items-center flex gap-4"><p className="family-normal ">84</p> <span className="bg-accent px-4 py-1 text-xs rounded-full text-primary font-bold">Protected</span></div>
+                                <p className="text-xs text-white/45 mt-2 mb-6 font-bold">Sensitive client data risk score — updated today</p>
+                                <div className="item mb-4">
+                                    <div className="flex justify-between mb-1.5">
+                                        <p className="text-xs text-white/55 font-semibold">Tax returns & W-2s</p>
+                                        <p className="text-xs text-white/55 font-semibold">96%</p>
+                                    </div>
+                                    <div className="h-1.5 bg-white/10 rounded-full w-full">
+                                        <div className="bg-accent rounded-full h-full w-[96%]"></div>
+                                    </div>
+                                </div>
+                                <div className="item mb-4">
+                                    <div className="flex justify-between mb-1.5">
+                                        <p className="text-xs text-white/55 font-semibold">Email attachments</p>
+                                        <p className="text-xs text-white/55 font-semibold">71%</p>
+                                    </div>
+                                    <div className="h-1.5 bg-white/10 rounded-full w-full">
+                                        <div className="bg-[#F5A742] rounded-full h-full w-[71%]"></div>
+                                    </div>
+                                </div>
+                                <div className="item mb-5">
+                                    <div className="flex justify-between mb-1.5">
+                                        <p className="text-xs text-white/55 font-semibold">Shared drives</p>
+                                        <p className="text-xs text-white/55 font-semibold">88%</p>
+                                    </div>
+                                    <div className="h-1.5 bg-white/10 rounded-full w-full">
+                                        <div className="bg-secondary rounded-full h-full w-[88%]"></div>
+                                    </div>
+                                </div>
+                                <div className="bg-white p-4 border flex gap-4 border-gray rounded-xl absolute w-full max-w-100 -left-10">
+                                    <div className="icon bg-light rounded-lg w-10 h-10 text-center content-center">
+                                        <svg viewBox="0 0 16 16" fill="none" className="w-5 h-6 mx-auto"><path d="M8 1.5L2 4v5c0 3.5 2.5 6.7 6 7.5 3.5-.8 6-4 6-7.5V4L8 1.5Z" fill="#D8F5F1" stroke="#35A897" strokeWidth="1.3"></path><path d="M5.5 8l2 2 3.5-3.5" stroke="#35A897" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                    </div>
+                                    <div className="text-left">
+                                        <h6 className="text-sm font-bold text-primary family-normal">247 files protected today</h6>
+                                        <p className="text-slate text-sm font-semibold">Sensitive data protected automatically</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-[#FAFAFA] py-5 border-t border-gray">
+                <div className="container px-10 mx-auto">
+                    <div className="flex gap-2 items-center">
+                        <p className="text-muted text-xs font-bold">Compliance ready:</p>
+                        <span className="bg-secondary text-slate py-2 px-3 text-xs rounded-full font-bold border border-gray">GLBA</span>
+                        <span className="bg-secondary text-slate py-2 px-3 text-xs rounded-full font-bold border border-gray">IRS Pub 4557</span>
+                        <span className="bg-secondary text-slate py-2 px-3 text-xs rounded-full font-bold border border-gray">FTC Safeguards Rule</span>
+                        <span className="bg-secondary text-slate py-2 px-3 text-xs rounded-full font-bold border border-gray">CCPA</span>
+                        <span className="bg-secondary text-slate py-2 px-3 text-xs rounded-full font-bold border border-gray">SOC 2 Type II</span>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-primary py-24 border-t border-gray">
+                <div className="container px-10 mx-auto">
+                    <div className="text-center mb-10">
+                        <p className="text-lg text-accent uppercase tracking-[0.12em]">How it works</p>
+                        <h2 className="text-white text-[40px] leading-13 family-normal mt-2 mb-3 font-bold">One end-to-end workflow</h2>
+                        <p className="text-lg text-white/45 max-w-130 mx-auto">From first scan to ongoing protection — Fortipii handles every step, automatically.</p>
+                    </div>
+                    <div className="relative">
+                        <div className="w-4/5 h-[1px] bg-linear-end absolute top-10 left-1/2 -translate-x-1/2"></div>
+                        <div className="grid grid-cols-5 gap-5">
+                            <div className="text-center group">
+                                <div className="icon w-17 h-17 mx-auto bg-[#293341] border-[1.5px] border-accent/30 rounded-full content-center relative mb-5 group-hover:border-accent">
+                                    <span className="bg-accent w-5 h-5 font-bold family-normal text-center content-center absolute -top-2 -right-1 text-primary text-xs rounded-full">1</span>
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mx-auto"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><path d="M7 12h10M7 8h7M7 16h5" stroke="#5ED1C0" strokeWidth="1.3" strokeLinecap="round"></path></svg>
+                                </div>
+                                <h5 className="text-white font-semibold text-sm">Assess</h5>
+                                <p className="text-xs text-white/65 mt-1 leading-5 font-semibold">Scan files, drives & network shares for sensitive client data</p>
+                            </div>
+                            <div className="text-center group">
+                                <div className="icon w-17 h-17 mx-auto bg-[#293341] border-[1.5px] border-accent/30 rounded-full content-center relative mb-5 group-hover:border-accent">
+                                    <span className="bg-accent w-5 h-5 font-bold family-normal text-center content-center absolute -top-2 -right-1 text-primary text-xs rounded-full">2</span>
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mx-auto"><circle cx="12" cy="12" r="9" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></circle><path d="M12 8v4l3 3" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round"></path></svg>
+                                </div>
+                                <h5 className="text-white font-semibold text-sm">Score</h5>
+                                <p className="text-xs text-white/65 mt-1 leading-5 font-semibold">FortiPIIScore rates your sensitive data exposure risk</p>
+                            </div>
+                            <div className="text-center group">
+                                <div className="icon w-17 h-17 mx-auto bg-[#293341] border-[1.5px] border-accent/30 rounded-full content-center relative mb-5 group-hover:border-accent">
+                                    <span className="bg-accent w-5 h-5 font-bold family-normal text-center content-center absolute -top-2 -right-1 text-primary text-xs rounded-full">3</span>
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mx-auto"><rect x="4" y="5" width="16" height="14" rx="2.5" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><rect x="7" y="9" width="7" height="2.5" rx="1.2" fill="#5ED1C0" opacity="0.4"></rect><path d="M7 14h10M7 17h6" stroke="#5ED1C0" strokeWidth="1.2" strokeLinecap="round"></path></svg>
+                                </div>
+                                <h5 className="text-white font-semibold text-sm">Protect</h5>
+                                <p className="text-xs text-white/65 mt-1 leading-5 font-semibold">Smart protection across PDFs, images & documents</p>
+                            </div>
+                            <div className="text-center group">
+                                <div className="icon w-17 h-17 mx-auto bg-[#293341] border-[1.5px] border-accent/30 rounded-full content-center relative mb-5 group-hover:border-accent">
+                                    <span className="bg-accent w-5 h-5 font-bold family-normal text-center content-center absolute -top-2 -right-1 text-primary text-xs rounded-full">4</span>
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mx-auto"><rect x="3" y="6" width="18" height="13" rx="2.5" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><path d="M3 9.5l9 5.5 9-5.5" stroke="#5ED1C0" strokeWidth="1.3" strokeLinecap="round" fill="none"></path></svg>
+                                </div>
+                                <h5 className="text-white font-semibold text-sm">Monitor</h5>
+                                <p className="text-xs text-white/65 mt-1 leading-5 font-semibold">Ongoing email & attachment protection, O365 & Gmail</p>
+                            </div>
+                            <div className="text-center group">
+                                <div className="icon w-17 h-17 mx-auto bg-[#293341] border-[1.5px] border-accent/30 rounded-full content-center relative mb-5 group-hover:border-accent">
+                                    <span className="bg-accent w-5 h-5 font-bold family-normal text-center content-center absolute -top-2 -right-1 text-primary text-xs rounded-full">5</span>
+                                    <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 mx-auto"><rect x="5" y="3" width="14" height="18" rx="2.5" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><path d="M9 8h6M9 12h6M9 16h4" stroke="#5ED1C0" strokeWidth="1.2" strokeLinecap="round"></path></svg>
+                                </div>
+                                <h5 className="text-white font-semibold text-sm">Report</h5>
+                                <p className="text-xs text-white/65 mt-1 leading-5 font-semibold">WISP-ready compliance documentation, always current</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-[#FAFAFA] py-24 border-t border-gray">
+                <div className="container px-10 mx-auto">
+                    <div className="text-center mb-10">
+                        <p className="text-lg text-slate uppercase tracking-[0.12em]">Built for small offices</p>
+                        <h2 className="text-primary text-[40px] leading-13 family-normal mt-2 mb-3 font-bold">Quietly protecting your clients' data <br />behind the scenes</h2>
+                        <p className="text-lg text-slate max-w-130 mx-auto">Everything a tax or financial professional needs to keep sensitive client data safe — without enterprise complexity.</p>
+                    </div>
+                    <div className="grid grid-cols-3 gap-5">
+                        <div className="bg-secondary border border-gray px-6 py-8 rounded-2xl hover:border-accent">
+                            <div className="icon bg-light w-12 h-12 rounded-xl content-center mb-4">
+                                <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><rect x="2" y="2" width="18" height="18" rx="3" stroke="#35A897" strokeWidth="1.5" fill="none"></rect><path d="M6 11h10M6 7h7M6 15h5" stroke="#35A897" strokeWidth="1.3" strokeLinecap="round"></path></svg>
+                            </div>
+                            <h4 className="text-primary font-semibold family-normal mb-2">Folder-based scanning</h4>
+                            <p className="text-sm text-slate family-normal leading-6">Scan desktops, OneDrive, Google Drive, and shared drives to locate exposed sensitive client data — SSNs, DOBs, account numbers, and more.</p>
+                        </div>
+                        <div className="bg-secondary border border-gray px-6 py-8 rounded-2xl hover:border-accent">
+                            <div className="icon bg-light w-12 h-12 rounded-xl content-center mb-4">
+                                <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><rect x="2" y="3" width="18" height="16" rx="2.5" stroke="#35A897" strokeWidth="1.5" fill="none"></rect><rect x="5" y="7" width="7" height="3" rx="1.5" fill="#35A897" opacity="0.35"></rect><path d="M5 13h12M5 16h8" stroke="#35A897" strokeWidth="1.2" strokeLinecap="round"></path></svg>
+                            </div>
+                            <h4 className="text-primary font-semibold family-normal mb-2">Smart protection</h4>
+                            <p className="text-sm text-slate family-normal leading-6">Protect private client data in PDFs and images while preserving document layout. Originals secured in a controlled vault.</p>
+                        </div>
+                        <div className="bg-primary border border-gray px-6 py-8 rounded-2xl hover:border-accent">
+                            <div className="icon bg-accent/15 w-12 h-12 rounded-xl content-center mb-4">
+                                <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><rect x="2" y="4" width="18" height="14" rx="2.5" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><path d="M2 8l9 6 9-6" stroke="#5ED1C0" strokeWidth="1.3" strokeLinecap="round" fill="none"></path></svg>
+                            </div>
+                            <h4 className="text-white font-semibold family-normal mb-2">Email & attachment monitoring</h4>
+                            <p className="text-sm text-white/80 family-normal leading-6">Monitor high-risk mailboxes across O365 and Gmail. Flag, isolate, or protect sensitive client data before it becomes a liability.</p>
+                        </div>
+                        <div className="bg-secondary border border-gray px-6 py-8 rounded-2xl hover:border-accent">
+                            <div className="icon bg-light w-12 h-12 rounded-xl content-center mb-4">
+                                <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><circle cx="11" cy="11" r="8" stroke="#35A897" strokeWidth="1.5" fill="none"></circle><path d="M11 7v4l3 3" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round"></path></svg>
+                            </div>
+                            <h4 className="text-primary font-semibold family-normal mb-2">FortiPIIScore</h4>
+                            <p className="text-sm text-slate family-normal leading-6">A monthly risk score that quantifies your sensitive data exposure across files, drives, and email. Track protection improvement over time.</p>
+                        </div>
+                        <div className="bg-secondary border border-gray px-6 py-8 rounded-2xl hover:border-accent">
+                            <div className="icon bg-light w-12 h-12 rounded-xl content-center mb-4">
+                                <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><path d="M11 2L3 5.5V11c0 4.2 3.2 8 8 9 4.8-1 8-4.8 8-9V5.5L11 2Z" stroke="#35A897" strokeWidth="1.5" fill="none"></path><path d="M8 11l2.5 2.5 4-5" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                            </div>
+                            <h4 className="text-primary font-semibold family-normal mb-2">WISP documentation</h4>
+                            <p className="text-sm text-slate family-normal leading-6">Auto-generate and maintain your Written Information Security Plan — a core IRS requirement — updated as your protection changes.</p>
+                        </div>
+                        <div className="bg-secondary border border-gray px-6 py-8 rounded-2xl hover:border-accent">
+                            <div className="icon bg-light w-12 h-12 rounded-xl content-center mb-4">
+                                <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><rect x="4" y="2" width="14" height="18" rx="2.5" stroke="#35A897" strokeWidth="1.5" fill="none"></rect><path d="M8 7h6M8 11h6M8 15h4" stroke="#35A897" strokeWidth="1.2" strokeLinecap="round"></path></svg>
+                            </div>
+                            <h4 className="text-primary font-semibold family-normal mb-2">Compliance reporting</h4>
+                            <p className="text-sm text-slate family-normal leading-6">Exportable audit-ready reports for GLBA, IRS Pub 4557, and FTC Safeguards Rule — ready if you're ever audited, with zero manual effort.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-secondary py-24 border-t border-gray">
+                <div className="container px-10 mx-auto">
+                    <div className="grid grid-cols-2 gap-14">
+                        <div className="text-left">
+                            <p className="text-lg text-slate uppercase tracking-[0.12em]">Why Fortipii</p>
+                            <h2 className="text-primary text-[40px] family-normal mt-4 mb-5 font-bold leading-12">Your clients trust you with their most sensitive information</h2>
+                            <p className="text-lg text-slate max-w-130 mx-auto">Tax and financial professionals handle more private client data than almost any other business. One breach can be devastating. Fortipii was built specifically for this — by people who've seen it happen.</p>
+                            <div className="mt-6">
+                                <div className="flex gap-4 mb-5">
+                                    <div className="icon w-8 h-8 bg-light border border-teal/40 rounded-lg text-center content-center">
+                                        <svg viewBox="0 0 15 15" fill="none" className="w-4 h-5 mx-auto"><path d="M7.5 1.5L2 4v5c0 3.2 2.5 6 5.5 6.5 3-.5 5.5-3.3 5.5-6.5V4L7.5 1.5Z" stroke="#35A897" strokeWidth="1.3" fill="none"></path></svg>
+                                    </div>
+                                    <div className="text-left flex-1">
+                                        <h4 className="text-base font-semibold family-normal text-primary mb-2">Purpose-built for tax & financial offices</h4>
+                                        <p className="text-sm text-slate family-normal">Not a generic data tool. Fortipii understands W-2s, 1099s, SSNs, TINs — the data your practice handles daily.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 mb-5">
+                                    <div className="icon w-8 h-8 bg-light border border-teal/40 rounded-lg text-center content-center">
+                                        <svg viewBox="0 0 15 15" fill="none" className="w-4 h-5 mx-auto"><circle cx="7.5" cy="7.5" r="6" stroke="#35A897" strokeWidth="1.3" fill="none"></circle><path d="M5 7.5l2 2 3.5-4" stroke="#35A897" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                    </div>
+                                    <div className="text-left flex-1">
+                                        <h4 className="text-base font-semibold family-normal text-primary mb-2">No IT team required</h4>
+                                        <p className="text-sm text-slate family-normal">Installs in minutes. Runs automatically in the background. No technical expertise needed.</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4">
+                                    <div className="icon w-8 h-8 bg-light border border-teal/40 rounded-lg text-center content-center">
+                                        <svg viewBox="0 0 15 15" fill="none" className="w-4 h-5 mx-auto"><rect x="2" y="5" width="11" height="8" rx="2" stroke="#35A897" strokeWidth="1.3" fill="none"></rect><path d="M5 5V4a2.5 2.5 0 015 0v1" stroke="#35A897" strokeWidth="1.3" strokeLinecap="round"></path></svg>
+                                    </div>
+                                    <div className="text-left flex-1">
+                                        <h4 className="text-base font-semibold family-normal text-primary mb-2">Your data never leaves your environment</h4>
+                                        <p className="text-sm text-slate family-normal">Everything processes locally. Client data is never transmitted to or stored on our servers.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="content-center">
+                            <div className="bg-primary px-6 py-5 rounded-[18px] flex items-center gap-6 mb-4">
+                                <h5 className="text-accent text-5xl font-bold family-normal">68%</h5>
+                                <div className="text-left">
+                                    <h6 className="text-white text-sm font-semibold">of small financial firms have no formal data protection policy</h6>
+                                    <p className="text-sm text-white/55 font-semibold mt-2">Regulators are increasingly auditing practices of all sizes under GLBA and the FTC Safeguards Rule.</p>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="bg-white border border-gray py-5 px-5 rounded-[18px]">
+                                    <h5 className="text-teal text-3xl font-bold family-normal">$200k+</h5>
+                                    <p className="text-slate text-sm family-normal mt-2">Average cost of a data breach for a small financial practice</p>
+                                </div>
+                                <div className="bg-white border border-gray py-5 px-5 rounded-[18px]">
+                                    <h5 className="text-teal text-3xl font-bold family-normal">4 min</h5>
+                                    <p className="text-slate text-sm family-normal mt-2">Average time to set up and run your first Fortipii scan</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-[#FAFAFA] py-24 border-t border-gray">
+                <div className="container px-10 mx-auto">
+                    <div className="text-center mb-10">
+                        <p className="text-lg text-slate uppercase tracking-[0.12em]">About us</p>
+                        <h2 className="text-primary text-[40px] family-normal mt-2 mb-3 font-bold">Built by the people who wrote the rules</h2>
+                        <p className="text-lg text-slate max-w-130 mx-auto">Founding members of IRS security initiatives protecting taxpayers nationwide — we've spent our careers fighting identity theft at the national level.</p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-6 mb-10">
+                        <div className="bg-secondary border border-gray rounded-[26px] border-t-4 border-t-accent px-8 py-6">
+                            <div className="flex gap-5 items-center pb-4 mb-4 border-b border-gray">
+                                <div className="bg-teal rounded-full w-14 h-14 text-xl family-normal rounded-full text-center content-center font-bold text-white">S</div>
+                                <div className="text-left">
+                                    <h4 className="text-primary text-lg font-bold family-normal mb-1">Shannon Bond</h4>
+                                    <p className="text-teal text-sm font-semibold">Former VP & GM, US Preparer Market</p>
+                                    <em className="text-sm text-muted font-semibold">Wolters Kluwer Tax & Accounting</em>
+                                </div>
+                            </div>
+                            <ul className="p-0">
+                                <li className="flex gap-3 text-sm text-primary items-center font-bold family-normal mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    Founding member, IRS Security Summit
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    Co-lead, Security Summit Tax Pro Work Group
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    Chair of CERCA; Former IRS ETAAC member
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    20+ years in tax preparation industry
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    Led product management & government relations
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="bg-secondary border border-gray rounded-[26px] border-t-4 border-t-accent px-8 py-6">
+                            <div className="flex gap-5 items-center pb-4 mb-4 border-b border-gray">
+                                <div className="bg-primary rounded-full w-14 h-14 text-xl family-normal rounded-full text-center content-center font-bold text-white">S</div>
+                                <div className="text-left">
+                                    <h4 className="text-primary text-lg font-bold family-normal mb-1">Satyan Penmetsa</h4>
+                                    <p className="text-teal text-sm font-semibold">Former VP & CTO, Tax & Accounting US</p>
+                                    <em className="text-sm text-muted font-semibold">Wolters Kluwer / Broadridge</em>
+                                </div>
+                            </div>
+                            <ul className="p-0">
+                                <li className="flex gap-3 text-sm text-primary items-center font-bold family-normal mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    Founding member, IRS Security Summit
+                                </li>
+                                <li className="flex gap-3 text-sm text-primary items-center font-bold family-normal mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    Founding board member, IRS ISAC
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    SVP Software Engineering @ Broadridge
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    8 years CTO at Wolters Kluwer Tax & Accounting
+                                </li>
+                                <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-3">
+                                    <div className="bg-light border border-teal/50 p-1 rounded-full"><svg viewBox="0 0 9 9" fill="none" className="w-2.5 h-2.5"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg></div>
+                                    25+ years enterprise fintech platforms
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="bg-primary rounded-[26px] py-12 px-6">
+                        <p className="text-center text-accent text-xs font-bold uppercase tracking-[0.12em] mb-4">Why we built Fortipii</p>
+                        <p className="text-center max-w-5/7 font-medium mx-auto text-white/85 text-xl leading-8 mb-5">"Having spent our careers fighting identity theft at the national level, we've seen firsthand the catastrophic consequences when taxpayer data is stolen. We built Fortipii to protect tax preparers and their clients from these preventable disasters."</p>
+                        <p className="text-sm text-white/35 text-center font-semibold">— Shannon Bond & Satyan Penmetsa, Co-founders</p>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-secondary py-24 border-t border-gray">
+                <div className="container px-10 mx-auto">
+                    <div className="text-center mb-8">
+                        <p className="text-lg text-slate uppercase tracking-[0.12em]">Simple pricing</p>
+                        <h2 className="text-primary text-[40px] family-normal mt-2 mb-3 font-bold">Two ways to protect your clients' sensitive data</h2>
+                        <p className="text-lg text-slate max-w-130 mx-auto">Start with a one-time scan to find and eliminate exposure today — or jump straight into ongoing protection.</p>
+                    </div>
+                    <div className="max-w-5/6 mx-auto">
+                        <div className="grid grid-cols-2 gap-6">
+                            <div className="bg-primary px-8 py-9 rounded-4xl">
+                                <p className="text-[11px] text-accent uppercase font-bold family-normal mb-5 tracking-[0.1em]">Ongoing protection</p>
+                                <h3 className="text-white text-2xl font-bold family-normal mb-4">Stay protected every day.</h3>
+                                <p className="text-sm text-white/50 leading-5.5 mb-5">Continuous monitoring, real-time email & attachment protection, and automatic shielding — quietly guarding your clients' private data in the background.</p>
+                                <p className="text-sm text-white/50">as low as</p>
+                                <h4 className="text-white family-normal text-[52px] font-bold">$49 <span className="text-base text-white/50 font-semibold">/ month</span></h4>
+                                <p className="text-sm text-accent mt-1 mb-5 font-semibold">14-day free trial. Cancel anytime.</p>
+                                <hr className="border-white/10 mb-5" />
+                                <ul className="p-0 mb-7">
+                                    <li className="flex gap-3 text-sm text-white/65 items-center font-semibold mb-4">
+                                        <div className="bg-accent/12 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Continuous sensitive data monitoring
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-white/65 items-center font-semibold mb-4">
+                                        <div className="bg-accent/12 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Email & attachment monitoring
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-white/65 items-center font-semibold mb-4">
+                                        <div className="bg-accent/12 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Automatic protection of private client data
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-white/65 items-center font-semibold mb-4">
+                                        <div className="bg-accent/12 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Monthly sensitive data risk score updates
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-white/65 items-center font-semibold mb-4">
+                                        <div className="bg-accent/12 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        GLBA & IRS Pub 4557 ready
+                                    </li>
+                                </ul>
+                                <Link className="text-[15px] font-bold bg-accent text-primary py-4 px-5 inline-block text-center w-full rounded-full hover:bg-teal hover:text-white"> Get the one-time scan →</Link>
+                            </div>
+                            <div className="bg-white border border-gray px-8 py-9 rounded-4xl">
+                                <p className="text-[11px] text-teal uppercase font-bold family-normal mb-5 tracking-[0.1em]">One-time scan & protect</p>
+                                <h3 className="text-primary text-2xl font-bold family-normal mb-4">Find it. Fix it. Done.</h3>
+                                <p className="text-sm text-slate leading-5.5 mb-5">A complete sweep of your files and drives to locate exposed sensitive client data — then smart protection and a full risk report. No subscription required.</p>
+                                <p className="text-sm text-slate">as low as</p>
+                                <h4 className="text-primary family-normal text-[52px] font-bold">$299 <span className="text-base text-slate font-semibold">one time</span></h4>
+                                <p className="text-sm text-teal mt-1 mb-5 font-semibold">No subscription. No recurring charges.</p>
+                                <hr className="border-gray mb-5" />
+                                <ul className="p-0 mb-7">
+                                    <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-4">
+                                        <div className="bg-accent/20 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Full scan of files, drives & network shares
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-4">
+                                        <div className="bg-accent/20 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Smart protection of sensitive client data
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-4">
+                                        <div className="bg-accent/20 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        FortiPIIScore private data risk report
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-4">
+                                        <div className="bg-accent/20 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        Exportable compliance summary report
+                                    </li>
+                                    <li className="flex gap-3 text-sm text-slate items-center font-semibold mb-4">
+                                        <div className="bg-accent/20 p-1 rounded-full">
+                                            <svg viewBox="0 0 9 9" fill="none" className="w-3 h-3"><path d="M1.5 4.5l2 2 4-4" stroke="#5ED1C0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                        </div>
+                                        30-day access to your results
+                                    </li>
+                                </ul>
+                                <Link className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Start free trial →</Link>
+                            </div>
+                        </div>
+                        <div className="bg-light px-4 py-3 flex gap-3 mt-8 mb-4 rounded-2xl border border-teal/40">
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className="mt-1"><circle cx="9" cy="9" r="8" fill="#FFFFFF"></circle><path d="M9 5v4l2.5 2.5" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                            <p className="text-base text-primary font-medium"><strong>Already did the one-time scan?</strong> Your $299 is credited toward your first three months of ongoing protection if you upgrade within 30 days.</p>
+                        </div>
+                        <div className="bg-white px-4 py-4 flex items-center justify-between gap-3 rounded-2xl border border-gray">
+                            <div className="text-left">
+                                <p className="text-base text-primary font-semibold">Enterprise & multi-firm</p>
+                                <p className="text-sm text-muted family-normal">Custom user counts, SSO, volume pricing, dedicated onboarding, SLA guarantees.</p>
+                            </div>
+                            <Link className="bg-light text-teal border-[1.5px] border-accent/50 px-6 py-2.5 rounded-full text-xs font-semibold hover:bg-accent hover:text-primary">Contact us for enterprise pricing →</Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="bg-primary py-22 relative">
+                <div className="container px-10 mx-auto">
+                    <div className="text-center">
+                        <div className="relative z-2">
+                            <p className="text-xs tracking-[0.12em] mb-2 text-accent font-bold uppercase">Get started today</p>
+                            <h2 className="text-white text-[40px] font-bold tracking-[-0.3px] family-normal mb-2">Your clients' sensitive data deserves real protection</h2>
+                            <p className="text-white/45 text-lg leading-7 max-w-100 mx-auto mb-10">Start with a one-time scan as low as $299 — or try ongoing protection free for 14 days.</p>
+                            <em className="text-sm font-semibold text-accent">"So safe, you'll forget it's working."</em>
+                            <div className="flex gap-4 mt-7 justify-center items-center">
+                                <a href="#" className="text-base font-bold bg-pop text-primary py-3 px-10 rounded-full family-normal hover:bg-[#cbee5c]">Get the one-time scan — $299</a>
+                                <a href="#" className="text-base font-semibold border-[2px] border-white/35 text-white py-3 px-10 rounded-full hover:text-accent hover:border-accent">Start free trial</a>
+                            </div>
+                        </div>
+                        <div className="w-125 h-75 bg-[radial-gradient(ellipse,rgba(94,209,192,0.12)_0%,transparent_70%)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }

@@ -1,16 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #41CBBA;
+  /* --color-primary: #41CBBA;
   --color-secondary: #1C2C3A;
-  --color-dark: #1e1e1e;
+  --color-dark: #1e1e1e; */
+
+  --color-primary: #1C2C3A;
+  --color-secondary: #F5F3EE;
+  --color-accent: #5ED1C0;
+  --color-teal: #35A897;
+  --color-light: #D8F5F1;
+  --color-slate: #4B5563;
+  --color-cloud: #FAFAFA;
+  --color-pop: #DFFB72;
+  --color-gray: #E2E8ED;
+  --color-muted: #6B7C8D;
 }
 
 @font-face {
   font-family: "Nunito Sans";
   src: local("Nunito Sans"),
        url("/assets/fonts/NunitoSans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf") format("truetype");
-  font-weight: 800;
+  font-weight: 300;
   font-style: normal;
 }
 
@@ -34,6 +45,7 @@
 html{
   overflow-x: hidden; scroll-behavior: smooth;
 }
+.container{max-width: 1100px;}
 .family-normal{font-family: "Nunito Sans normal";}
 .font-commissioner{font-family: "Commissioner", sans-serif;}
 .btn-primary, .btn-secondary{z-index: 1; overflow: hidden;}
@@ -61,7 +73,8 @@ html{
 .humburger.active .line-2 .bg-secondary{ width: 100%; height:100%; animation: scale 0.3s ease-in-out; position: absolute; top: 0px; left: 0px; background-color: transparent; border: 2px solid var(--color-primary); transition: background-color 0s linear;}
 .humburger.active .line-2 .bg-primary{display: none;}
 .humburger.active .line-3{margin: auto; animation: width 0.3s ease-in-out; transform: rotate(-45deg); width: 24px; position: absolute; top: 24px; left: 12px; height: 2px;}
-
+.bg-linear-end{background:linear-gradient(to right, transparent, rgba(94,209,192,0.35), rgba(94,209,192,0.35), transparent)}
+.footer-links h4{letter-spacing: 0.1em;}
 @keyframes width {
   0%{width: 0%;}
   100%{width: 20px;}

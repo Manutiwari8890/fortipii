@@ -91,41 +91,41 @@ function Header(){
     return (
         <>
             <header>
-                <nav className={`bg-white  border fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 ease-in-out py-4 ${menu ? "min-h-125" : "min-h-20 content-center rounded-[150px] lg:rounded-[150px]"} ${isScroll ? " mx-auto border-[#26365626] top-2 shadow-sm sticky-wrapper w-[98%] md:w-[98%] xl:rounded-full lg:py-4 lg:w-[95%] xl:py-2 xl:w-[95%] 2xl:w-3/4" : "w-full border-transparent top-0"} xl:min-h-20 2xl:min-h-25 ${(isScroll && menu) ? "rounded-[36px] lg:rounded-[36px]" : ""}`}>
-                    <div className="container mx-auto px-2 lg:px-5">
-                        <div className={`flex gap-2 items-center justify-between ${isScroll ? "px-3" : ""}`}>
+                <nav className={`bg-white  fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 w-full ease-in-out py-2 min-h-17 content-center shadow-sm sticky-wrapper lg:py-4 xl:py-2 top-0 xl:min-h-17 2xl:min-h-17`}>
+                    <div className="container mx-auto px-10">
+                        <div className={`flex gap-2 items-center justify-between`}>
                             <Link className="mr-6" to="/">
-                                <img src="/assets/images/fortipii.svg" alt="Fortipii" className={`${isScroll ? "w-35 md:w-35" : "w-40"} lg:w-45 xl:w-45`} />
+                                <img src="/assets/images/fortipii.svg" alt="Fortipii" className={`${isScroll ? "w-35 md:w-35" : "w-40"} lg:w-45 xl:w-30`} />
                             </Link>
-                            <ul className={`gap-1 fixed z-10000 top-20 left-0 border-1 border-transparent rounded-0 px-4 py-2 transition-all transition-ease-in-out duration-300 origin-top overflow-hidden ${menu ? "opacity-100 h-95 rotate-x-0 w-full delay-200" : "opacity-0 w-0 relative border-[#26365626] h-0 rotate-x-90 xl:rotate-x-0 xl:opacity-100" } md:px-8 xl:rounded-full xl:top-0 xl:px-2 xl:w-max xl:border-[#26365626] xl:w-auto xl:flex xl:justify-center xl:relative xl:h-max xl:overflow-y-visible xl:translate-y-0`}  ref={navRef} onMouseLeave={handleLeave}>
-                                <li className="nav-item my-1">
-                                    <NavLink to="/" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/" ? "text-primary xl:text-white" : ""}`} data-page="/" onMouseEnter={handleHover}>Home</NavLink>
+                            <ul className={`gap-1 fixed z-10000 bg-secondary items-center top-20 left-0 border-1 border-gray rounded-0 px-3 py-[2px] transition-all transition-ease-in-out duration-300 origin-top overflow-hidden ${menu ? "opacity-100 h-95 rotate-x-0 w-full delay-200" : "opacity-0 w-0 relative border-[#26365626] h-0 rotate-x-90 xl:rotate-x-0 xl:opacity-100" } md:px-8 xl:rounded-full xl:top-0 xl:px-[6px] xl:w-max xl:border-[#26365626] xl:w-auto xl:flex xl:justify-center xl:relative xl:h-max xl:overflow-y-visible xl:translate-y-0`}  ref={navRef} onMouseLeave={handleLeave}>
+                                <li className="nav-item">
+                                    <NavLink to="/" className={`inline-block text-xl text-slate font-semibold py-2.5 px-1 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/" ? "text-primary xl:text-primary" : ""}`} data-page="/" onMouseEnter={handleHover}>Home</NavLink>
                                 </li>
-                                <li className="nav-item my-1">
-                                    <NavLink to="/about" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/about" ? "text-primary xl:text-white" : ""}`}  data-page="/about"  onMouseEnter={handleHover}>About</NavLink>
+                                <li className="nav-item">
+                                    <NavLink to="/about" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/about" ? "text-primary xl:text-primary" : ""}`}  data-page="/about"  onMouseEnter={handleHover}>About</NavLink>
                                 </li>
-                                <li className="nav-item my-1">
-                                    <NavLink to="/services" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/services" ? "text-primary xl:text-white" : ""}`}  data-page="/services" onMouseEnter={handleHover}>Service</NavLink>
+                                <li className="nav-item">
+                                    <NavLink to="/services" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/services" ? "text-primary xl:text-primary" : ""}`}  data-page="/services" onMouseEnter={handleHover}>Platform</NavLink>
                                 </li>
-                                <li className="nav-item my-1">
-                                    <NavLink to="/blog" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/blog" ? "text-primary xl:text-white" : ""}`}  data-page="/blog" onMouseEnter={handleHover}>Blog</NavLink>
+                                <li className="nav-item">
+                                    <NavLink to="/blog" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/blog" ? "text-primary xl:text-primary" : ""}`}  data-page="/blog" onMouseEnter={handleHover}>Pricing</NavLink>
                                 </li>
-                                <li className="nav-item my-1">
-                                    <NavLink to="/contact" className={`inline-block text-xl text-[#263656] font-medium font-commissioner py-2 px-2 w-full lg:px-6 xl:text-base xl:w-max ${hoverTab=="/contact" ? "text-primary xl:text-white" : ""}`}  data-page="/contact"  onMouseEnter={handleHover}>Contact</NavLink>
+                                <li className="nav-item">
+                                    <NavLink to="/contact" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/contact" ? "text-primary xl:text-primary" : ""}`}  data-page="/contact"  onMouseEnter={handleHover}>Contact</NavLink>
                                 </li>
                                 {!isLogin ?
                                     <>
                                         <li className="nav-item block px-5 xl:hidden">
-                                            <Link to="/register" className="inline-block btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
+                                            <Link to="/register" className="inline-block btn-primary bg-secondary text-base relative font-semibold text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
                                         </li>
                                         <li className="nav-item block px-5 xl:hidden">
-                                            <Link to="/login" className="inline-block btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
+                                            <Link to="/login" className="inline-block btn-secondary bg-primary text-base relative font-semibold text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
                                         </li>
                                     </> :
                                      ''
                                 }
                                 <span
-                                    className="absolute top-1/2 -translate-y-1/2 h-[42px] bg-primary rounded-full transition-all -z-1 hidden xl:block"
+                                    className="absolute top-1/2 -translate-y-1/2 h-[35px] bg-white shadow-sm rounded-full transition-all -z-1 hidden xl:block"
                                     style={{
                                         left: `${lineStyle.left}px`,
                                         width: `${lineStyle.width}px`,
@@ -135,17 +135,17 @@ function Header(){
                             <div className="flex gap-2 items-center">
                                 {!isLogin ?
                                     <>
-                                        <Link to="/register" className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Sign Up</Link>
-                                        <Link to="/login" className="btn-secondary bg-primary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden xl:block 2xl:block">Login</Link>
+                                        <Link to="/login" className="bg-transparent text-sm relative font-semibold text-slate py-2 px-4.5 border-[1.5px] border-gray rounded-full hidden xl:block 2xl:block hover:border-accent hover:text-teal">Login</Link>
+                                        <Link to="/register" className="bg-accent text-sm relative font-bold text-primary py-2.25 px-5 rounded-full hidden xl:block 2xl:block hover:bg-teal hover:text-white">Get early access</Link>
                                     </> :
                                     <>
                                         <div className="flex gap-2 items-center px-4 border-r-2 mr-2 border-[#26365626]">
-                                            <h2 className="text-lg text-[#263656] font-medium font-commissioner">{user?.user_nicename}</h2>
+                                            <h2 className="text-lg text-[#263656] font-semibold">{user?.user_nicename}</h2>
                                             <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" className="w-5 h-5 text-primary">
                                                 <path d="m10.958,15.576c-.156.528-.706.833-1.244.673-.553-.165-1.129-.249-1.714-.249-3.309,0-6,2.691-6,6v1c0,.552-.447,1-1,1s-1-.448-1-1v-1c0-4.411,3.589-8,8-8,.778,0,1.548.112,2.286.332.529.158.83.715.672,1.244Zm13.042-1.14v3.085c0,4.032-3.973,5.942-5.126,6.406-.12.048-.247.072-.373.072-.153,0-.307-.035-.463-.113-1.123-.562-5.038-2.796-5.038-6.365v-3.085c0-1.295.826-2.439,2.055-2.848l3.131-1.038c.203-.067.426-.067.629,0l3.13,1.038c1.229.408,2.056,1.553,2.056,2.848Zm-2,0c0-.432-.275-.813-.686-.949l-2.814-.933-2.815.933c-.409.136-.685.518-.685.949v3.085c0,2.28,2.63,3.888,3.545,4.379,1.031-.454,3.455-1.796,3.455-4.379v-3.085ZM14,6c0,3.309-2.691,6-6,6s-6-2.691-6-6S4.691,0,8,0s6,2.691,6,6Zm-2,0c0-2.206-1.794-4-4-4s-4,1.794-4,4,1.794,4,4,4,4-1.794,4-4Z" fill="currentColor" />
                                             </svg>
                                         </div>
-                                        <button className="btn-primary bg-secondary font-commissioner text-base relative font-medium text-white py-3 px-8 rounded-full hidden cursor-pointer xl:block 2xl:block" onClick={() => logout()}>Logout</button>
+                                        <button className="btn-primary bg-secondary font-commissioner text-base relative font-semibold text-white py-3 px-8 rounded-full hidden cursor-pointer xl:block 2xl:block" onClick={() => logout()}>Logout</button>
                                     </>
                                 }
                                 <button className={`block ml-4 humburger cursor-pointer group text-center content-center lg:block xl:hidden 2xl:hidden ${menu ? "active" : ""}`} onClick={() => setMenu((pre) => !pre)}>

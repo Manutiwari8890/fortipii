@@ -180,7 +180,7 @@ function Index(){
                 <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[9999] backdrop-blur-[2px]" onClick={() => setShowVideo(false)}>
                     <div className="bg-secondary border border-gray-200 shadow-xs p-4 w-9/10 rounded-3xl lg:w-2/3 xl:w-1/2" onClick={(e) => e.stopPropagation()}>
                         <iframe className="w-full h-50 rounded-2xl lg:h-80" src="https://www.youtube.com/embed/QqVdIt5sPOo?si=WzGg8xZAgCURNG1H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
+                    </div> 
                 </div>
             }
             <section className="bg-[#FAFAFA] py-5 border-t border-gray">

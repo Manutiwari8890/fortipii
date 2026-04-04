@@ -27,13 +27,13 @@ function Footer(){
     return (
         <>
             <footer className="bg-primary pt-12 border-t border-[#ffffff12]">
-                <div className="container px-2 mx-auto lg:px-10">
-                    <div className="grid grid-cols-1 gap-y-3 px-2 pb-10 md:px-0 md:gap-y-2 md:gap-x-8 md:grid-cols-2 lg:gap-2 lg:grid-cols-4 lg:gap-5 xl:gap-10">
+                <div className="container px-5 mx-auto lg:px-10">
+                    <div className="grid grid-cols-1 gap-y-3 px-0 pb-10 md:gap-y-2 md:gap-x-8 md:grid-cols-2 lg:gap-2 lg:grid-cols-4 lg:gap-5 xl:gap-10">
                         <div className="company-detail">
                             <Link to="/" className="inline-block">
                                 <img src="/assets/images/fortipii-light.svg" alt="" className="w-30"/>
                             </Link>
-                            <p className="text-sm font-semibold leading-5 text-[#ffffff59] mt-2 max-w-40">Protecting your clients' sensitive data. <br /> <em className="text-accent">"So safe, it's boring."</em></p>
+                            <p className="text-sm font-semibold leading-5 text-[#ffffff59] mt-2 max-w-40">Protecting your clients' sensitive data. <br /> <em className="text-accent mt-2 inline-block lg:mt-0">"So safe, it's boring."</em></p>
                         </div>
                         <div className="footer-links">
                             <h4 className="text-xs font-semibold uppercase text-white/35 mb-3 mt-2">Platform</h4>
@@ -96,8 +96,8 @@ function Footer(){
                     </button>
                 </div>
                 <div className="py-6 text-center bg-primary/10 border-t border-white/7">
-                    <div className="container px-10 mx-auto">
-                        <div className="flex justify-between">
+                    <div className="container px-5 mx-auto lg:px-10">
+                        <div className="flex justify-between flex-wrap gap-y-3">
                             <p className="text-sm text-white/25 font-semibold">© 2026 Fortipii, Inc. All rights reserved. &nbsp; · &nbsp; <a href="" className="text-xs text-white/50 font-semibold hover:text-accent">Privacy </a> &nbsp; · &nbsp; <a href="" className="text-xs text-white/50 font-semibold hover:text-accent">Terms</a></p>
                             <div className="flex gap-2">
                                 <span className="text-[11px] font-semibold text-white/35 border border-white/10 px-3 py-1 rounded-full">GLBA</span>

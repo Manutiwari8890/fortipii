@@ -91,13 +91,13 @@ function Header(){
     return (
         <>
             <header>
-                <nav className={`bg-white  fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 w-full ease-in-out py-2 min-h-17 content-center shadow-sm sticky-wrapper lg:py-4 xl:py-2 top-0 xl:min-h-17 2xl:min-h-17`}>
-                    <div className="container mx-auto px-10">
+                <nav className={`bg-[#FAFAFA]/96 fixed left-1/2 -translate-x-1/2 z-[999] transition-all duration-300 w-full backdrop-blur-lg ease-in-out py-2 min-h-17 content-center shadow-xs sticky-wrapper lg:py-4 xl:py-2 top-0 xl:min-h-17 2xl:min-h-17`}>
+                    <div className="container mx-auto px-5 lg:px-10">
                         <div className={`flex gap-2 items-center justify-between`}>
                             <Link className="mr-6" to="/">
                                 <img src="/assets/images/fortipii.svg" alt="Fortipii" className={`${isScroll ? "w-35 md:w-35" : "w-40"} lg:w-45 xl:w-30`} />
                             </Link>
-                            <ul className={`gap-1 fixed z-10000 bg-secondary items-center top-20 left-0 border-1 border-gray rounded-0 px-3 py-[2px] transition-all transition-ease-in-out duration-300 origin-top overflow-hidden ${menu ? "opacity-100 h-95 rotate-x-0 w-full delay-200" : "opacity-0 w-0 relative border-[#26365626] h-0 rotate-x-90 xl:rotate-x-0 xl:opacity-100" } md:px-8 xl:rounded-full xl:top-0 xl:px-[6px] xl:w-max xl:border-[#26365626] xl:w-auto xl:flex xl:justify-center xl:relative xl:h-max xl:overflow-y-visible xl:translate-y-0`}  ref={navRef} onMouseLeave={handleLeave}>
+                            <ul className={`gap-1 fixed z-10000 bg-secondary items-center top-17 left-0 border-1 border-gray rounded-0 px-5 py-4 transition-all transition-ease-in-out duration-300 origin-top overflow-hidden ${menu ? "opacity-100 h-115 rotate-x-0 w-full delay-200" : "opacity-0 w-0 relative border-[#26365626] h-0 rotate-x-90 xl:rotate-x-0 xl:opacity-100" } md:px-8 md:py-[2px] xl:rounded-full xl:top-0 xl:px-[6px] xl:w-max xl:border-[#26365626] xl:w-auto xl:flex xl:justify-center xl:relative xl:h-max xl:overflow-y-visible xl:translate-y-0`}  ref={navRef} onMouseLeave={handleLeave}>
                                 <li className="nav-item">
                                     <NavLink to="/" className={`inline-block text-xl text-slate font-semibold py-2.5 px-1 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/" ? "text-primary xl:text-primary" : ""}`} data-page="/" onMouseEnter={handleHover}>Home</NavLink>
                                 </li>
@@ -105,21 +105,24 @@ function Header(){
                                     <NavLink to="/about" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/about" ? "text-primary xl:text-primary" : ""}`}  data-page="/about"  onMouseEnter={handleHover}>About</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/services" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/services" ? "text-primary xl:text-primary" : ""}`}  data-page="/services" onMouseEnter={handleHover}>Platform</NavLink>
+                                    <NavLink to="/platform" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/platform" ? "text-primary xl:text-primary" : ""}`}  data-page="/platform" onMouseEnter={handleHover}>Platform</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/blog" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/blog" ? "text-primary xl:text-primary" : ""}`}  data-page="/blog" onMouseEnter={handleHover}>Pricing</NavLink>
+                                    <NavLink to="/pricing" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/pricing" ? "text-primary xl:text-primary" : ""}`}  data-page="/pricing" onMouseEnter={handleHover}>Pricing</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/blog" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/blog" ? "text-primary xl:text-primary" : ""}`}  data-page="/blog" onMouseEnter={handleHover}>Blog</NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink to="/contact" className={`inline-block text-xl text-slate font-semibold py-2.5 px-2 w-full lg:px-4 xl:text-sm xl:w-max ${hoverTab=="/contact" ? "text-primary xl:text-primary" : ""}`}  data-page="/contact"  onMouseEnter={handleHover}>Contact</NavLink>
                                 </li>
                                 {!isLogin ?
                                     <>
-                                        <li className="nav-item block px-5 xl:hidden">
-                                            <Link to="/register" className="inline-block btn-primary bg-secondary text-base relative font-semibold text-white py-3 px-8 mt-5 rounded-full w-full text-center">Sign Up</Link>
+                                        <li className="nav-item block py-2 xl:hidden">
+                                            <Link to="/register" className="bg-transparent text-xl relative font-semibold text-center text-slate py-3 px-4.5 w-full inline-block border-[1.5px] border-gray rounded-full hover:border-accent hover:text-teal">Sign Up</Link>
                                         </li>
-                                        <li className="nav-item block px-5 xl:hidden">
-                                            <Link to="/login" className="inline-block btn-secondary bg-primary text-base relative font-semibold text-white py-3 px-8 rounded-full w-full text-center">Login</Link>
+                                        <li className="nav-item block py-2 xl:hidden">
+                                            <Link to="/register" className="bg-accent text-xl relative font-bold text-primary py-3 px-5 inline-block w-full text-center rounded-full hover:bg-teal hover:text-white">Get early access</Link>
                                         </li>
                                     </> :
                                      ''
@@ -150,12 +153,12 @@ function Header(){
                                 }
                                 <button className={`block ml-4 humburger cursor-pointer group text-center content-center lg:block xl:hidden 2xl:hidden ${menu ? "active" : ""}`} onClick={() => setMenu((pre) => !pre)}>
                                     <div className="flex flex-col overflow-hidden w-12 h-12 justify-center relative gap-1.5 relative m-auto">
-                                        <div className="w-10 h-1 bg-secondary rounded-full line-1"></div>
+                                        <div className="w-10 h-1 bg-primary rounded-full line-1"></div>
                                         <div className="flex justify-start gap-1 items-center min-h-1.5 line-2">
-                                            <span className="block w-7 h-1 bg-secondary rounded-full group-hover:w-8"></span>
+                                            <span className="block w-7 h-1 bg-primary rounded-full group-hover:w-8"></span>
                                             <span className="block w-1.5 h-1.5 bg-primary rounded-full group-hover:opacity-0"></span>
                                         </div>
-                                        <div className="block w-6 h-1 bg-secondary rounded-full line-3"></div>
+                                        <div className="block w-6 h-1 bg-primary rounded-full line-3"></div>
                                     </div>
                                 </button>
                             </div>

@@ -45,8 +45,10 @@
 html{
   overflow-x: hidden; scroll-behavior: smooth;
 }
+body{overflow-x: hidden;}
 .container{max-width: 1100px;}
 .family-normal{font-family: "Nunito Sans normal";}
+.family-inter{font-family: 'Inter',sans-serif;}
 .font-commissioner{font-family: "Commissioner", sans-serif;}
 .btn-primary, .btn-secondary{z-index: 1; overflow: hidden;}
 .btn-primary::after, .btn-secondary::after{content: ''; width: 100%; height: 100%; border-radius: calc(infinity * 1px); background-color: var(--color-primary); position: absolute; top: 0; left: 0; z-index: -1; transform: translateX(-100%); transition: all 0.3s ease-in-out;}
@@ -108,6 +110,10 @@ html{
 .dynamic-content table tbody tr td{font-size: 20px; padding: 10px;}  
 }
 
+@media (width <= 768px) {
+.bg-linear-end{background:linear-gradient(to top, transparent, rgba(94,209,192,0.35), rgba(94,209,192,0.35), transparent)}
+  
+}
 
 .TopToBotton {
   position: fixed;

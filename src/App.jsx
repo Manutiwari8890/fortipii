@@ -5,13 +5,14 @@ import Index from "./Pages/Index";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { LoadingContext } from "./Context/LoadingContext";
 import Loader from "./Componments/Loader";
-import Services from "./Pages/Services";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Blog from "./Pages/Blog";
 import SingleBlog from "./Pages/SingleBlog";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import { Pricing } from "./Pages/Pricing";
+import Platform from "./Pages/Platform";
 
 function App(){
   const location = useLocation();
@@ -37,8 +38,9 @@ function App(){
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/platform" element={<Platform />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/pricing" element={<Pricing />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Login />} />

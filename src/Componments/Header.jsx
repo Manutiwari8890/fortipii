@@ -119,10 +119,10 @@ function Header(){
                                 {!isLogin ?
                                     <>
                                         <li className="nav-item block py-2 xl:hidden">
-                                            <Link to="/register" className="bg-transparent text-xl relative font-semibold text-center text-slate py-3 px-4.5 w-full inline-block border-[1.5px] border-gray rounded-full hover:border-accent hover:text-teal">Sign Up</Link>
+                                            <Link to="/" className="bg-transparent text-xl relative font-semibold text-center text-slate py-3 px-4.5 w-full inline-block border-[1.5px] border-gray rounded-full hover:border-accent hover:text-teal">Log in</Link>
                                         </li>
                                         <li className="nav-item block py-2 xl:hidden">
-                                            <Link to="/register" className="bg-accent text-xl relative font-bold text-primary py-3 px-5 inline-block w-full text-center rounded-full hover:bg-teal hover:text-white">Get early access</Link>
+                                            <Link to="/contact" className="bg-accent text-xl relative font-bold text-primary py-3 px-5 inline-block w-full text-center rounded-full hover:bg-teal hover:text-white">Get early access</Link>
                                         </li>
                                     </> :
                                      ''
@@ -138,8 +138,8 @@ function Header(){
                             <div className="flex gap-2 items-center">
                                 {!isLogin ?
                                     <>
-                                        <Link to="/login" className="bg-transparent text-sm relative font-semibold text-slate py-2 px-4.5 border-[1.5px] border-gray rounded-full hidden xl:block 2xl:block hover:border-accent hover:text-teal">Login</Link>
-                                        <Link to="/register" className="bg-accent text-sm relative font-bold text-primary py-2.25 px-5 rounded-full hidden xl:block 2xl:block hover:bg-teal hover:text-white">Get early access</Link>
+                                        <Link to="/" className="bg-transparent text-sm relative font-semibold text-slate py-2 px-4.5 border-[1.5px] border-gray rounded-full hidden xl:block 2xl:block hover:border-accent hover:text-teal">Log in</Link>
+                                        <Link to="/contact" className="bg-accent text-sm relative font-bold text-primary py-2.25 px-5 rounded-full hidden xl:block 2xl:block hover:bg-teal hover:text-white">Get early access</Link>
                                     </> :
                                     <>
                                         <div className="flex gap-2 items-center px-4 border-r-2 mr-2 border-[#26365626]">

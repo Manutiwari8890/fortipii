@@ -80,7 +80,7 @@ function Blog(){
                     <div className="bg-light py-8 px-8 border border-accent rounded-3xl mb-5 lg:mb-8">
                         <div className="flex gap-5 items-center mb-6">
                             <div className="w-13 h-13 bg-teal rounded-xl content-center">
-                                <svg viewBox="0 0 22 22" fill="none" class="w-8 h-8 mx-auto"><rect x="4" y="2" width="14" height="18" rx="2.5" stroke="#FFFFFF" strokewidth="1.5" fill="none"></rect><path d="M8 7h6M8 11h6M8 15h4" stroke="#FFFFFF" strokewidth="1.2" strokelinecap="round"></path></svg>
+                                <svg viewBox="0 0 22 22" fill="none" className="w-8 h-8 mx-auto"><rect x="4" y="2" width="14" height="18" rx="2.5" stroke="#FFFFFF" strokeWidth="1.5" fill="none"></rect><path d="M8 7h6M8 11h6M8 15h4" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round"></path></svg>
                             </div>
                             <div className="text-left flex-1">
                                 <h4 className="text-primary text-base font-bold family-normal mb-2">Free Download: WISP Assessment Template</h4>

@@ -50,7 +50,7 @@ function SingleBlog(){
                 <div className="container px-5 mx-auto lg:px-10">
                     <div className="w-full mx-auto lg:w-4/5 xl:w-2/3">
                         <div className="bg-light text-sm font-semibold family-normal text-teal border border-accent flex gap-2 p-5 rounded-2xl leading-5 mb-8 xl:mb-15">
-                            <svg viewBox="0 0 22 22" fill="none" class="w-7 h-7"><circle cx="11" cy="11" r="8" stroke="#35A897" strokewidth="1.5" fill="none"></circle><path d="M11 7v4l3 3" stroke="#35A897" strokewidth="1.5" strokelinecap="round"></path></svg>
+                            <svg viewBox="0 0 22 22" fill="none" className="w-7 h-7"><circle cx="11" cy="11" r="8" stroke="#35A897" strokeWidth="1.5" fill="none"></circle><path d="M11 7v4l3 3" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round"></path></svg>
                             <p className="flex-1"><strong className="font-bold">Quick summary :</strong> A WISP (Written Information Security Plan) is a document every tax professional is required to have under IRS Publication 4557. It describes how your practice protects client data. This article explains what it is, what it must contain, and how to create one — with a free template at the end.</p>
                         </div>
                         <h4 className="text-2xl family-normal font-bold text-primary mb-2 xl:mb-4">The short version</h4>

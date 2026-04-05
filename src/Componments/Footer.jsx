@@ -39,19 +39,19 @@ function Footer(){
                             <h4 className="text-xs font-semibold uppercase text-white/35 mb-3 mt-2">Platform</h4>
                             <ul>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">One-time scan & protect</Link>
+                                    <Link to="/platform" className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">One-time scan & protect</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Ongoing protection</Link>
+                                    <Link to="/platform" className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Ongoing protection</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">FortiPIIScore</Link>
+                                    <Link to="/platform" className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">FortiPIIScore</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Email monitoring</Link>
+                                    <Link to="/platform" className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Email monitoring</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">WISP documentation</Link>
+                                    <Link to="/platform" className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">WISP documentation</Link>
                                 </li>
                             </ul>
                         </div>
@@ -59,16 +59,16 @@ function Footer(){
                             <h4 className="text-xs font-semibold uppercase text-white/35 mb-3 mt-2">Company</h4>
                             <ul>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">About</Link>
+                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent" to="/about">About</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Blog</Link>
+                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent" to="/blog">Blog</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Careers</Link>
+                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent" to="/contact">Contact</Link>
                                 </li>
                                 <li>
-                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent">Contact</Link>
+                                    <Link className="text-sm text-white/50 font-semibold py-2 inline-block w-full hover:text-accent" to="/pricing">Pricing</Link>
                                 </li>
                             </ul>
                         </div>

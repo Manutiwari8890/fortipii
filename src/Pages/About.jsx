@@ -7,8 +7,7 @@ import { motion } from "framer-motion";
 
 
 function About() {
-    const [openFaq, setOpenFaq] = useState(0);
-    const [faqs, setFaqs] = useState([]);
+    const [showVideo, setShowVideo] = useState(false)
     const [content, setContent] = useState();
     const { loading, startLoading, stopLoading } = useContext(LoadingContext)
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -63,11 +62,6 @@ function About() {
         visible: { opacity: 1, y: 0 }
     };
 
-    const fadeRight = {
-        hidden: { opacity: 0, x: -150 },
-        visible: { opacity: 1, x: 0 }
-    };
-
 
     return (
         <>
@@ -97,6 +91,7 @@ function About() {
                             <motion.div 
                                 variants={fadeTop}
                                 initial="hidden"
+                                viewport={{ once: true }}
                                 whileInView="visible"
                                 transition={{ duration: 1 }}
                                 className="bg-light border border-accent rounded-3xl p-8 flex gap-5 flex-col lg:flex-row lg:items-center"
@@ -218,17 +213,24 @@ function About() {
                         <div className="relative z-2">
                             <p className="text-xs tracking-[0.12em] mb-2 text-accent font-bold uppercase">Ready to get started?</p>
                             <h2 className="text-white font-bold tracking-[-0.3px] family-normal mb-2 text-3xl xl:text-[40px]">Join the early access program</h2>
-                            <p className="text-white/45 text-base leading-6 max-w-100 mx-auto mb-3 lg:text-lg lg:leading-7 lg:mb-5 xl:mb-10">Be among the first tax professionals to protect their clients' sensitive data with Fortipii.</p>
+                            <p className="text-white/45 text-base leading-6 max-w-100 mx-auto mb-3 lg:text-lg lg:leading-7 lg:mb-5 ">Be among the first tax professionals to protect their clients' sensitive data with Fortipii.</p>
                             <em className="text-sm font-semibold text-accent">"We don't do drama. Just privacy."</em>
                             <div className="flex gap-4 mt-5 justify-center items-center flex-wrap lg:mt-7">
-                                <a href="#" className="text-base font-bold bg-accent text-primary py-3 px-5 rounded-full family-normal hover:bg-teal lg:px-10">See pricing — from free →</a>
-                                <a href="#" className="text-base font-semibold border-[2px] border-white/35 text-white py-3 px-5 rounded-full hover:text-accent hover:border-accent lg:px-10">Watch the demo</a>
+                                <Link to="/pricing" className="text-base font-bold bg-accent text-primary py-3 px-5 rounded-full family-normal hover:bg-teal lg:px-10">See pricing — from free →</Link>
+                                <button className="text-base font-semibold border-[2px] border-white/35 text-white py-3 px-5 rounded-full hover:text-accent hover:border-accent lg:px-10 cursor-pointer" onClick={() => setShowVideo(prev => !prev)}>Watch the demo</button>
                             </div>
                         </div>
                         <div className="w-125 h-75 bg-[radial-gradient(ellipse,rgba(94,209,192,0.12)_0%,transparent_70%)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
                     </div>
                 </div>
             </section>
+            {showVideo &&
+                <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[9999] backdrop-blur-[2px]" onClick={() => setShowVideo(false)}>
+                    <div className="bg-secondary border border-gray-200 shadow-xs p-4 w-9/10 rounded-3xl lg:w-2/3 xl:w-1/2" onClick={(e) => e.stopPropagation()}>
+                        <iframe className="w-full h-50 rounded-2xl lg:h-80" src="https://www.youtube.com/embed/QqVdIt5sPOo?si=WzGg8xZAgCURNG1H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div> 
+                </div>
+            }
         </>
     )
 }

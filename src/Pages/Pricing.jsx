@@ -1,9 +1,14 @@
 import { useState } from "react"
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-export function Pricing(){
+export default function Pricing(){
 
     const [openFaq, setOpenFaq] = useState(0);
+    const fadeTop = {
+        hidden: { opacity: 0, y: 100 },
+        visible: { opacity: 1, y: 0 }
+    };
 
     return (
         <>
@@ -34,7 +39,13 @@ export function Pricing(){
                     </div>
                     <div className="mx-auto">
                         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-4">
-                            <div className="bg-white border border-gray px-5 py-7 rounded-3xl border-t-3 border-t-accent flex flex-col justify-between">
+                            <motion.div 
+                                variants={fadeTop}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className="bg-white border border-gray px-5 py-7 rounded-3xl border-t-3 border-t-accent flex flex-col justify-between">
                                 <div className="text-up">
                                     <p className="text-[11px] text-teal uppercase font-bold family-normal mb-3 tracking-[0.1em]">FortipiiSID download</p>
                                     <h3 className="text-primary text-xl font-bold family-normal mb-2">Free scan tool</h3>
@@ -76,9 +87,15 @@ export function Pricing(){
                                     </ul>
                                 </div>
                                 
-                                <Link className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Download FortipiiSID →</Link>
-                            </div>
-                            <div className="bg-primary px-5 py-7 rounded-3xl border-2 border-accent relative flex justify-between flex-col">
+                                <Link to="/contact" className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Download FortipiiSID →</Link>
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeTop}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className="bg-primary px-5 py-7 rounded-3xl border-2 border-accent relative flex justify-between flex-col">
                                 <div className="text-up">
                                     <p className="absolute w-max py-1 px-3 text-primary bg-accent -top-3 rounded-full text-xs font-bold left-1/2 -translate-x-1/2">Most popular</p>
                                     <p className="text-[11px] text-accent uppercase font-bold family-normal mb-5 tracking-[0.1em]">One-time scan & protect</p>
@@ -121,9 +138,15 @@ export function Pricing(){
                                         </li>
                                     </ul>
                                 </div>
-                                <Link className="text-[15px] font-bold bg-accent text-primary py-4 px-5 inline-block text-center w-full rounded-full hover:bg-teal hover:text-white"> Claim early-bird — $299 →</Link>
-                            </div>
-                            <div className="bg-white border border-gray px-5 py-7 rounded-3xl border-t-3 border-t-accent flex flex-col justify-between">
+                                <Link to="/contact" className="text-[15px] font-bold bg-accent text-primary py-4 px-5 inline-block text-center w-full rounded-full hover:bg-teal hover:text-white"> Claim early-bird — $299 →</Link>
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeTop}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className="bg-white border border-gray px-5 py-7 rounded-3xl border-t-3 border-t-accent flex flex-col justify-between">
                                 <div className="text-up">
                                     <p className="text-[11px] text-teal uppercase font-bold family-normal mb-3 tracking-[0.1em]">Guardian</p>
                                     <h3 className="text-primary text-xl font-bold family-normal mb-2">Ongoing <br /> protection</h3>
@@ -165,9 +188,15 @@ export function Pricing(){
                                         </li>
                                     </ul>
                                 </div>
-                                <Link className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Start with Guardian →</Link>
-                            </div>
-                            <div className="bg-white border border-gray px-5 py-7 rounded-3xl rounded-4xl border-t-3 border-t-accent flex flex-col justify-between">
+                                <Link to="/contact" className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Start with Guardian →</Link>
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeTop}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className="bg-white border border-gray px-5 py-7 rounded-3xl rounded-4xl border-t-3 border-t-accent flex flex-col justify-between">
                                 <div className="text-up">
                                     <p className="text-[11px] text-teal uppercase font-bold family-normal mb-3 tracking-[0.1em]">Fortress</p>
                                     <h3 className="text-primary text-xl font-bold family-normal mb-2">Whole-office protection</h3>
@@ -209,8 +238,8 @@ export function Pricing(){
                                         </li>
                                     </ul>
                                 </div>
-                                <Link className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Start with Fortress →</Link>
-                            </div>
+                                <Link to="/contact" className="text-[15px] font-bold bg-white text-primary border-gray border-2 py-4 px-5 inline-block text-center w-full rounded-full hover:border-accent hover:text-teal">Start with Fortress →</Link>
+                            </motion.div>
                         </div>
                         <div className="max-w-full mx-auto lg:max-w-4/5">
                             <div className="bg-light px-4 py-3 flex gap-3 mt-8 mb-4 rounded-2xl border border-teal/40">
@@ -222,10 +251,9 @@ export function Pricing(){
                                     <p className="text-base text-primary font-semibold mb-1">Enterprise & multi-firm</p>
                                     <p className="text-sm text-muted family-inter">Custom user counts, SSO, volume pricing, dedicated onboarding, SLA guarantees.</p>
                                 </div>
-                                <Link className="bg-light text-teal border-[1.5px] border-accent/50 px-6 py-2.5 rounded-full text-xs font-semibold hover:bg-accent hover:text-primary">Contact us for enterprise pricing →</Link>
+                                <Link to="/contact" className="bg-light text-teal border-[1.5px] border-accent/50 px-6 py-2.5 rounded-full text-xs font-semibold hover:bg-accent hover:text-primary">Contact us for enterprise pricing →</Link>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </section>
@@ -239,11 +267,11 @@ export function Pricing(){
                         <table className="w-full mx-auto lg:w-9/10 xl:w-7/8 overflow-auto">
                             <thead>
                                 <tr>
-                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray w-full">Feature</th>
-                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray w-full">FortipiiSID <br /><span className="text-xs family-inter font-medium text-muted">Free</span></th>
-                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray w-full">Scan & Protectbr <br/> <span className="text-xs family-inter font-medium text-muted">$299 early bird</span></th>
-                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray w-full">Guardian<br/> <span className="text-xs family-inter font-medium text-muted">$39.99/mo</span></th>
-                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray w-full">Fortress<br/> <span className="text-xs family-inter font-medium text-muted">$59.99/mo</span></th>
+                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray ">Feature</th>
+                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray ">FortipiiSID <br /><span className="text-xs family-inter font-medium text-muted">Free</span></th>
+                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray ">Scan & Protectbr <br/> <span className="text-xs family-inter font-medium text-muted">$299 early bird</span></th>
+                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray ">Guardian<br/> <span className="text-xs family-inter font-medium text-muted">$39.99/mo</span></th>
+                                    <th className="p-2 lg:px-3 text-sm text-primary text-left content-start leading-7 border-b-2 border-gray ">Fortress<br/> <span className="text-xs family-inter font-medium text-muted">$59.99/mo</span></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -330,11 +358,17 @@ export function Pricing(){
                         <h2 className="text-primary family-normal mt-2 mb-3 font-bold text-3xl leading-10 xl:leading-13 xl:text-[40px]">Common questions</h2>
                     </div>
                     <div className="max-w-full mx-auto lg:max-w-2/3">
-                        <div className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base font-bold text-left family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(0)}>
                                 Do you store my clients' sensitive data on your servers?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -342,12 +376,18 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 0 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>No — never. Fortipii processes everything locally on your machine. Your clients' sensitive data never leaves your environment and is never transmitted to or stored on Fortipii servers. This is a core design principle, not just a policy.</p>
-                        </div>
-                        <div className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
+                        </motion.div>
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base font-bold text-left family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(1)}>
                                 How is the one-time scan different from ongoing protection?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -355,12 +395,18 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 1 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>The one-time scan is a single deep sweep of your existing files and drives. It finds exposed sensitive data, protects it, and gives you a FortiPIIScore report. It's a great starting point. Ongoing protection adds continuous monitoring — so new files, emails, and documents are protected automatically as they arrive, every day.</p>
-                        </div>
-                        <div className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
+                        </motion.div>
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base text-left font-bold family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(2)}>
                                 Can I apply my one-time scan fee toward a subscription?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -368,12 +414,18 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 2 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>Yes. If you upgrade to an ongoing protection plan within 30 days of your one-time scan, your scan fee is credited toward your first months of the subscription. We want the scan to feel like a natural on-ramp, not a sunk cost.</p>
-                        </div>
-                        <div className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
+                        </motion.div>
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base text-left font-bold family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(3)}>
                                 Does Fortipii work on Windows and Mac?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -381,12 +433,18 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 3 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>Yes. Fortipii runs on both Windows and Mac. No IT support or technical expertise is required — the average setup time is under 4 minutes.</p>
-                        </div>
-                        <div className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
+                        </motion.div>
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base text-left font-bold family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(4)}>
                                 What's the difference between Guardian and Fortress?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -394,12 +452,18 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 4 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>Guardian ($39.99/mo) provides continuous file and drive monitoring with automatic protection of sensitive client data. Fortress ($59.99/mo) adds email and attachment monitoring, automated WISP documentation, and the full IRS Pub 4557 compliance audit pack — everything a tax professional needs for complete practice protection.</p>
-                        </div>
-                        <div className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
+                        </motion.div>
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item mb-3 border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base text-left font-bold family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(5)}>
                                 What is the early-bird offer on the one-time scan?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -407,12 +471,18 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 5 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>The first 100 firms to sign up get the one-time Scan & Protect for $299 — a saving of $100 off the standard $399 price. Once the first 100 spots are taken, the price returns to $399. Guardian and Fortress subscriptions are unaffected by this offer.</p>
-                        </div>
-                        <div className="accordion-item border-b border-gray py-2 lg:py-4">
+                        </motion.div>
+                        <motion.div 
+                            variants={fadeTop}
+                            initial="hidden"
+                            viewport={{ once: true }}
+                            whileInView="visible"
+                            transition={{ duration: 1 }}
+                            className="accordion-item border-b border-gray py-2 lg:py-4">
                             <button className="flex justify-between text-base text-left font-bold family-normal text-navy w-full cursor-pointer hover:text-teal" onClick={() => setOpenFaq(6)}>
                                 Do I need a WISP?
                                 <div className="w-6 h-6 bg-secondary border content-center border-gray rounded-full text-primary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xml:space="preserve" className="w-2.5 h-2.5 mx-auto">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}} xmlSpace="preserve" className="w-2.5 h-2.5 mx-auto">
                                         <g>
                                             <path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z" fill="currentColor" />
                                         </g>
@@ -420,7 +490,7 @@ export function Pricing(){
                                 </div>
                             </button>
                             <p className={`text-sm text-slate family-inter leading-6 ${openFaq == 6 ? "mt-4 max-h-max" : "max-h-0"} overflow-hidden`}>If you're a tax professional, yes. The IRS requires all tax preparers to have a Written Information Security Plan (WISP) under Publication 4557. Fortipii generates and maintains your WISP automatically as part of ongoing protection plans.</p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>

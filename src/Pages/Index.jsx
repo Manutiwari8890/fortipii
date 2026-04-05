@@ -78,7 +78,7 @@ function Index(){
                             <p className="text-xl text-slate max-w-130 mt-3 mb-4 leading-8 lg:mt-6">Fortipii finds, scores, and shields your clients' sensitive data across your files, drives, and email — quietly, automatically, completely.</p>
                             <em className="text-slate text-sm font-semibold ">"So safe, it's boring." — That's the goal.</em>
                             <div className="flex gap-2 items-center my-4 lg:gap-4 lg:my-5 xl:my-8">
-                                <a href="" className="text-base font-bold bg-primary text-white py-4 px-6 rounded-full family-normal hover:bg-teal hover:-translate-y-[2px] lg:px-10">Get early access →</a>
+                                <Link to="/contact" className="text-base font-bold bg-primary text-white py-4 px-6 rounded-full family-normal hover:bg-teal hover:-translate-y-[2px] lg:px-10">Get early access →</Link>
                                 <button className="text-base font-semibold border-[2px] border-gray text-primary py-4 px-6 rounded-full hover:text-accent hover:border-accent flex gap-1 cursor-pointer lg:px-10" onClick={() => setShowVideo(true)}>
                                     <div className="bg-white rounded-full content-center text-primary">
                                         <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" className="w-5 h-5"><path d="m12,0C5.383,0,0,5.383,0,12s5.383,12,12,12,12-5.383,12-12S18.617,0,12,0Zm0,21c-4.963,0-9-4.038-9-9S7.037,3,12,3s9,4.038,9,9-4.037,9-9,9Zm-3-13.5l8,4.5-8,4.5V7.5Z" fill="currentColor" /></svg>
@@ -206,6 +206,7 @@ function Index(){
                         <div className="w-[2px] h-150 bg-linear-end absolute top-10 left-1/2 -translate-x-1/2 animate-pulse lg:w-4/5 lg:h-[1px]"></div>
                         <motion.div
                             variants={container}
+                            viewport={{ once: true }}
                             initial="hidden"
                             whileInView="visible"
                             className="grid grid-cols-1 gap-5 lg:grid-cols-5"
@@ -283,6 +284,7 @@ function Index(){
                     </div>
                     <motion.div
                         variants={container}
+                        viewport={{ once: true }}
                         initial="hidden"
                         whileInView="visible"
                         className="grid grid-cols-1 gap-x-5 gap-y-7 lg:grid-cols-3"
@@ -385,11 +387,11 @@ function Index(){
                         <div className="relative z-2">
                             <p className="text-xs tracking-[0.12em] mb-2 text-accent font-bold uppercase">Get started today</p>
                             <h2 className="text-white text-2xl font-bold tracking-[-0.3px] family-normal mb-2 lg:text-3xl xl:text-[40px]">Your clients' sensitive data deserves real protection</h2>
-                            <p className="text-white/45 text-nase leading-6 max-w-100 mx-auto mb-3 lg:leading-7 lg:text-lg lg:mb-5 xl:mb-10">Download FortipiiSID free — or claim the early-bird Scan & Protect for $299 while spots last.</p>
+                            <p className="text-white/45 text-nase leading-6 max-w-100 mx-auto mb-4 lg:leading-7 lg:text-lg xl:mb-4">Download FortipiiSID free — or claim the early-bird Scan & Protect for $299 while spots last.</p>
                             <em className="text-sm font-semibold text-accent">"So safe, you'll forget it's working."</em>
                             <div className="flex gap-2 mt-7 justify-center flex-wrap items-center lg:gap-4">
-                                <a href="#" className="text-base font-bold bg-pop text-primary py-3 px-5 rounded-full family-normal hover:bg-[#cbee5c] lg:px-10">Get the one-time scan — $299</a>
-                                <a href="#" className="text-base font-semibold border-[2px] border-white/35 text-white py-3 px-5 rounded-full hover:text-accent hover:border-accent lg:px-10">Download free scan tool</a>
+                                <Link to="/pricing" className="text-base font-bold bg-pop text-primary py-3 px-5 rounded-full family-normal hover:bg-[#cbee5c] lg:px-10">Claim early-bird — $299 →</Link>
+                                <Link to="/contact" className="text-base font-semibold border-[2px] border-white/35 text-white py-3 px-5 rounded-full hover:text-accent hover:border-accent lg:px-10">Download free scan tool</Link>
                             </div>
                         </div>
                         <div className="w-125 h-75 bg-[radial-gradient(ellipse,rgba(94,209,192,0.12)_0%,transparent_70%)] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>

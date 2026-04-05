@@ -1,18 +1,20 @@
-import { useState, useEffect, useContext } from "react";
-import Header from "./Componments/Header";
-import Footer from "./Componments/Footer";
-import Index from "./Pages/Index";
+import { useEffect, useContext, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { LoadingContext } from "./Context/LoadingContext";
-import Loader from "./Componments/Loader";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Blog from "./Pages/Blog";
-import SingleBlog from "./Pages/SingleBlog";
-import Signup from "./Pages/Signup";
-import Login from "./Pages/Login";
-import { Pricing } from "./Pages/Pricing";
-import Platform from "./Pages/Platform";
+
+const Header = lazy(() => import('./Componments/Header'));
+const Footer = lazy(() => import('./Componments/Footer'));
+const Index = lazy(() => import('./Pages/Index'));
+const Loader = lazy(() => import('./Componments/Loader'));
+const About = lazy(() => import('./Pages/About'));
+const Contact = lazy(() => import('./Pages/Contact'));
+const Blog = lazy(() => import('./Pages/Blog'));
+const SingleBlog = lazy(() => import('./Pages/SingleBlog'));
+const Login = lazy(() => import('./Pages/Login'));
+const Signup = lazy(() => import('./Pages/Signup'));
+const Pricing = lazy(() => import('./Pages/Pricing'));
+const Platform = lazy(() => import('./Pages/Platform'));
+
 
 function App(){
   const location = useLocation();

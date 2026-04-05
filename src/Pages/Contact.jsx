@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
 import { useContext, useState, useEffect } from "react";
 import { LoadingContext } from "../Context/LoadingContext";
+import { motion } from "framer-motion";
 
 function Contact(){
-
+    const [showVideo, setShowVideo] = useState(false)
     const [content, setContent] = useState();
     const { loading, startLoading, stopLoading } = useContext(LoadingContext)
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
-
+    const fadeLeft = {
+        hidden: { opacity: 0, x: 150 },
+        visible: { opacity: 1, x: 0 }
+    };
     // useEffect(() => {
     //     const getPageContent = async () => {
     //         startLoading();
@@ -102,47 +105,77 @@ function Contact(){
                             <p className="mt-4 font-semibold family-normal text-muted text-sm text-center">We'll respond within one business day. No spam, ever.</p>
                         </div>
                         <div className="text-left">
-                            <div className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
+                            <motion.div 
+                                variants={fadeLeft}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
                                 <div className={`icon bg-light w-12 h-12 rounded-xl content-center mb-4`}>
-                                    <svg viewBox="0 0 22 22" fill="none" class="w-6 h-6 mx-auto"><rect x="2" y="4" width="18" height="14" rx="2.5" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><path d="M2 8l9 6 9-6" stroke="#5ED1C0" strokeWidth="1.3" strokeLinecap="round" fill="none"></path></svg>
+                                    <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><rect x="2" y="4" width="18" height="14" rx="2.5" stroke="#5ED1C0" strokeWidth="1.5" fill="none"></rect><path d="M2 8l9 6 9-6" stroke="#5ED1C0" strokeWidth="1.3" strokeLinecap="round" fill="none"></path></svg>
                                 </div>
                                 <div className="text-left">
                                     <h4 className={`text-primary font-semibold family-normal mb-1`}>Email us</h4>
                                     <p className={`text-slate text-sm family-normal leading-6`}>For general inquiries and partnership opportunities.</p>
                                     <a href="mailto:hello@fortipii.com" className="text-sm text-teal font-semibold">hello@fortipii.com</a>
                                 </div>
-                            </div>
-                            <div className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeLeft}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
                                 <div className={`icon bg-light w-12 h-12 rounded-xl content-center mb-4`}>
-                                    <svg viewBox="0 0 22 22" fill="none" class="w-6 h-6 mx-auto"><circle cx="11" cy="11" r="8" stroke="#35A897" strokeWidth="1.5" fill="none"></circle><path d="M11 7v4l3 3" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round"></path></svg>
+                                    <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><circle cx="11" cy="11" r="8" stroke="#35A897" strokeWidth="1.5" fill="none"></circle><path d="M11 7v4l3 3" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round"></path></svg>
                                 </div>
                                 <div className="text-left flex-1">
                                     <h4 className={`text-primary font-semibold family-normal mb-1`}>Watch the demo</h4>
                                     <p className={`text-slate text-sm family-normal leading-6`}>See FortipiiSID in action — the full scan, scoring, and protection workflow.</p>
-                                    <a href="" className="text-sm text-teal font-semibold">Watch now →</a>
+                                    <button className="text-sm text-teal font-semibold cursor-pointer" onClick={() => setShowVideo(prev => !prev)}>Watch now →</button>
                                 </div>
-                            </div>
-                            <div className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeLeft}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
                                 <div className={`icon bg-light w-12 h-12 rounded-xl content-center mb-4`}>
-                                    <svg viewBox="0 0 22 22" fill="none" class="w-6 h-6 mx-auto"><path d="M11 2L3 5.5V11c0 4.2 3.2 8 8 9 4.8-1 8-4.8 8-9V5.5L11 2Z" stroke="#35A897" strokeWidth="1.5" fill="none"></path><path d="M8 11l2.5 2.5 4-5" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
+                                    <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><path d="M11 2L3 5.5V11c0 4.2 3.2 8 8 9 4.8-1 8-4.8 8-9V5.5L11 2Z" stroke="#35A897" strokeWidth="1.5" fill="none"></path><path d="M8 11l2.5 2.5 4-5" stroke="#35A897" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path></svg>
                                 </div>
                                 <div className="text-left flex-1">
                                     <h4 className={`text-primary font-semibold family-normal mb-1`}>Security questions</h4>
                                     <p className={`text-slate text-sm family-normal leading-6`}>Questions about how Fortipii protects your data or our security practices.</p>
                                     <a href="mailto:security@fortipii.com" className="text-sm text-teal font-semibold">security@fortipii.com</a>
                                 </div>
-                            </div>
-                            <div className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeLeft}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className={`bg-white border border-gray p-6 rounded-2xl flex gap-5 hover:border-accent hover:-translate-y-1 mb-6`}>
                                 <div className={`icon bg-light w-12 h-12 rounded-xl content-center mb-4`}>
-                                    <svg viewBox="0 0 22 22" fill="none" class="w-6 h-6 mx-auto"><rect x="4" y="2" width="14" height="18" rx="2.5" stroke="#35A897" strokeWidth="1.5" fill="none"></rect><path d="M8 7h6M8 11h6M8 15h4" stroke="#35A897" strokeWidth="1.2" strokeLinecap="round"></path></svg>
+                                    <svg viewBox="0 0 22 22" fill="none" className="w-6 h-6 mx-auto"><rect x="4" y="2" width="14" height="18" rx="2.5" stroke="#35A897" strokeWidth="1.5" fill="none"></rect><path d="M8 7h6M8 11h6M8 15h4" stroke="#35A897" strokeWidth="1.2" strokeLinecap="round"></path></svg>
                                 </div>
                                 <div className="text-left flex-1">
                                     <h4 className={`text-primary font-semibold family-normal mb-1`}>Press & media</h4>
                                     <p className={`text-slate text-sm family-normal leading-6`}>For press inquiries and media kit requests.</p>
                                     <a href="mailto:press@fortipii.com" className="text-sm text-teal font-semibold">press@fortipii.com</a>
                                 </div>
-                            </div>
-                            <div className="bg-primary p-8 rounded-3xl">
+                            </motion.div>
+                            <motion.div 
+                                variants={fadeLeft}
+                                initial="hidden"
+                                viewport={{ once: true }}
+                                whileInView="visible"
+                                transition={{ duration: 1 }}
+                                className="bg-primary p-8 rounded-3xl">
                                 <div className="flex gap-5 items-center pb-4 mb-2">
                                     <div className="bg-teal rounded-full w-10 h-10 text-lg family-normal rounded-full text-center content-center font-bold text-white">C</div>
                                     <div className="text-left flex-1">
@@ -151,11 +184,18 @@ function Contact(){
                                     </div>
                                 </div>
                                 <p className="text-base text-white/80 leading-7">"With all the bad actors out there, prioritizing client data safety is an essential part of any CPA firm. Fortipii brought to my attention that, even after implementing strict access controls and software securities, substantial information was left behind unencrypted on various drives in the office. Fortipii simply and efficiently protected the sensitive information and kept my files organized so there was no disruption in productivity."</p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
             </section>
+            {showVideo &&
+                <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[9999] backdrop-blur-[2px]" onClick={() => setShowVideo(false)}>
+                    <div className="bg-secondary border border-gray-200 shadow-xs p-4 w-9/10 rounded-3xl lg:w-2/3 xl:w-1/2" onClick={(e) => e.stopPropagation()}>
+                        <iframe className="w-full h-50 rounded-2xl lg:h-80" src="https://www.youtube.com/embed/QqVdIt5sPOo?si=WzGg8xZAgCURNG1H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div> 
+                </div>
+            }
         </>
     )
 }

@@ -12,6 +12,7 @@ function LightCard({data}){
                 variants={fadeTop}
                 initial="hidden"
                 whileInView="visible"
+                viewport={{ once: true }}
                 transition={{ duration: 1 }}
                 className={`${data?.dark ? "bg-primary" : "bg-white"} border border-gray p-6 rounded-2xl hover:border-accent hover:-translate-y-1`}>
                 <div className={`icon ${data?.dark ? "bg-accent/15" : "bg-light"} w-12 h-12 rounded-xl content-center mb-4`} dangerouslySetInnerHTML={{ __html: data?.icon}}>

@@ -5,6 +5,7 @@ function IconCard({data, variants, transition}){
         <>
             <motion.div
                 variants={variants}
+                viewport={{ once: true }}
                 transition={transition}
                 className={`${data?.dark ? "bg-primary" : "bg-secondary"} border border-gray px-6 py-8 rounded-3xl hover:border-accent hover:-translate-y-1`}
             >

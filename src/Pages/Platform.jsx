@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 function Platform() {
     const [showVideo, setShowVideo] = useState(false)
     const [content, setContent] = useState();
-    const [faqs, setFaqs] = useState([]);
     const { loading, startLoading, stopLoading } = useContext(LoadingContext)
     const baseUrl = import.meta.env.VITE_API_BASE_URL;
-
+    const [activeSec, setActiveSec] = useState(null)
     const sectionRef = useRef([null, null, null, null, null])
 
     const scrollTo = (index) => {
+        setActiveSec(index)
         sectionRef.current[index].scrollIntoView({
             behavior: "smooth"
         });
@@ -196,11 +196,11 @@ function Platform() {
                 <div className="container px-5 mx-auto lg:px-10">
                     <div className="overflow-auto lg:overflow-hidden">
                         <div className="flex gap-1  w-max lg:gap-2">
-                            <button className="text-sm font-semibold text-primary border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer bg-primary text-white border-primary" onClick={() => scrollTo(0)}>Scan & Assess</button>
-                            <button className="text-sm font-semibold text-primary border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white hover:border-primary" onClick={() => scrollTo(1)}>FortiPIIScore</button>
-                            <button className="text-sm font-semibold text-primary border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white hover:border-primary" onClick={() => scrollTo(2)}>Smart Protection</button>
-                            <button className="text-sm font-semibold text-primary border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white hover:border-primary" onClick={() => scrollTo(3)}>Email Monitoring</button>
-                            <button className="text-sm font-semibold text-primary border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white hover:border-primary" onClick={() => scrollTo(4)}>WISP & Compliance</button>
+                            <button className={`text-sm font-semibold border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white ${activeSec==0 ? "bg-primary text-white border-primary" : "text-primary "}`} onClick={() => scrollTo(0)}>Scan & Assess</button>
+                            <button className={`text-sm font-semibold border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white ${activeSec==1 ? "bg-primary text-white border-primary" : "text-primary "}`} onClick={() => scrollTo(1)}>FortiPIIScore</button>
+                            <button className={`text-sm font-semibold border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white ${activeSec==2 ? "bg-primary text-white border-primary" : "text-primary "}`} onClick={() => scrollTo(2)}>Smart Protection</button>
+                            <button className={`text-sm font-semibold border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white ${activeSec==3 ? "bg-primary text-white border-primary" : "text-primary "}`} onClick={() => scrollTo(3)}>Email Monitoring</button>
+                            <button className={`text-sm font-semibold border-2 border-gray rounded-full px-6 py-2.5 cursor-pointer hover:bg-primary hover:text-white ${activeSec==4 ? "bg-primary text-white border-primary" : "text-primary "}`} onClick={() => scrollTo(4)}>WISP & Compliance</button>
                         </div>
                     </div>
                 </div>

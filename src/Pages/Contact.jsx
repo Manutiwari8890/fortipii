@@ -11,6 +11,9 @@ function Contact(){
         hidden: { opacity: 0, x: 150 },
         visible: { opacity: 1, x: 0 }
     };
+
+    const [data, setData] = useState({first_name : "", last_name : "", email : "", practice_name : "", practice_type : "", number_of_staff : "", number_of_clients : "", annual_client : "", question : ""});
+
     // useEffect(() => {
     //     const getPageContent = async () => {
     //         startLoading();
@@ -47,60 +50,77 @@ function Contact(){
             </section>
             <section className="bg-[#FAFAFA] py-16 border-t border-gray lg:py-18 xl:py-20">
                 <div className="container px-5 mx-auto lg:px-10">
-                    <div className="grid grid-cols-1 items-start gap-8 xl:gap-14 lg:grid-cols-2">
+                    <div className="grid grid-cols-1 items-start gap-8 xl:gap-12 lg:grid-cols-2">
                         <div className={`bg-white border border-gray p-8 rounded-2xl`}>
                             <h4 className="text-primary text-xl font-bold family-normal mb-3">Request early access</h4>
                             <p className="text-base family-normal text-slate mb-7">Tell us a little about your practice and we'll be in touch within one business day.</p>
                             <form>
-                                <div className="grid grid-cols-2 gap-5">
+                                <div className="grid grid-cols-2 gap-4">
                                     <div className="form-group">
                                         <label htmlFor="first_name" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">First Name</label>
-                                        <input type="text" if="first_name" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Shanon" />
+                                        <input type="text" if="first_name" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="First name" value={data?.first_name} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))} />
                                     </div>
                                     <div className="form-group">
                                         <label htmlFor="last_name" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Last Name</label>
-                                        <input type="text" if="last_name" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Bond" />
+                                        <input type="text" if="last_name" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Last name" value={data?.last_name} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))} />
                                     </div>
                                     <div className="form-group col-span-2">
                                         <label htmlFor="email" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Work email</label>
-                                        <input type="email" id="email" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="you@yourfirm.com" />
+                                        <input type="email" id="email" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="you@yourfirm.com" value={data?.email} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))} />
                                     </div>
-                                    <div className="form-group col-span-2">
-                                        <label htmlFor="firm_name" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Practice name</label>
-                                        <input type="text" if="firm_name" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Your firm name" />
+                                    <div className="form-group">
+                                        <label htmlFor="practice_name" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Practice name</label>
+                                        <input type="text" id="practice_name" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Your firm name" value={data?.practice_name} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))} />
                                     </div>
-                                    <div className="form-group col-span-2">
-                                        <label htmlFor="describes" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">What best describes your practice?</label>
-                                        <select id="describes" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent">
-                                            <option value="">Select one...</option>
-                                            <option>Solo tax preparer</option>
-                                            <option>Small tax firm (2–10 staff)</option>
-                                            <option>Mid-size firm (11–50 staff)</option>
-                                            <option>CPA firm</option>
-                                            <option>Financial advisor / planner</option>
-                                            <option>Other financial services</option>
+                                    <div className="form-group">
+                                        <label htmlFor="practice_type" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Type of practice</label>
+                                        <select id="practice_type" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" name="practice_type" defaultValue={data?.practice_type} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))}>
+                                            <option value="">Select ...</option>
+                                            <option value="tax">Tax</option>
+                                            <option value="accounting">Accounting</option>
+                                            <option value="financial advisory">Financial advisory</option>
+                                            <option value="legal">Legal</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="number_of_staff" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Number of staff</label>
+                                        <select id="number_of_staff" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" name="number_of_staff" defaultValue={data?.number_of_staff} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))}>
+                                            <option value="">Select ...</option>
+                                            <option value="solo">Solo</option>
+                                            <option value="2-10">2–10</option>
+                                            <option value="11-50">11–50</option>
+                                            <option value="50+">50+</option>
+                                        </select>
+                                    </div>
+                                    <div className="form-group">
+                                        <label htmlFor="number_of_clients" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Number of clients</label>
+                                        <select id="number_of_clients" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" name="number_of_clients" defaultValue={data?.number_of_clients} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))}>
+                                            <option value="">Select ...</option>
+                                            <option value="Under 100">Under 100</option>
+                                            <option value="100-500">100–500</option>
+                                            <option value="500-2500">500-2500</option>
+                                            <option value="2500+">2500+</option>
                                         </select>
                                     </div>
                                     <div className="form-group col-span-2">
-                                        <label htmlFor="interested" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">What are you most interested in?</label>
-                                        <select id="interested" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent">
-                                            <option value="">Select one...</option>
-                                            <option>One-time Scan &amp; Protect — $299 early bird ($399 standard)</option>
-                                            <option>Guardian — $39.99/month</option>
-                                            <option>Fortress — $59.99/month</option>
-                                            <option>FortipiiSID free download only</option>
-                                            <option>Just exploring for now</option>
-                                            <option>Enterprise / multi-firm pricing</option>
-                                            <option>Watch the demo video</option>
+                                        <label htmlFor="annual_client" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Annual {(data?.practice_type == "" || data?.practice_type == "tax") ? "tax returns filed" : "client engagements"} </label>
+                                        <select id="annual_client" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" value={data?.annual_client} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))}>
+                                            <option value="">Select ...</option>
+                                            <option value="Under 100">Under 100</option>
+                                            <option value="100-500">100-500</option>
+                                            <option value="500-2500">500-2500</option>
+                                            <option value="2500+">2500+</option>
                                         </select>
                                     </div>
                                     <div className="form-group col-span-2">
                                         <label htmlFor="question" className="text-[12px] font-bold family-normal text-primary inline-block mb-1">Any questions for us? (optional)</label>
-                                        <textarea id="question" rows="3" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Tell us what's on your mind...">
+                                        <textarea id="question" rows="3" className="bg-[#fafafa] border-2 border-gray rounded-lg text-sm font-semibold py-2.5 px-3 w-full focus:border-accent" placeholder="Tell us what's on your mind..."  defaultValue={data?.question} onChange={(e) => setData(prev => ({...data, [e.target.name] : e.target.value}))}>
+                                            
                                         </textarea>
                                     </div>
                                 </div>
-                                <button className="text-base font-bold bg-primary text-white w-full py-3 px-10 rounded-full family-normal hover:-translate-y-1 hover:bg-primary/90 mt-4 cursor-pointer">Send request →</button>
+                                <button type="button" onClick={() => {console.log(data)}} className="text-base font-bold bg-primary text-white w-full py-3 px-10 rounded-full family-normal hover:-translate-y-1 hover:bg-primary/90 mt-4 cursor-pointer">Send request →</button>
                             </form>
                             <p className="mt-4 font-semibold family-normal text-muted text-sm text-center">We'll respond within one business day. No spam, ever.</p>
                         </div>
